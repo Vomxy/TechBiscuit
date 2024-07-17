@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBiscuit | Homepage</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a id="logo">
+                <img src="/images/TheTechBiscuit-logo.svg" alt="TechBiscuit Logo">
+            </a>
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#">Blogs</a>
+                <a href="#">About Me</a>
+                <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <h1>Welcome to the TechBiscuit</h1>
+        <p>Explore my journey in tech with blogs on learning new skills and interests.</p>
+        <button>Explore Blogs</button>
+        <button>Explore My Projects</button>
+    </div>
+    <main>
+        <div class="content-container">
+            <section class="featured-blogs">
+                <h2>Recent Blogs</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <h3>Blog Title</h3>
+                        <img src="/images/img1.png" alt="Relevant Image">
+                        <p>Short description of the blog...</p>
+                        <a href="link_to_full_blog" class="read-more">Read More</a>
+                    </div>
+                    <div class="blog-card">
+                        <h3>Blog Title</h3>
+                        <img src="/images/img1.png" alt="Relevant Image">
+                        <p>Short description of the blog...</p>
+                        <a href="link_to_full_blog" class="read-more">Read More</a>
+                    </div>
+                    <div class="blog-card">
+                        <h3>Blog Title</h3>
+                        <img src="/images/img1.png" alt="Relevant Image">
+                        <p>Short description of the blog...</p>
+                        <a href="link_to_full_blog" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonials">
+                <h2>Quotes I Like...</h2>
+                <div class="testimonials-slider">
+                    <blockquote>
+                        <p>"This platform has transformed the way I approach research and collaboration."</p>
+                        <footer>- Jane Doe, Enthusiast</footer>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h4>About TechBiscuit</h4>
+                <p>Your go-to source for the latest in tech news, reviews, and trends.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> contact@techbiscuit.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechBiscuit. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var x = document.querySelector("nav");
+            if (x.className === "") {
+                x.className += "responsive";
+            } else {
+                x.className = "";
+            }
+        }
+    </script>
+</body>
+</html>
