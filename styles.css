@@ -102,7 +102,7 @@ nav .icon {
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: url('/images/hero-bg.avif') no-repeat center center/cover;
+    background: url('https://vomxy.github.io/TechBiscuit/images/hero-bg.avif') no-repeat center center/cover;
     color: white;
 }
 
@@ -434,7 +434,7 @@ footer .footer-bottom a:hover {
 .about-hero {
     text-align: center;
     padding: 60px 20px;
-    background: url('/images/hero-bg.avif') no-repeat center center/cover;
+    background: url('https://vomxy.github.io/TechBiscuit/images/hero-bg.avif') no-repeat center center/cover;
     color: white;
 }
 
