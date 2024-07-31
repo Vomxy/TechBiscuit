@@ -1,120 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TechBiscuit - Explore tech blogs, projects, and resources. Learn more about the author and his journey in tech.">
-    <title>TechBiscuit | Homepage</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-  </head>
-  <body>
-    <header role="banner">
-      <div class="header-container">
-        <a id="logo" href="/">
-          <img src="/images/TheTechBiscuit-logo.svg" alt="TechBiscuit Logo">
-        </a>
-        <nav>
-          <a href="/index.html" class="active" aria-current="page">Home</a>
-          <a href="/blogs.html">Blogs</a>
-          <a href="/about-me.html">About Me</a>
-        </nav>
-      </div>
-    </header>
-    <section class="hero" aria-label="Hero Section">
-      <div class="hero-content">
-        <h1>Welcome to the TechBiscuit</h1>
-        <p>The TechBiscuit is the platform of one Zack Baxter. A gallery of my interests and a one-stop shop for getting to know me. Here you will find blog posts I have written, my favourite media, and the space I use to think and play my part in the internet.</p>
-      </div>
-      </br>
-      <button onclick="location.href='blogs.html'" aria-label="Explore Our Blogs">Explore My Blogs</button>
-      <button class="secondary" onclick="location.href='projects.html'" aria-label="Discover My Projects">Check Me Out!</button>
-    </section>
-    <main id="main-content" role="main">
-      <div class="content-container">
-        <section class="section-header">
-          <h2>Recent Blogs</h2>
-          <div class="blog-grid">
-            <div class="blog-card">
-              <h3>Sample Post 1</h3>
-              <img src="/images/img1.webp" alt="Description of the image">
-              <p>Short description of the blog...</p>
-              <a href="link_to_full_blog" class="read-more">Read More</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TechBiscuit - Explore tech blogs, projects, and resources. Learn more about the author and his journey in tech.">
+        <title>TechBiscuit | Homepage</title>
+
+        <link rel="stylesheet" type="text/css" href="/styles.css">
+        
+        
+
+    </head>
+    <body>
+        <header role="banner">
+            <div class="header-container">
+                <a id="logo" href="/">
+                    <img src="/images/TheTechBiscuit-logo.svg" alt="TechBiscuit Logo">
+                </a>
+                <nav>
+                    <a href="/index.html" class="active" aria-current="page">Home</a>
+                    <a href="/blogs.html">Blogs</a>
+                    <a href="/about-me.html">About Me</a>
+                </nav>
             </div>
-            <div class="blog-card">
-              <h3>Post #2</h3>
-              <img src="/images/img1.webp" alt="Description of the image">
-              <p>Short description of the blog...</p>
-              <a href="link_to_full_blog" class="read-more">Read More</a>
+        </header>
+        <section class="hero" aria-label="Hero Section">
+            <div class="hero-content">
+                <h1>Welcome to the TechBiscuit</h1>
+                <p>The TechBiscuit is the platform of one Zack Baxter. A gallery of my interests and a one-stop shop for getting to know me. Here you will find blog posts I have written, my favourite media, and the space I use to think and play my part in the internet.</p>
             </div>
-            <div class="blog-card">
-              <h3>Post #3</h3>
-              <img src="/images/hero-bg.avif" alt="Description of the image">
-              <p>Short description of the blog...</p>
-              <a href="link_to_full_blog" class="read-more">Read More</a>
-            </div>
-          </div>
+            </br>
+            <button onclick="location.href='blogs.html'" aria-label="Explore Our Blogs">Explore My Blogs</button>
+            <button class="secondary" onclick="location.href='projects.html'" aria-label="Discover My Projects">Check Me Out!</button>
         </section>
-        <section class="section-header">
-          <h2>Quotes...</h2>
-          <blockquote>
-            <p>"A simple blockquote i will probably use to display quotes from books I like."</p>
-            <div class="source">
-              <cite>Jane Doe</cite>
-              <span class="quote-role">Myself</span>
+        <main id="main-content" role="main">
+            <div class="content-container">
+                <section class="section-header">
+                    <h2>Recent Blogs</h2>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <h3>Sample Post 1</h3>
+                            <img src="/images/img1.webp" alt="Description of the image">
+                            <p>Short description of the blog...</p>
+                            <a href="link_to_full_blog" class="read-more">Read More</a>
+                        </div>
+                        <div class="blog-card">
+                            <h3>Post #2</h3>
+                            <img src="/images/img1.webp" alt="Description of the image">
+                            <p>Short description of the blog...</p>
+                            <a href="link_to_full_blog" class="read-more">Read More</a>
+                        </div>
+                        <div class="blog-card">
+                            <h3>Post #3</h3>
+                            <img src="/images/hero-bg.avif" alt="Description of the image">
+                            <p>Short description of the blog...</p>
+                            <a href="link_to_full_blog" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-header">
+                    <h2>Quotes...</h2>
+                    <blockquote>
+                        <p>"A simple blockquote i will probably use to display quotes from books I like."</p>
+                            <div class="source">
+                                <cite>Jane Doe</cite>
+                            <span class="quote-role">Myself</span>
+                            </div>
+                    </blockquote>
+                </section>
             </div>
-          </blockquote>
-        </section>
-      </div>
-    </main>
-    <footer>
-      <div class="footer-container">
-        <div class="contact-info">
-          <h3>Contact</h3>
-          <p>
-            <i style="margin-right: 10px; font-size: 1.2em;" class="fas fa-envelope"></i>
-            <a href="mailto:comms@thetechbiscuit.com">comms@thetechbiscuit.com</a>
-          </p>
-          <p>
-            <i style="margin-right: 10px; font-size: 1.2em;" class="fas fa-phone"></i>
-            <a href="tel:+447542940000">+44 7542 940000</a>
-          </p>
-        </div>
-        <div class="social-media">
-          <h3>Follow Me</h3>
-          <a href="#" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://x.com/cptfletcher" aria-label="Twitter">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="https://www.instagram.com/cptfletcher" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="www.linkedin.com/in/zackbaxter" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
-        <div class="quick-links">
-          <h3>Quick Links</h3>
-          <a href="#">Home</a>
-          <a href="#">Blogs</a>
-          <a href="#">About Me</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
-      </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-    </script>
-  </body>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="contact-info">
+                    <h3>Contact</h3>
+                    <p>
+                        <i style="margin-right: 10px; font-size: 1.2em;" class="fas fa-envelope"></i>
+                        <a href="mailto:comms@thetechbiscuit.com">comms@thetechbiscuit.com</a>
+                    </p>
+                    <p>
+                        <i style="margin-right: 10px; font-size: 1.2em;" class="fas fa-phone"></i>
+                        <a href="tel:+447542940000">+44 7542 940000</a>
+                    </p>
+                </div>
+                <div class="social-media">
+                    <h3>Follow Me</h3>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://x.com/cptfletcher" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/cptfletcher" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="www.linkedin.com/in/zackbaxter" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">About Me</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
+            </div>
+        </footer>
+        
+
+        
+        <script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body>
 </html>
