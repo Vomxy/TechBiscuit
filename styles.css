@@ -17,33 +17,16 @@
 }
 
 /* --- Typography --- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
 }
 
-h1 {
-    font-size: 64px;
-}
-h2 {
-    font-size: 56px;
-}
-h3 {
-    font-size: 48px;
-}
-h4 {
-    font-size: 40px;
-}
-h5 {
-    font-size: 26px;
-}
-h6 {
-    font-size: 18px;
-}
+h1 { font-size: 64px; }
+h2 { font-size: 56px; }
+h3 { font-size: 48px; }
+h4 { font-size: 40px; }
+h5 { font-size: 26px; }
+h6 { font-size: 18px; }
 
 /* --- Global Styles --- */
 body {
@@ -60,8 +43,7 @@ a {
     color: inherit;
 }
 
-a:hover,
-button:hover {
+a:hover, button:hover {
     transform: scale(1.05);
     transition: transform 0.2s;
 }
@@ -118,28 +100,45 @@ nav .icon {
 /* --- Hero Section --- */
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 50px 20px;
     background: url("/images/hero-bg.avif") no-repeat center center/cover;
     color: white;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .hero .hero-content {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 10px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
     display: inline-block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     width: 80%;
+    max-width: 900px;
+    z-index: 2;
 }
 
 .hero h1 {
     font-size: 3em;
     font-weight: var(--bold-font-weight);
+    margin: 0 0 20px 0;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.25em;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
 .hero button {
@@ -147,13 +146,10 @@ nav .icon {
     color: white;
     border: none;
     border-radius: 28px;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.hero button:hover {
-    background-color: var(--secondary);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* --- Buttons --- */
@@ -245,7 +241,7 @@ main {
 blockquote {
     background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
     border-left: 5px solid var(--accent);
-    padding: 20px; /* Reduced padding */
+    padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -260,17 +256,16 @@ blockquote {
 
 blockquote p {
     margin: 0;
-    padding-left: 20px; /* Reduced padding for more compact layout */
-    padding-right: 20px; /* Added padding to right for symmetry */
+    padding-left: 20px;
+    padding-right: 20px;
     font-style: italic;
     position: relative;
     z-index: 1;
 }
 
-/* Adjust positioning and size for the opening quote */
 blockquote p:before {
     content: "\201C";
-    font-size: 3em; /* Reduced font size */
+    font-size: 3em;
     color: var(--accent);
     position: absolute;
     left: 0;
@@ -280,10 +275,9 @@ blockquote p:before {
     margin-left: -10px;
 }
 
-/* Adjust positioning and size for the closing quote */
 blockquote p:after {
     content: "\201D";
-    font-size: 3em; /* Reduced font size */
+    font-size: 3em;
     color: var(--accent);
     position: absolute;
     right: 0;
@@ -291,7 +285,7 @@ blockquote p:after {
     opacity: 0.8;
     line-height: 1;
     margin-right: -10px;
-    transform: translateY(40%); /* Adjusted alignment */
+    transform: translateY(40%);
 }
 
 blockquote .source {
@@ -300,7 +294,7 @@ blockquote .source {
     align-items: flex-end;
     font-style: normal;
     color: var(--text);
-    margin-top: 10px; /* Reduced margin */
+    margin-top: 10px;
 }
 
 blockquote .source cite {
@@ -345,13 +339,13 @@ footer h3 {
 }
 footer h3::after {
     content: "";
-    width: 60px; /* Slightly wider for better visibility */
+    width: 60px;
     height: 3px;
     background-color: var(--accent);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -10px; /* Lowered to create space */
+    bottom: -10px;
 }
 footer a,
 footer p {
@@ -662,35 +656,25 @@ footer .footer-bottom {
     gap: 20px;
 }
 
-/* Sidebar Area */
-.blog-post .sidebar {
-    flex: 1;
-    position: sticky;
-    top: 20px;
-    align-self: flex-start;
-}
-
-/* Blog Title */
 .blog-post h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     margin-top: 20px;
     margin-bottom: 10px;
-    color: var(--text);
+    color: var(--text-color);
     text-align: center;
 }
 
-/* Meta Information */
 .meta-info {
     display: flex;
     justify-content: center;
     gap: 20px;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #666;
     margin-bottom: 20px;
 }
 
 .meta-info .author a {
-    color: var(--accent);
+    color: var(--accent-color);
     text-decoration: none;
     padding-left: 0.1em;
 }
@@ -705,28 +689,28 @@ footer .footer-bottom {
 }
 
 /* Featured Image */
-.featured-image {
+.blog-post .featured-image {
     width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius, 10px);
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Content Styling */
 .content h2,
 .content h3 {
-    color: var(--text);
+    color: var(--text, #333);
     margin-top: 20px;
     margin-bottom: 10px;
-    border-bottom: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey, #ddd);
     padding-bottom: 5px;
 }
 
 .content p {
     line-height: 1.8;
     margin-bottom: 20px;
-    color: var(--text);
+    color: var(--text, #333);
 }
 
 .content ol,
@@ -747,8 +731,8 @@ footer .footer-bottom {
 
 .related-posts h3 {
     margin-bottom: 20px;
-    color: var(--text);
-    font-size: 1.5em;
+    color: var(--text, #333);
+    font-size: 1.5rem;
 }
 
 .related-posts ul {
@@ -762,33 +746,34 @@ footer .footer-bottom {
 }
 
 .related-posts ul li a {
-    color: var(--accent);
+    color: var(--accent, #0073e6);
     text-decoration: none;
 }
 
 .related-posts ul li a:hover {
     text-decoration: underline;
 }
-/* --- Table of Contents --- */
+
+/* Table of Contents */
 .table-of-contents {
-    background-color: white;
-    border: 1px solid var(--light-grey);
-    border-radius: var(--border-radius);
-    padding: 20px; /* Space inside the ToC */
-    margin: 20px 0; /* Space around the ToC */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    transition: all 0.3s ease;
+    background-color: #fff;
+    border: 1px solid var(--light-grey, #ddd);
+    border-radius: var(--border-radius, 10px);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
+
 .table-of-contents:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .table-of-contents h2 {
-    font-size: 1.5em;
-    color: var(--text);
+    font-size: 1.5rem;
+    color: var(--text, #333);
     margin-bottom: 15px;
-    text-align: left;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent, #0073e6);
     padding-bottom: 10px;
 }
 
@@ -803,17 +788,17 @@ footer .footer-bottom {
 }
 
 .table-of-contents ul li a {
-    color: var(--accent);
+    color: var(--accent, #0073e6);
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     padding: 5px 10px;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, 10px);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .table-of-contents ul li a:hover {
-    background-color: var(--accent);
-    color: white;
+    background-color: var(--accent, #0073e6);
+    color: #fff;
 }
 
 /* Infographics */
@@ -825,14 +810,14 @@ footer .footer-bottom {
 .infographic img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: var(--border-radius, 5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .infographic p {
     margin-top: 10px;
     font-style: italic;
-    color: var(--text);
+    color: var(--text, #333);
 }
 
 /* Image Gallery */
@@ -845,11 +830,11 @@ footer .footer-bottom {
 .image-gallery img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: var(--border-radius, 5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Typography --- */
+/* Typography */
 .content .bold-text {
     font-weight: bold;
 }
@@ -859,21 +844,21 @@ footer .footer-bottom {
 }
 
 .content .highlight-text {
-    background-color: var(--accent);
-    color: white;
+    background-color: var(--accent, #0073e6);
+    color: #fff;
     padding: 2px 5px;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, 5px);
 }
 
 /* Side Notes or Callouts */
 .side-note {
     background-color: #f0f4f8;
-    border-left: 5px solid var(--accent);
+    border-left: 5px solid var(--accent, #0073e6);
     padding: 10px 15px;
     margin: 20px 0;
-    font-size: 0.9em;
-    color: var(--text);
-    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    color: var(--text, #333);
+    border-radius: var(--border-radius, 10px);
 }
 
 /* --- Media Queries for Responsiveness --- */
@@ -928,43 +913,44 @@ footer .footer-bottom {
 /* Adjustments for mobile devices (phones) */
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 1.75em;
+        font-size: 1.75rem;
     }
 
     h4 {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 
     h5 {
-        font-size: 1.25em;
+        font-size: 1.25rem;
     }
 
     h6 {
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     .header-container {
         flex-direction: column;
         align-items: center;
     }
+
     nav {
         display: none;
     }
 
     .hero h1 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     .hero p {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .hero button {
@@ -973,7 +959,7 @@ footer .footer-bottom {
 
     blockquote {
         padding: 15px 20px;
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 
     footer .footer-container {
@@ -1042,11 +1028,11 @@ footer .footer-bottom {
     }
 
     .related-posts h3 {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .table-of-contents {
         padding: 10px;
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }
