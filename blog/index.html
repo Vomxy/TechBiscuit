@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Dive into TechBiscuit's blog collection and read the digital and lifestyle content of Zack Baxter.">
 		<meta name="keywords" content="TechBiscuit blogs, tech trends, cybersecurity insights, digital lifestyle, tech articles, Zack Baxter blogs">
-    <title>Blogs | TechBiscuit</title>
+		<title>Blogs | TechBiscuit</title>
 		<link rel="stylesheet" href="/styles.css">
 	</head>
 	<body>
 		<header>
 			<div class="header-container">
 				<a id="logo" href="/">
-					<img src="/images/TheTechBiscuit-logo.svg" alt="TechBiscuit Logo">
+				<img src="/images/TheTechBiscuit-logo.svg" alt="TechBiscuit Logo">
 				</a>
 				<nav>
 					<a href="/index.html">Home</a>
@@ -23,70 +23,63 @@
 		</header>
 		<main>
 			<section class="blog-listings">
-                <div class="content-container">
-                  <div class="blog-grid">
-                    <div class="blog-card">
-                      <img src="/images/img1.webp" alt="Blog Thumbnail">
-                      <h3>Post 001</h3>
-                      <p class="excerpt">Short excerpt of the blog post...</p>
-                      <p class="post-meta">Published on Publish Date</p>
-                      <a href="/blog/2024/cloaked.html" class="read-more">Read More</a>
-                    </div>
-                    <div class="blog-card">
-                      <img src="/images/img1.webp" alt="Blog Thumbnail">
-                      <h3>Post 002</h3>
-                      <p class="excerpt">Short excerpt of the blog post...</p>
-                      <p class="post-meta">Published on Publish Date</p>
-                      <a href="/blog/2024/cloaked.html" class="read-more">Read More</a>
-                    </div>
-                    <div class="blog-card">
-                      <img src="/images/img1.webp" alt="Blog Thumbnail">
-        
-                      <h3>An Introduction to TechBiscuit</h3>
-                      <p class="excerpt">TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater</p>
-                      <p class="post-meta">Published on August 06, 2024</p>
-                      <a href="/blog/2024/whatistechbiscuit.html" class="read-more">Read More</a>
-        
-                    </div>
-                    </div>
-                </div>
-              </section>
+				<div class="content-container">
+				<div class="blog-grid">
+					<div class="blog-card">
+						<img src="/images/hero-bg.webp" alt="Blog Thumbnail">
+						<h3>Post 001</h3>
+						<p class="excerpt">Short excerpt of the blog post...</p>
+						<p class="post-meta">Published on Publish Date</p>
+						<button onclick="location.href='/blog/2024/cloaked.html'" class="read-more" aria-label="Read More">Read More</button>
+					</div>
+					<div class="blog-card">
+						<img src="/images/img1.webp" alt="Blog Thumbnail">
+						<h3>Post 002</h3>
+						<p class="excerpt">Short excerpt of the blog post...</p>
+						<p class="post-meta">Published on Publish Date</p>
+						<button onclick="location.href='/blog/2024/cloaked.html'" class="read-more" aria-label="Read More">Read More</button>
+					</div>
+					<div class="blog-card">
+						<img src="/images/img1.webp" alt="Blog Thumbnail">
+						<h3>An Introduction to TechBiscuit</h3>
+						<p class="excerpt">TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater</p>
+						<p class="post-meta">Published on August 06, 2024</p>
+						<button onclick="location.href='/blog/2024/whatistechbiscuit.html'" class="read-more" aria-label="Read More">Read More</button>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer>
-            <div class="footer-container">
-                <div class="contact-info">
-                    <h3>Contact</h3>
-                    <p>
-                        <i style="margin-right: 10px; font-size: 1.2em;" class="fas fa-envelope"></i>
-                        <a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a>
-                    </p>
-                </div>
-                <div class="social-media">
-                  <h3>Follow Me</h3>
-                  <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                      <i class="fab fa-facebook"></i>
-                  </a>
-                  <a href="https://x.com/onlytechbiscuit" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                      <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                  <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                      <i class="fab fa-instagram"></i>
-                  </a>
-                  <a href="www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                      <i class="fab fa-linkedin"></i>
-                  </a>
-              </div>
-                <div class="quick-links">
-                  <h3>Quick Links</h3>
-                  <a href="/">Home</a>
-                  <a href="/blog/">Blogs</a>
-                  <a href="/about-me.html">About Me</a>
-              </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
-            </div>
-        </footer>
+			<div class="footer-container">
+				<div class="footer-section contact-info">
+					<h3>Contact</h3>
+					<p><i class="fas fa-envelope" style="margin-right: 10px; font-size: 1.2em;"></i><strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
+					<p><i class="fas fa-key" style="margin-right: 10px; font-size: 1.2em;"></i> <strong><a href="/public-key.asc" download>Download PGP Public Key</a></strong></p>
+				</div>
+				<div class="footer-section btc-donations">
+					<h3>Support My Work</h3>
+					<p><strong>BTC Wallet:</strong> <span id="btc-wallet">bc1qg08djtkm3r7p3dt3lxh6pcpllfheyqg47uc5kg</span></p>
+				</div>
+				<!-- Social Media Links -->
+				<div class="footer-section social-media">
+					<h3>Follow Me</h3>
+					<a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+					<a href="https://x.com/onlytechbiscuit" aria-label="X (formally Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+				</div>
+				<!-- Quick Links Section -->
+				<div class="footer-section quick-links">
+					<h3>Quick Links</h3>
+					<a href="/">Home</a>
+					<a href="/blog/">Blogs</a>
+					<a href="/about-me.html">About Me</a>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
+			</div>
+		</footer>
 		<script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 	</body>
 </html>
