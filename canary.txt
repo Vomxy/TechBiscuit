@@ -1,0 +1,13 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Ownership Canary:
+The domain thetechbiscuit.com is owned and operated by Zack B.
+This statement was last updated on 2024-08-09.
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQQHBZIXvbN+QhiyTfNeiEIbKjConwUCZrVatAAKCRBeiEIbKjCo
+n7EkAP4qja06pTRbUyD6Kkm6OhpeuLPNAL6v0dFrM/fVk9N2LgEA/rPCETcGnzoA
+JVpJb9uqRL1VdG6IN0NxAGerLIcrFwU=
+=b5ro
+-----END PGP SIGNATURE-----
