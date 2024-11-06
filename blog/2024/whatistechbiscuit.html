@@ -14,16 +14,16 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <a id="logo" href="/">
-                <img src="/images/TheTechBiscuit-logo.svg" alt="TechBiscuit Logo">
-            </a>
-            <nav aria-label="Main Navigation">
-                <a href="/index.html">Home</a>
-                <a href="/blog/" class="active">Blogs</a>
-                <a href="/about-me.html">About Me</a>
-            </nav>
-        </div>
+        <nav class="header-container">
+            <div class="navbar">
+                <span class="navbar-path" aria-label="Website path">TheTechBiscuit:</span>
+                <ul class="navbar-links" role="navigation" aria-label="Main navigation">
+                    <li><a href="/index.html" aria-current="page">cd ./home</a></li>
+                    <li><a href="/blog/" class="active">cd ./blogs</a></li>
+                    <li><a href="/about-me.html">cd ./about-me</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <div id="progress-bar"></div>
@@ -46,7 +46,7 @@
                 </ul>
             </div>
 
-            <section class="content">1
+            <section class="content">
                 <h2 id="introduction">Introduction</h2>
                 <p>TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater. Every project started with the goal of being unique, a fresh idea different from the last. Yet, they often fell apart, either because I was too eager to start the next big thing or because my enthusiasm waned. Despite this, I preserved the code, knowing that these spare parts, would eventually be the parts I needed to build my great Frankenstein's monster.</p>
                 <p>TechBiscuit is that creation. It might not be the most extravagant site on the web, but it’s mine, and it does exactly what it’s meant to do. I encourage you to explore it—you might find it more interesting than you expect.</p>
@@ -156,4 +156,3 @@ window.onscroll = function() {
 </body>
 
 </html>
-
