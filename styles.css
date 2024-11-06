@@ -1,5 +1,6 @@
 /* --- Fonts Import --- */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
 
 /* --- CSS Variables --- */
 :root {
@@ -8,43 +9,53 @@
     --accent: #e69e56;
     --secondary: #1a1a1a;
     --light-grey: #dcdcdc;
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
     --base-spacing: 1.2em;
     --half-spacing: 0.6em;
     --double-spacing: 2.4em;
     --normal-font-weight: 400;
     --bold-font-weight: 700;
     --border-radius: 0.6em;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
 }
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat", sans-serif;
+
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.2;
-}
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1.25rem; }
-
-/* --- Global Styles --- */
-body {
-    font-family: "Lato", sans-serif;
+    color: #2c2c2c;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.75rem; }
+  h5 { font-size: 1.5rem; }
+  h6 { font-size: 1.25rem; }
+  
+  body {
+    font-family: 'Lato', sans-serif;
     color: var(--text);
     background-color: var(--background);
     margin: 0;
     padding: 0;
-    line-height: 1.8;
-}
-
+    line-height: 1.6;
+    font-family: monospace;
+  }
+  
+  
 /* Global Link Styles */
-a {
+a, .navbar-links a {
+    color: var(--text);
     text-decoration: none;
-    color: inherit;
+    transition: color 0.3s ease;
 }
 
-a:hover, button:hover {
+a:hover, .navbar-links a:hover {
+    color: var(--accent);
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
 }
@@ -59,73 +70,100 @@ header {
     width: 100%;
 }
 
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Navbar Path */
+.navbar-path {
+    color: var(--background);
+    font-family: monospace;
+    font-weight: var(--bold-font-weight);
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links li {
+    margin-left: 10px;
+}
+
+/* Navbar Links */
+.navbar-links a {
+    color: var(--background);
+    background-color: var(--text);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: monospace;
+    font-size: 0.95em;
+}
+
+.navbar-links a:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Active Link Styling */
+.navbar-links a.active {
+    background-color: var(--accent);
+    color: var(--secondary);
+    font-weight: var(--bold-font-weight);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-path {
+        margin-bottom: 10px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links li {
+        margin-left: 0;
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Adjust Header Container */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 12px 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-#logo img {
-    width: 160px;
-}
 
-/* Navigation Styles */
-nav {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-nav a {
-    position: relative;
-    padding: 10px 18px;
-    font-size: 1em;
-    color: #fff;
-    background-color: var(--secondary);
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    z-index: 1;
-}
-
-nav a:hover {
-    background-color: var(--accent);
-    color: #fff;
-    transform: translateY(-3px);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-nav a:hover::before {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-nav a.active {
-    background: var(--accent);
-    color: #0d131a;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-3px);
-}
-/* Mobile Navigation Icon */
-nav .icon {
-    display: none;
+@media screen and (max-width: 768px) {
+    #logo img {
+        width: 140px; /* Reduced size for better fit */
+    }
 }
 
 /* --- Hero Section --- */
@@ -141,7 +179,7 @@ nav .icon {
 }
 
 .hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -164,8 +202,14 @@ nav .icon {
     z-index: 2;
 }
 @keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .hero h1 {
@@ -184,8 +228,14 @@ nav .icon {
 }
 
 @keyframes fadeInText {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- Button Styles --- */
@@ -215,7 +265,7 @@ button:hover {
 }
 
 button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -248,24 +298,11 @@ button.secondary:hover {
     color: #0d131a;
 }
 
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .header-container {
         flex-direction: column;
         align-items: center;
-        padding: 10px 15px;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav a {
-        padding: 10px 16px;
-        width: 100%;
-        text-align: center;
     }
 
     .hero .hero-content {
@@ -364,7 +401,7 @@ main {
     font-size: 0.9em;
     color: #999;
     margin-top: auto;
-    padding-top: 10px;/* --- Fonts Import --- */
+    padding-top: 10px; /* --- Fonts Import --- */
 }
 /* Tags Styling */
 .tags {
@@ -400,15 +437,13 @@ main {
 .read-more:hover {
     background-color: var(--secondary);
     transform: translateY(-3px);
-    color:#fff;
+    color: #fff;
 }
 
 .read-more:focus {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
-
-
 
 /* --- Blockquote --- */
 blockquote {
@@ -589,6 +624,10 @@ footer .footer-bottom {
     padding: 40px 0;
     background-color: #f9f9f9;
     border-top: 5px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #my-story h2,
@@ -598,12 +637,13 @@ footer .footer-bottom {
     font-size: 2.5em;
     color: var(--secondary);
     position: relative;
+    font-family: var(--font-serif);
 }
 
 #my-story h2::after,
 #favorites h2::after {
     content: "";
-    width: 80px;
+    width: 100px;
     height: 4px;
     background-color: var(--accent);
     position: absolute;
@@ -1126,145 +1166,71 @@ footer .footer-bottom {
         font-size: 0.9rem;
     }
 }
-.poetry-blog {
-    max-width: 800px;
+
+/* Poem Grid Layout */
+.poem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
     margin: 0 auto;
-    padding: 40px 20px;
 }
 
-.poem-container {
+/* Poem Card Styling */
+.poem-card {
     background-color: #fff;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.poem-container h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #444;
-    border-bottom: 2px solid #e69e56;
-    padding-bottom: 10px;
-}
-
-.poem-container .author {
-    font-size: 1.2em;
-    font-style: italic;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #666;
-}
-
-.poem {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.1em;
-    white-space: pre-wrap;
-    color: #333;
-    line-height: 1.8;
-    padding-left: 20px;
-    border-left: 5px solid #e69e56;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 15px 20px;
-    overflow-x: auto;
-}
-
-.poem pre {
-    margin: 0;
-}
-
-@media screen and (max-width: 768px) {
-    .poetry-blog {
-        padding: 20px 10px;
-    }
-
-    .poem-container {
-        padding: 20px;
-    }
-
-    .poem-container h1 {
-        font-size: 1.5em;
-    }
-
-    .poem-container .author {
-        font-size: 1em;
-    }
-
-    .poem {
-        font-size: 1em;
-        padding: 10px 15px;
-    }
-}
-#journey-milestones {
-    background: #f9f9f9;
-    padding: 40px;
-    text-align: center;
-    color: #333;
-}
-
-#journey-milestones .intro {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.timeline {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 40px;
-}
-
-.timeline-item {
-    width: 30%;
-    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    height: auto; /* Allow card height to adjust based on content */
 }
 
-.timeline-item .icon {
-    font-size: 2em;
-    color: #e69e56;
+.poem-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.education ul, .goals ul {
-    list-style-type: none;
-    padding: 0;
+/* Poem Title */
+.poem-title {
+    font-family: var(--font-serif), Georgia, 'Times New Roman', serif;
+    font-size: 1.6em;
+    color: var(--accent);
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.poem-author {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Poem Text Styling */
+.poem-text {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: clamp(1em, 1vw + 0.5em, 1.1em);
+    color: var(--text);
     text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+    line-height: 1.6;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--background);
+    font-style: italic;
+    overflow-wrap: break-word;
+    overflow-y: auto;
 }
 
-.education ul li, .goals ul li {
-    margin: 20px 0;
-    font-size: 1.1em;
-    color: #666;
+.poem-line {
+    display: block;
+    padding: 0.2em 0;
+    font-style: italic;
 }
-
-.education ul li strong, .goals ul li .icon {
-    color: #e69e56;
-    font-weight: bold;
-}
-
-.goals ul li .icon {
-    margin-right: 10px;
-}
-
-@media (max-width: 768px) {
-    .timeline {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .timeline-item {
-        width: 100%;
-    }
-
-    .education ul, .goals ul {
-        text-align: center;
-    }
-}
-
