@@ -1,6 +1,7 @@
 /* --- Fonts Import --- */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 /* --- CSS Variables --- */
 :root {
@@ -20,34 +21,34 @@
     --border-radius: 0.6em;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Lato', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
 }
 
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.2;
-    color: #2c2c2c;
-  }
-  
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.5rem; }
-  h3 { font-size: 2rem; }
-  h4 { font-size: 1.75rem; }
-  h5 { font-size: 1.5rem; }
-  h6 { font-size: 1.25rem; }
-  
-  body {
-    font-family: 'Lato', sans-serif;
+/* --- Global Typography --- */
+body {
+    font-family: var(--font-sans);
     color: var(--text);
     background-color: var(--background);
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    font-family: monospace;
-  }
-  
-  
-/* Global Link Styles */
+    font-family: monospace
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    line-height: 1.2;
+    color: #2c2c2c;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; }
+
+/* --- Global Link Styles --- */
 a, .navbar-links a {
     color: var(--text);
     text-decoration: none;
@@ -57,31 +58,28 @@ a, .navbar-links a {
 a:hover, .navbar-links a:hover {
     color: var(--accent);
     transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
 }
 
-/* --- Header --- */
+/* --- Header Styles --- */
 header {
     position: sticky;
     top: 0;
     background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
     z-index: 1000;
     width: 100%;
 }
 
-/* Navbar Container */
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: var(--secondary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
-/* Navbar Path */
 .navbar-path {
     color: var(--background);
     font-family: monospace;
@@ -100,12 +98,10 @@ header {
     margin-left: 10px;
 }
 
-/* Navbar Links */
 .navbar-links a {
     color: var(--background);
     background-color: var(--text);
     padding: 5px 10px;
-    text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     font-family: monospace;
@@ -150,93 +146,15 @@ header {
     }
 }
 
-/* Adjust Header Container */
+/* Header Container */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
-
-@media screen and (max-width: 768px) {
-    #logo img {
-        width: 140px; /* Reduced size for better fit */
-    }
-}
-
-/* --- Hero Section --- */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: url("/images/hero-bg.avif") no-repeat bottom center/cover;
-    color: white;
-    position: relative;
-    background-attachment: fixed;
-    background-size: cover;
-    animation: fadeInHero 1.5s ease-out;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.hero .hero-content {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    display: inline-block;
-    max-width: 800px;
-    width: 100%;
-    animation: slideUp 1s ease-out;
-    z-index: 2;
-}
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.hero h1 {
-    font-size: 2.8rem;
-    font-weight: var(--bold-font-weight);
-    margin-bottom: 20px;
-    color: #fff;
-    animation: fadeInText 1.5s ease-out;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 1.3em;
-    margin-bottom: 40px;
-    line-height: 1.5;
-}
-
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* --- Button Styles --- */
 button {
@@ -300,23 +218,6 @@ button.secondary:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero .hero-content {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
 
     button {
         padding: 10px 20px;
@@ -357,7 +258,7 @@ main {
 
 /* Blog Card */
 .blog-card {
-    background-color: #fff;
+    background-color: var(--card-bg);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -383,6 +284,7 @@ main {
     padding-bottom: 5px;
     border-bottom: 2px solid var(--accent);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-heading);
 }
 
 /* Excerpt Styling */
@@ -443,77 +345,6 @@ main {
 .read-more:focus {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-}
-
-/* --- Blockquote --- */
-blockquote {
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border-left: 5px solid var(--accent);
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: "Lato", sans-serif;
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: var(--text);
-    position: relative;
-    max-width: 800px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-blockquote p {
-    margin: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
-}
-
-blockquote p:before {
-    content: "\201C";
-    font-size: 3em;
-    color: var(--accent);
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0.8;
-    line-height: 1;
-    margin-left: -10px;
-}
-
-blockquote p:after {
-    content: "\201D";
-    font-size: 3em;
-    color: var(--accent);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    opacity: 0.8;
-    line-height: 1;
-    margin-right: -10px;
-    transform: translateY(40%);
-}
-
-blockquote .source {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    font-style: normal;
-    color: var(--text);
-    margin-top: 10px;
-}
-
-blockquote .source cite {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: var(--accent);
-}
-
-blockquote .source .quote-role {
-    font-size: 1em;
-    color: #666;
 }
 
 /* --- Footer Styles --- */
@@ -622,7 +453,7 @@ footer .footer-bottom {
 #my-story,
 #favorites {
     padding: 40px 0;
-    background-color: #f9f9f9;
+    background-color: var(--background);
     border-top: 5px solid var(--accent);
     display: flex;
     flex-direction: column;
@@ -1085,11 +916,6 @@ footer .footer-bottom {
 
     nav {
         display: none;
-    }
-
-    blockquote {
-        padding: 15px 20px;
-        font-size: 0.9rem;
     }
 
     footer .footer-container {
