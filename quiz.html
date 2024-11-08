@@ -34,24 +34,25 @@
     
         main {
             width: 80%;
-            margin: 0 auto;
+            margin: 1 auto;
             max-width: 1200px;
             padding: 1rem;
         }
     
         /* Quiz Section Styles */
         .quiz {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #ddd;
-        }
-    
-        .quiz h2 {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #222;
-        }
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+}
+
+.quiz h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #222;
+}
     
         /* Round Structure */
         .quiz-round {
@@ -82,6 +83,8 @@
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid #ddd;
+            font-style: italic;
+            color: #777;
         }
     
         .quiz-round .answers h4 {
@@ -97,14 +100,13 @@
     
         /* Image Styling */
         .quiz-image {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 1rem auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
     
         /* Responsive Adjustments */
         @media (max-width: 768px) {
