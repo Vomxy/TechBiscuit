@@ -6,66 +6,132 @@
     <title>Pub Quiz Archive</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+    
+        h1, h2, h3, h4 {
+            color: #444;
+        }
+    
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+    
+        p {
+            text-align: center;
+            font-size: 1rem;
+            color: #777;
+        }
+    
+        main {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+    
+        /* Quiz Section Styles */
+        .quiz {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #ddd;
+        }
+    
+        .quiz h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+    
+        /* Round Structure */
+        .quiz-round {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+    
+        .quiz-round h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+            
+        }
+    
+        /* Questions and Answers Layout */
+        .quiz-round ol {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            color: #444;
+        }
+    
+        .quiz-round .answers {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+    
+        .quiz-round .answers h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+    
+        .quiz-round .answers ol {
+            color: #777;
+            padding-left: 1.5rem;
+        }
+    
+        /* Image Styling */
+        .quiz-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            main {
+                width: 95%;
+                padding: 0 1rem;
+            }
+    
+            h1 {
+                font-size: 1.8rem;
+            }
+    
+            .quiz h2 {
+                font-size: 1.6rem;
+            }
+    
+            .quiz-round h3 {
+                font-size: 1.3rem;
+            }
+    
+            .quiz-round .answers h4 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-main {
-    width: 80%;
-    margin: 2rem auto;
-}
-
-.quiz {
-    margin-bottom: 3rem;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 2rem;
-}
-
-.quiz h2 {
-    color: #555;
-}
-h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-.quiz-round {
-    margin: 1rem 0;
-}
-p {
-    text-align: center;
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 1.5rem;
-}
-.quiz-round h3 {
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.quiz-round ol, .quiz-round ul {
-    margin: 0;
-    padding-left: 1.5rem;
-}
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-    main {
-        margin: 1rem auto;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-</style>
 <body>
     <header>
         <nav class="header-container">
@@ -79,18 +145,206 @@ p {
             </div>
         </nav>
     </header>
+    <main>
         <h1>Pub Quiz Archive</h1>
         <p>A collection of all past quizzes for you to enjoy!</p>
-
-    
-    <main>
-        <!-- Quiz Section Template -->
+        <section class="quiz">
+            <h2>Guy Fawkes Pub Quiz - November 7, 2024</h2>
+            <article class="quiz-round">
+                <h3>Round 1: Picture Round - Name the Celeb</h3>
+                <p>Guess the celebrity from the image below:</p>
+                <img src="https://www.greatbritishbucketlist.com/wp-content/uploads/2020/08/2.-Famous-People-From-the-UK-1-1086x1536.jpg" alt="Celebrity Guess Who" class="quiz-image">
+                <ol>
+                    <li>Stormzy</li>
+                    <li>Rowan Atkinson</li>
+                    <li>Danny Cipriani</li>
+                    <li>Shirley Bassey</li>
+                    <li>Nicola Sturgeon</li>
+                    <li>Jessica Ennis-Hill</li>
+                    <li>Brian May</li>
+                    <li>Bear Grylls</li>
+                    <li>Daniel Craig</li>
+                    <li>Eddie Izzard</li>
+                </ol>
+            </article>
+            <article class="quiz-round">
+                <h3>Round 2: Current Events</h3>
+                <ol>
+                    <li>What historical plot is commemorated on 5th November?</li>
+                    <li>In which year did this plot take place?</li>
+                    <li>Which tech company unveiled its first quantum computer in September 2024?</li>
+                    <li>Last month, which technology company surpassed Apple as the most valuable company?</li>
+                    <li>In July 2024, which country hosted the Summer Olympics?</li>
+                    <li>Which tech company was fined two undecillion rubles by Russia for internet censorship?</li>
+                    <li>Which celebrity brought a handbag made entirely from ice to the 2024 Met Gala?</li>
+                    <li>Richard Gadd starred as himself in which Netflix hit series in April 2024?</li>
+                    <li>Which movie won 'Best Picture' at the 2024 Oscars?</li>
+                    <li>What has the Home Office issued Paddington Bear with?</li>
+                </ol>
+                <h4>Answers:</h4>
+                <ol>
+                    <li>Gunpowder Plot</li>
+                    <li>1605</li>
+                    <li>IBM</li>
+                    <li>Nvidia</li>
+                    <li>France</li>
+                    <li>Google</li>
+                    <li>Camila Cabello</li>
+                    <li>Baby Reindeer</li>
+                    <li>Oppenheimer</li>
+                    <li>Passport</li>
+                </ol>
+            </article>
+            <article class="quiz-round">
+                <h3>Round 3: General Knowledge</h2>
+            <ol>
+                <li>Which river is the longest in the world?</li>
+                <li>Who painted "The Starry Night"?</li>
+                <li>In Greek mythology, who was the god of war?</li>
+                <li>Which country has the most islands in the world?</li>
+                <li>What is the capital of New Zealand?</li>
+                <li>What do you call a group of lions?</li>
+                <li>What is the main ingredient in hummus?</li>
+                <li>Which planet in our solar system has the most moons?</li>
+                <li>In what decade was the first successful heart transplant performed?</li>
+                <li>Name one primary color according to Johannes Itten's color wheel.</li>
+            </ol>
+            <h4>Answers:</h3>
+            <ol>
+                <li>The Nile</li>
+                <li>Vincent van Gogh</li>
+                <li>Ares</li>
+                <li>Sweden</li>
+                <li>Wellington</li>
+                <li>A pride</li>
+                <li>Chickpeas</li>
+                <li>Jupiter</li>
+                <li>1960s</li>
+                <li>Yellow, Blue, or Red</li>
+            </ol>
+            </article>
+            <article class="quiz-round">
+                <h3>Round 4: Sport</h3>
+                <ol>
+                    <li>How many players are there on a basketball team?</li>
+                    <li>Which country invented ice hockey?</li>
+                    <li>Which of these sports has the record for the longest-running world championship in history?<br>
+                        (A) Chess<br>
+                        (B) Golf<br>
+                        (C) Soccer<br>
+                        (D) Horse Racing</li>
+                    <li>In baseball, how many bases must a batter run to complete a 'home run'?</li>
+                    <li>What is the term for a zero score in tennis?</li>
+                    <li>In which country did the sport of cricket originate?<br>
+                        (A) India<br>
+                        (B) Australia<br>
+                        (C) United Kingdom<br>
+                        (D) South Africa</li>
+                    <li>In table tennis, how many points must a player win by to claim a game?</li>
+                    <li>During the 1900 Summer Olympics, which sport featured live pigeons as targets?</li>
+                    <li>The Olympics are held every how many years?</li>
+                    <li>Which of these events is not part of the decathlon?<br>
+                        (A) Long jump<br>
+                        (B) Swimming<br>
+                        (C) 1500 meters<br>
+                        (D) Discus throw</li>
+                </ol>
+                <h4>Answers:</h4>
+                <ol>
+                    <li>Five</li>
+                    <li>Canada</li>
+                    <li>(A) Chess (The World Chess Championship has been held since 1886)</li>
+                    <li>4</li>
+                    <li>Love</li>
+                    <li>(C) United Kingdom</li>
+                    <li>2 Clear Points</li>
+                    <li>Live Pigeon Shooting</li>
+                    <li>4 Years</li>
+                    <li>(B) Swimming</li>
+                </ol>
+            </article>
+            
+            <article class="quiz-round">
+                <h3>Round 5: Wipeout Round</h3>
+                <ol>
+                    <li>What is the capital city of Brazil?<br>
+                        (A) Buenos Aires<br>
+                        (B) Rio de Janeiro<br>
+                        (C) Brasília<br>
+                        (D) São Paulo</li>
+                    <li>Who wrote the famous play "Hamlet"?<br>
+                        (A) William Wordsworth<br>
+                        (B) William Shakespeare<br>
+                        (C) Geoffrey Chaucer<br>
+                        (D) Christopher Marlowe</li>
+                    <li>Which element has the chemical symbol 'O'?<br>
+                        (A) Oxygen<br>
+                        (B) Gold<br>
+                        (C) Osmium<br>
+                        (D) Iron</li>
+                    <li>In what year did the Berlin Wall fall?<br>
+                        (A) 1989<br>
+                        (B) 1991<br>
+                        (C) 1985<br>
+                        (D) 1995</li>
+                    <li>What is the largest mammal in the world?<br>
+                        (A) African Elephant<br>
+                        (B) Blue Whale<br>
+                        (C) Giraffe<br>
+                        (D) Hippopotamus</li>
+                    <li>Which of these is not a primary color in the RGB color model?<br>
+                        (A) Red<br>
+                        (B) Blue<br>
+                        (C) Green<br>
+                        (D) Yellow</li>
+                    <li>Who discovered penicillin?<br>
+                        (A) Marie Curie<br>
+                        (B) Isaac Newton<br>
+                        (C) Alexander Fleming<br>
+                        (D) Thomas Edison</li>
+                    <li>What element has the chemical symbol 'K'?<br>
+                        (A) Potassium<br>
+                        (B) Krypton<br>
+                        (C) Calcium<br>
+                        (D) Iron</li>
+                    <li>What is the main ingredient in traditional pesto sauce?<br>
+                        (A) Tomatoes<br>
+                        (B) Basil<br>
+                        (C) Oregano<br>
+                        (D) Parsley</li>
+                    <li>Which musical instrument did Louis Armstrong primarily play?<br>
+                        (A) Trumpet<br>
+                        (B) Saxophone<br>
+                        (C) Piano<br>
+                        (D) Guitar</li>
+                </ol>
+                <h4>Answers:</h4>
+                <ol>
+                    <li>(C) Brasília</li>
+                    <li>(B) William Shakespeare</li>
+                    <li>(A) Oxygen</li>
+                    <li>(A) 1989</li>
+                    <li>(B) Blue Whale</li>
+                    <li>(D) Yellow</li>
+                    <li>(C) Alexander Fleming</li>
+                    <li>(A) Potassium</li>
+                    <li>(B) Basil</li>
+                    <li>(A) Trumpet</li>
+                </ol>
+            </article>
+            
+            <article class="quiz-round">
+                <h3>Bonus Round: Music Round</h3>
+                <!-- Add your questions and answers here as per the quiz content -->
+            </article>
+            
+        </section>
         <section class="quiz">
             <h2>Halloween Pub Quiz - October 31, 2024</h2>
             
             <article class="quiz-round">
                 <h3>Round 1: Picture Round - Celebrity Guess Who, Halloween Edition</h3>
-                <ul>
+                <ol>
                     <li>Adele | Morticia from The Addams Family</li>
                     <li>Lizzo | Baby Yoda</li>
                     <li>Lil Nas X | Voldemort</li>
@@ -101,76 +355,76 @@ p {
                     <li>Rita Ora | Post Malone</li>
                     <li>Harry Styles | Elton John</li>
                     <li>Joe Keery | Harry Potter</li>
-                </ul>
+                </ol>
             </article>
         
             <article class="quiz-round">
                 <h3>Round 2: Local Trivia - Wandsworth Trivia Quiz</h3>
                 <ol>
                     <li>What is the origin of the name "Wandsworth"?<br> 
-                        A) Named after a famous historical figure<br>
-                        B) Named after the River Wandle<br>
-                        C) Derived from an old English term for a market town<br>
-                        D) Named after a local family estate</li>
+                        (A) Named after a famous historical figure<br>
+                        (B) Named after the River Wandle<br>
+                        (C) Derived from an old English term for a market town<br>
+                        (D) Named after a local family estate</li>
                     <li>Which of these is a notable event or idea from Wandsworth's history?<br> 
-                        A) The Great Fire of Wandsworth<br>
-                        B) The Putney Debates<br>
-                        C) The signing of the Magna Carta<br>
-                        D) The first public railway in the world</li>
+                        (A) The Great Fire of Wandsworth<br>
+                        (B) The Putney Debates<br>
+                        (C) The signing of the Magna Carta<br>
+                        (D) The first public railway in the world</li>
                     <li>How many bars are located along Garrett Lane alone?<br>
-                        A) 5<br>
-                        B) 14<br>
-                        C) 20<br>
-                        D) 3</li>
+                        (A) 5<br>
+                        (B) 14<br>
+                        (C) 20<br>
+                        (D) 3</li>
                     <li>What significant structure in Wandsworth was once used as a House of Correction?<br>
-                        A) Wandsworth Prison<br>
-                        B) The Old Town Hall<br>
-                        C) The Ram Brewery<br>
-                        D) The Wandle Industrial Museum</li>
+                        (A) Wandsworth Prison<br>
+                        (B) The Old Town Hall<br>
+                        (C) The Ram Brewery<br>
+                        (D) The Wandle Industrial Museum</li>
                     <li>Which famous London bridge connects Wandsworth to Fulham?<br>
-                        A) Battersea Bridge<br>
-                        B) Putney Bridge<br>
-                        C) Wandsworth Bridge<br>
-                        D) Hammersmith Bridge</li>
+                        (A) Battersea Bridge<br>
+                        (B) Putney Bridge<br>
+                        (C) Wandsworth Bridge<br>
+                        (D) Hammersmith Bridge</li>
                     <li>In which area of Wandsworth would you find the first purpose-built mosque in London?<br>
-                        A) Clapham Junction<br>
-                        B) Southfields<br>
-                        C) Tooting<br>
-                        D) Balham</li>
+                        (A) Clapham Junction<br>
+                        (B) Southfields<br>
+                        (C) Tooting<br>
+                        (D) Balham</li>
                     <li>Which green space in Wandsworth was once a site of common land and now contains some of London's most expensive townhouses?<br>
-                        A) Battersea Park<br>
-                        B) Wandsworth Common<br>
-                        C) Tooting Bec Common<br>
-                        D) Clapham Common</li>
+                        (A) Battersea Park<br>
+                        (B) Wandsworth Common<br>
+                        (C) Tooting Bec Common<br>
+                        (D) Clapham Common</li>
                     <li>Which of these famous personalities learned their trade at a restaurant in Wandsworth?<br>
-                        A) Jamie Oliver<br>
-                        B) Gordon Ramsay<br>
-                        C) Heston Blumenthal<br>
-                        D) Nigella Lawson</li>
+                        (A) Jamie Oliver<br>
+                        (B) Gordon Ramsay<br>
+                        (C) Heston Blumenthal<br>
+                        (D) Nigella Lawson</li>
                     <li>What was the original function of the Surrey Iron Railway, located in Wandsworth?<br>
-                        A) Passenger transport<br>
-                        B) Transporting coal and other goods<br>
-                        C) A military railway<br>
-                        D) Transporting mail and express parcels</li>
+                        (A) Passenger transport<br>
+                        (B) Transporting coal and other goods<br>
+                        (C) A military railway<br>
+                        (D) Transporting mail and express parcels</li>
                     <li>The Ram Brewery in Wandsworth is notable for being?<br>
-                        A) The oldest brewery in London<br>
-                        B) The first to brew lager in the UK<br>
-                        C) The site of the first ale pub in England<br>
-                        D) All of the above</li>
+                        (A) The oldest brewery in London<br>
+                        (B) The first to brew lager in the UK<br>
+                        (C) The site of the first ale pub in England<br>
+                        (D) All of the above</li>
                 </ol>
                 <h4>Answers:</h4>
-                <ul>
-                    <li>1. B) Named after the River Wandle</li>
-                    <li>2. B) The Putney Debates</li>
-                    <li>3. B) 14</li>
-                    <li>4. A) Wandsworth Prison</li>
-                    <li>5. C) Wandsworth Bridge</li>
-                    <li>6. B) Southfields</li>
-                    <li>7. B) Wandsworth Common</li>
-                    <li>8. B) Gordon Ramsay</li>
-                    <li>9. B) Transporting coal and other goods</li>
-                    <li>10. A) The oldest brewery in London</li>
-                </ul>
+                <ol>
+                    <li>(B) Named after the River Wandle</li>
+                    <li>(B) The Putney Debates</li>
+                    <li>(B) 14</li>
+                    <li>(A) Wandsworth Prison</li>
+                    <li>(C) Wandsworth Bridge</li>
+                    <li>(B) Southfields</li>
+                    <li>(B) Wandsworth Common</li>
+                    <li>(B) Gordon Ramsay</li>
+                    <li>(B) Transporting coal and other goods</li>
+                    <li>(A) The oldest brewery in London</li>
+                </ol>
             </article>
         
             <article class="quiz-round">
@@ -188,18 +442,18 @@ p {
                     <li>How many teeth does an adult human typically have?</li>
                 </ol>
                 <h4>Answers:</h4>
-                <ul>
-                    <li>1. 2</li>
-                    <li>2. Flute (made from a vulture bone, discovered in Germany, dating back 35,000 years)</li>
-                    <li>3. Albert Einstein</li>
-                    <li>4. 26.2 miles</li>
-                    <li>5. 3 years</li>
-                    <li>6. Sylvester Stallone</li>
-                    <li>7. Turnips (beets and potatoes also accepted)</li>
-                    <li>8. Harper Lee</li>
-                    <li>9. 100</li>
-                    <li>10. 32</li>
-                </ul>
+                <ol>
+                    <li>2</li>
+                    <li>Flute (made from a vulture bone, discovered in Germany, dating back 35,000 years)</li>
+                    <li>Albert Einstein</li>
+                    <li>26.2 miles</li>
+                    <li>3 years</li>
+                    <li>Sylvester Stallone</li>
+                    <li>Turnips (beets and potatoes also accepted)</li>
+                    <li>Harper Lee</li>
+                    <li>100</li>
+                    <li>32</li>
+                </ol>
             </article>
         
             <article class="quiz-round">
@@ -217,18 +471,18 @@ p {
                     <li>What candy was originally called “Chicken Feed”?</li>
                 </ol>
                 <h4>Answers:</h4>
-                <ul>
-                    <li>1. Halloween (Michael Myers)</li>
-                    <li>2. Ireland</li>
-                    <li>3. Scream</li>
-                    <li>4. 1978</li>
-                    <li>5. It</li>
-                    <li>6. R.L. Stine</li>
-                    <li>7. The Shining</li>
-                    <li>8. Werewolf</li>
-                    <li>9. Mexico</li>
-                    <li>10. Candy Corn</li>
-                </ul>
+                <ol>
+                    <li>Halloween (Michael Myers)</li>
+                    <li>Ireland</li>
+                    <li>Scream</li>
+                    <li>1978</li>
+                    <li>It</li>
+                    <li>R.L. Stine</li>
+                    <li>The Shining</li>
+                    <li>Werewolf</li>
+                    <li>Mexico</li>
+                    <li>Candy Corn</li>
+                </ol>
             </article>
         
             <article class="quiz-round">
@@ -246,15 +500,20 @@ p {
                     <li>In what year did the Titanic sink?</li>
                 </ol>
                 <h4>Answers:</h4>
-                <ul>
-                    <li>1. Q</li>
-                    <li>2. 42</li>
-                    <li>3. Rhode Island</li>
-                </ul>
+                <ol>
+                    <li>Q</li>
+                    <li>42</li>
+                    <li>Rhode Island</li>
+                    <li>Mars</li>
+                    <li>Mexico</li>
+                    <li>Ottawa</li>
+                    <li>The Incas</li>
+                    <li>Sherlock Holmes</li>
+                    <li>Oxygen</li>
+                    <li>1912</li>
+                </ol>
             </article>
         </section>
-        
-        <!-- More quiz sections can be added in similar format -->
     </main>
 
     <footer>
