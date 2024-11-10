@@ -1,1063 +1,744 @@
-/* --- Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-/* --- CSS Variables --- */
-:root {
-    --text: #333333;
-    --background: #f5f5f5;
-    --accent: #e69e56;
-    --secondary: #1a1a1a;
-    --light-grey: #dcdcdc;
-    --card-bg: #ffffff;
-    --border-color: #ddd;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --base-spacing: 1.2em;
-    --half-spacing: 0.6em;
-    --double-spacing: 2.4em;
-    --normal-font-weight: 400;
-    --bold-font-weight: 700;
-    --border-radius: 0.6em;
-    --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Lato', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap);
+a,body{
+    color:var(--text)
 }
-
-/* --- Global Typography --- */
-body {
-    font-family: var(--font-sans);
-    color: var(--text);
-    background-color: var(--background);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    font-family: monospace
+body,nav ul{
+    padding:0;
+    margin:0
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
-    line-height: 1.2;
-    color: #2c2c2c;
+.button,.header-path,.read-more,nav ul li a.active{
+    font-weight:var(--bold-font-weight)
 }
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1.25rem; }
-
-/* --- Global Link Styles --- */
-a, .navbar-links a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.header-path,footer h3,nav ul li a{
+    color:var(--background)
 }
-
-a:hover, .navbar-links a:hover {
-    color: var(--accent);
-    transform: scale(1.05);
+a,footer a,footer p{
+    transition:color .3s
 }
-
-/* --- Header Styles --- */
-header {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 4px var(--shadow-color);
-    z-index: 1000;
-    width: 100%;
+#btc-wallet,.header-path,nav ul li a{
+    font-family:monospace
 }
-
-/* Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--secondary);
-    width: 100%;
+#favorites,#my-story,body{
+    background-color:var(--background)
 }
-
-.navbar-path {
-    color: var(--background);
-    font-family: monospace;
-    font-weight: var(--bold-font-weight);
+#favorites,#my-story,footer{
+    border-top:5px solid var(--accent)
 }
-
-/* Navbar Links */
-.navbar-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+#favorites h2::after,#my-story h2::after,footer h3::after{
+    content:"";
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-10px;
+    position:absolute
 }
-
-.navbar-links li {
-    margin-left: 10px;
+#favorites h2,#my-story h2,footer h3{
+    position:relative;
+    margin-bottom:20px
 }
-
-.navbar-links a {
-    color: var(--background);
-    background-color: var(--text);
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-family: monospace;
-    font-size: 0.95em;
+.related-posts ul li a,.table-of-contents ul li a{
+    color:var(--accent,#0073e6);
+    text-decoration:none
 }
-
-.navbar-links a:hover {
-    background-color: #444;
-    transform: scale(1.05);
+.button,.compact-list li a,.meta-info .author a,.read-more,.related-posts ul li a,a,footer a,footer p{
+    text-decoration:none
 }
-
-/* Active Link Styling */
-.navbar-links a.active {
-    background-color: var(--accent);
-    color: var(--secondary);
-    font-weight: var(--bold-font-weight);
-    box-shadow: 0 4px 15px var(--shadow-color);
-    transform: translateY(-2px);
+.excerpt,.poem-text,body,footer a,footer p{
+    line-height:1.6
 }
-
-/* Responsive Navbar */
-@media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+.content .italic-text,.infographic p,.poem-author,.poem-line,.poem-text{
+    font-style:italic
+}
+:root{
+    --text:#333333;
+    --background:#f5f5f5;
+    --accent:#e69e56;
+    --secondary:#1a1a1a;
+    --light-grey:#dcdcdc;
+    --card-bg:#ffffff;
+    --border-color:#ddd;
+    --shadow-color:rgba(0, 0, 0, 0.1);
+    --base-spacing:1.2em;
+    --half-spacing:0.6em;
+    --double-spacing:2.4em;
+    --normal-font-weight:400;
+    --bold-font-weight:700;
+    --border-radius:0.6em;
+    --font-serif:'Playfair Display',serif;
+    --font-sans:'Lato',sans-serif;
+    --font-heading:'Montserrat',sans-serif
+}
+body{
+    font-family:var(--font-sans);
+    font-family:monospace
+}
+h1,h2,h3,h4,h5,h6{
+    font-family:var(--font-serif);
+    line-height:1.2;
+    color:#2c2c2c
+}
+h1{
+    font-size:3rem
+}
+h2{
+    font-size:2.5rem
+    
+}
+h3{
+    font-size:2rem
+}
+h4{
+    font-size:1.75rem
+}
+h5{
+    font-size:1.5rem
+}
+h6{
+    font-size:1.25rem
+}
+a:hover{
+    color:var(--accent);
+    transform:scale(1.05)
+}
+header{
+    position:sticky;
+    top:0;
+    background-color:var(--secondary);
+    box-shadow:0 2px 4px var(--shadow-color);
+    z-index:1000;
+    max-width:100%;
+    display:flex;
+    align-items:center;
+    padding:10px 20px;
+    justify-content:space-between
+}
+.header-path{
+    margin-right:20px
+}
+.read-more:hover,footer{
+    color:#fff
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px
+}
+nav ul li{
+    margin-left:10px
+}
+nav ul li a{
+    background-color:var(--text);
+    padding:5px 10px;
+    border-radius:5px;
+    transition:background-color .3s,transform .2s;
+    font-size:.95em
+}
+nav ul li a:hover{
+    background-color:#444;
+    transform:scale(1.05)
+}
+.read-more:hover,nav ul li a.active{
+    transform:translateY(-2px);
+    background-color:var(--accent)
+}
+nav ul li a.active{
+    color:var(--secondary);
+    box-shadow:0 4px 15px var(--shadow-color)
+}
+.button,.read-more{
+    display:inline-block;
+    padding:12px 24px;
+    font-size:1rem;
+    color:#fff;
+    background-color:var(--accent);
+    border:none;
+    border-radius:8px;
+    text-align:center;
+    cursor:pointer;
+    transition:transform .3s,background-color .3s,box-shadow .3s;
+    box-shadow:0 4px 8px rgba(0,0,0,.15)
+}
+.read-more,footer a:hover{
+    color:var(--accent)
+}
+.read-more{
+    background-color:transparent;
+    font-weight:600;
+    border:1px solid var(--accent)
+}
+.blog-card h3,.content .bold-text,.poem-author{
+    font-weight:700
+}
+.blog-card:hover,.compact-list li:hover{
+    transform:translateY(-5px)
+}
+.button:focus,.read-more:focus{
+    outline:#ffa726 solid 2px;
+    outline-offset:3px;
+    box-shadow:0 0 0 3px rgba(255,167,38,.5)
+}
+@media screen and (max-width:768px){
+    header{
+        flex-direction:column;
+        align-items:flex-start
     }
-
-    .navbar-path {
-        margin-bottom: 10px;
+    .header-path{
+        margin-bottom:10px
     }
-
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-        display: none;
+    nav ul{
+        flex-direction:column;
+        width:100%
     }
-
-    .navbar-links li {
-        margin-left: 0;
-        margin-bottom: 5px;
-        width: 100%;
-        text-align: center;
+    nav ul li{
+        margin-left:0;
+        margin-bottom:5px;
+        width:100%;
+        text-align:center
     }
-}
-
-/* Header Container */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-}
-
-
-/* --- Button Styles --- */
-button {
-    position: relative;
-    background: var(--accent);
-    color: #0d131a;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: none;
-    border-radius: 25px;
-    padding: 14px 28px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.1em;
-    overflow: hidden;
-    z-index: 1;
-}
-
-button:hover {
-    background-color: var(--accent);
-    color: #0d131a;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-button:hover::before {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-button:focus {
-    outline: 3px solid #ffa726;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 3px rgba(255, 167, 38, 0.5);
-}
-
-button.secondary {
-    background-color: #0d131a;
-    color: #fff;
-}
-
-button.secondary:hover {
-    background-color: var(--accent);
-    color: #0d131a;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-
-    button {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    button{
+        padding:10px 20px;
+        font-size:.9em
     }
-    .blog-card {
-        padding: 20px;
+    .blog-card{
+        padding:20px
     }
-
-    .section-parallax {
-        padding: 40px 10px;
-        font-size: 1.2em;
+    .section-parallax{
+        padding:40px 10px;
+        font-size:1.2em
     }
 }
-
-/* --- Main Content --- */
-main {
-    padding: 20px;
+.blog-grid,main{
+    padding:20px
 }
-
-.content-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.content-container{
+    max-width:1200px;
+    margin:0 auto
 }
-
-.section-header h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.section-header h2,.tabs{
+    text-align:center;
+    margin-bottom:20px
 }
-
-/* Blog Grid */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px
 }
-
-/* Blog Card */
-.blog-card {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    text-align: left;
+.blog-card{
+    background-color:var(--card-bg);
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    transition:transform .2s;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+    text-align:left;
+    margin-bottom:1.5rem
 }
-
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.tab-link,.tags span{
+    background-color:var(--light-grey)
 }
-
-/* Blog Card Title */
-.blog-card h3 {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--accent);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    font-family: var(--font-heading);
+.tab-link,.table-of-contents ul li a{
+    transition:background-color .3s,color .3s
 }
-
-/* Excerpt Styling */
-.excerpt {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 15px;
-    line-height: 1.6;
+#favorites,#my-story,.blog-post h1,.infographic,.poem-author,.poem-title,footer,footer .footer-bottom{
+    text-align:center
 }
-
-/* Post Metadata */
-.blog-card .post-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9em;
-    color: #999;
-    margin-top: auto;
-    padding-top: 10px; /* --- Fonts Import --- */
+.excerpt,.tags{
+    margin-bottom:1rem
 }
-/* Tags Styling */
-.tags {
-    display: flex;
-    gap: 8px;
-    font-size: 0.9em;
-    color: #ccc;
-    flex-wrap: wrap;
+.blog-card:hover{
+    box-shadow:0 8px 16px rgba(0,0,0,.2)
 }
-
-.tags span {
-    background-color: #f0f0f0;
-    color: #666;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-weight: normal;
+.compact-list li:hover,.table-of-contents:hover{
+    box-shadow:0 6px 12px rgba(0,0,0,.2)
 }
-
-/* Read More Button */
-.read-more {
-    background-color: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 28px; /* Adjusted for uniformity */
-    padding: 10px 20px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    align-self: flex-end;
+.blog-card h3{
+    font-size:1.5em;
+    color:#333;
+    margin-bottom:.5rem;
+    padding-bottom:5px;
+    border-bottom:2px solid var(--accent);
+    text-shadow:1px 1px 2px rgba(0,0,0,.1);
+    font-family:var(--font-heading)
 }
-
-.read-more:hover {
-    background-color: var(--secondary);
-    transform: translateY(-3px);
-    color: #fff;
+.excerpt{
+    font-size:1em;
+    color:#666
 }
-
-.read-more:focus {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
+.blog-card .post-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:.9em;
+    color:#999;
+    margin-top:auto;
+    padding-top:10px
 }
-
-/* --- Footer Styles --- */
-footer {
-    background-color: #0d131a;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 5px solid var(--accent);
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    font-size:.85rem;
+    color:#777
 }
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-bottom: 40px;
+.tags span{
+    padding:3px 8px;
+    border-radius:4px;
+    font-weight:500
 }
-
-.footer-section {
-    padding: 10px;
+footer{
+    background-color:#0d131a;
+    padding:40px 20px
 }
-
-footer h3 {
-    font-size: 1.4em;
-    margin-bottom: 20px;
-    color: var(--background);
-    position: relative;
-    text-transform: uppercase;
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+    max-width:1400px;
+    margin:0 auto;
+    padding-bottom:40px
 }
-footer h3::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
+.footer-section{
+    padding:10px
 }
-footer a,
-footer p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
+footer h3{
+    font-size:1.4em;
+    text-transform:uppercase
 }
-#btc-wallet {
-    font-family: monospace;
-    word-break: break-all;
+footer h3::after{
+    width:60px;
+    height:3px;
+    background-color:var(--accent)
 }
-
-footer a:hover {
-    color: var(--accent);
+footer a,footer p{
+    font-size:1em;
+    color:#ccc
 }
-footer .social-media a {
-    margin: 0 10px;
-    font-size: 1.5em;
-    display: inline-block;
+#btc-wallet{
+    word-break:break-all
 }
-
-footer .contact-info p,
-footer .quick-links a {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center; /* Align icons and text vertically */
+footer .social-media a{
+    margin:0 10px;
+    font-size:1.5em;
+    display:inline-block
 }
-footer .contact-info i {
-    margin-right: 10px;
-    font-size: 1.3em;
-    color: #fff; /* Ensure this color is visible on your background */
+footer .contact-info p,footer .quick-links a{
+    margin-bottom:10px;
+    display:flex;
+    align-items:center
 }
-
-footer .quick-links a {
-    display: block;
-    margin: 5px 0;
-    padding: 5px 0;
+footer .contact-info i{
+    margin-right:10px;
+    font-size:1.3em;
+    color:#fff
 }
-footer .quick-links a:hover {
-    text-decoration: underline;
+footer .quick-links a{
+    display:block;
+    margin:5px 0;
+    padding:5px 0
 }
-footer .footer-bottom {
-    padding-top: 10px;
-    border-top: 1px solid #555; /* Subtle divider between sections */
-    text-align: center;
-    color: #777; /* Softer text color for footer bottom */
+.compact-list li a:hover,.meta-info .author a:hover,.related-posts ul li a:hover,footer .quick-links a:hover{
+    text-decoration:underline
 }
-@media (max-width: 768px) {
-    footer .footer-container {
-        flex-direction: column;
-        align-items: center;
+footer .footer-bottom{
+    padding-top:10px;
+    border-top:1px solid #555;
+    color:#777
+}
+@media (max-width:768px){
+    .button,.read-more{
+        padding:10px 20px;
+        font-size:.9rem
     }
-
-    footer .footer-section {
-        margin-bottom: 20px;
-        text-align: center;
+    footer .footer-container{
+        flex-direction:column;
+        align-items:center
     }
-
-    footer .contact-info p {
-        justify-content: center; /* Center-align contact info on smaller screens */
+    footer .footer-section{
+        margin-bottom:20px;
+        text-align:center
+    }
+    footer .contact-info p{
+        justify-content:center
     }
 }
-
-/* --- About Me Page Styles --- */
-#my-story,
-#favorites {
-    padding: 40px 0;
-    background-color: var(--background);
-    border-top: 5px solid var(--accent);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+#favorites,#my-story{
+    padding:40px 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center
 }
-
-#my-story h2,
-#favorites h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    color: var(--secondary);
-    position: relative;
-    font-family: var(--font-serif);
+#favorites h2,#my-story h2{
+    text-align:center;
+    font-size:2.5em;
+    color:var(--secondary);
+    font-family:var(--font-serif)
 }
-
-#my-story h2::after,
-#favorites h2::after {
-    content: "";
-    width: 100px;
-    height: 4px;
-    background-color: var(--accent);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
+#favorites h2::after,#my-story h2::after{
+    width:100px;
+    height:4px;
+    background-color:var(--accent)
 }
-
-#my-story p,
-.tab-content ul {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2em;
-    line-height: 1.6;
+#my-story p,.tab-content ul{
+    max-width:800px;
+    margin:0 auto;
+    font-size:1.2em;
+    line-height:1.6
 }
-
-/* Tabs and Tab Content */
-.tabs {
-    text-align: center;
-    margin-bottom: 20px;
+.tab-link{
+    border:none;
+    padding:10px 20px;
+    margin:0 5px;
+    cursor:pointer;
+    border-radius:5px
 }
-
-.tab-link {
-    background-color: var(--light-grey);
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.tab-link.active,.tab-link:hover{
+    background-color:var(--accent);
+    color:#fff
 }
-
-.tab-link.active,
-.tab-link:hover {
-    background-color: var(--accent);
-    color: white;
+.content .highlight-text,.table-of-contents ul li a:hover{
+    background-color:var(--accent,#0073e6);
+    color:#fff
 }
-
-.tab-content {
-    display: none;
+.tab-content{
+    display:none
 }
-
-/* Compact List Styling */
-.compact-list {
-    list-style: none;
-    padding: 0;
+.compact-list{
+    list-style:none;
+    padding:0
 }
-
-.compact-list li {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+.compact-list li{
+    background-color:#fff;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    box-shadow:0 4px 8px rgba(0,0,0,.1);
+    display:flex;
+    flex-direction:column;
+    transition:transform .3s,box-shadow .3s;
+    position:relative;
+    overflow:hidden
 }
-
-.compact-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.blog-post,.image-gallery img,.infographic img,.table-of-contents{
+    box-shadow:0 4px 10px rgba(0,0,0,.1)
 }
-
-.compact-list li strong {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-    color: var(--secondary);
+.compact-list li strong{
+    font-size:1.4em;
+    margin-bottom:10px;
+    color:var(--secondary)
 }
-
-.compact-list li p {
-    margin: 10px 0;
-    font-size: 1em;
+.compact-list li a{
+    color:var(--accent);
+    font-weight:700;
+    margin-top:10px;
+    align-self:flex-start
 }
-
-.compact-list li a {
-    color: var(--accent);
-    font-weight: bold;
-    margin-top: 10px;
-    text-decoration: none;
-    align-self: flex-start;
+.compact-list li .podcast-cover{
+    max-width:100px;
+    margin-right:5px;
+    border-radius:10px;
+    box-shadow:0 2px 4px rgba(0,0,0,.2)
 }
-
-.compact-list li a:hover {
-    text-decoration: underline;
+.compact-list li .podcast-info{
+    display:flex;
+    flex-direction:column
 }
-
-.compact-list li .podcast-cover {
-    max-width: 100px;
-    margin-right: 5px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.compact-list li .podcast-name{
+    margin:10px 0 5px;
+    font-size:1.4em;
+    color:var(--secondary)
 }
-
-.compact-list li .podcast-info {
-    display: flex;
-    flex-direction: column;
+.compact-list li .producer-name{
+    font-size:1em;
+    color:#888;
+    position:absolute;
+    top:10px;
+    right:20px
 }
-
-.compact-list li .podcast-name {
-    margin: 10px 0 5px;
-    font-size: 1.4em;
-    color: var(--secondary);
+.compact-list li p{
+    margin:10px 0;
+    font-size:1em
 }
-
-.compact-list li .producer-name {
-    font-size: 1em;
-    color: #888;
-    position: absolute;
-    top: 10px;
-    right: 20px;
+.compact-list li .podcast-links{
+    display:flex;
+    gap:10px;
+    margin-top:5px;
+    position:absolute;
+    top:35px;
+    right:20px
 }
-
-.compact-list li p {
-    margin: 10px 0;
-    font-size: 1em;
+.compact-list li .podcast-links a img{
+    width:24px;
+    max-height:24px
 }
-
-.compact-list li .podcast-links {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-    position: absolute;
-    top: 35px;
-    right: 20px;
+.blog-post h1,.content ol li,.content ul li,.related-posts ul li,.table-of-contents ul li{
+    margin-bottom:10px
 }
-
-.compact-list li .podcast-links a img {
-    width: 24px;
-    max-height: 24px;
+#progress-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0;
+    height:4px;
+    background-color:var(--accent);
+    z-index:9999;
+    transition:width .2s ease-out
 }
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .compact-list li {
-        flex-direction: column;
-        text-align: center;
+.blog-post{
+    max-width:900px;
+    margin:40px auto;
+    padding:0 20px;
+    background-color:#fff;
+    border-radius:var(--border-radius);
+    display:flex;
+    gap:20px
+}
+.blog-post h1{
+    font-size:2.5rem;
+    margin-top:20px;
+    color:var(--text-color)
+}
+.meta-info{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    font-size:.9rem;
+    color:#666;
+    margin-bottom:20px
+}
+.content p,.infographic p,.related-posts h3,.side-note,.table-of-contents h2{
+    color:var(--text,#333)
+}
+.meta-info .author a{
+    color:var(--accent-color);
+    padding-left:.1em
+}
+.meta-info span{
+    display:flex;
+    align-items:center
+}
+.blog-post .featured-image{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    border-radius:var(--border-radius,10px);
+    margin-bottom:20px
+}
+.content h2,.content h3{
+    color:var(--text,#333);
+    margin-top:20px;
+    margin-bottom:10px;
+    border-bottom:1px solid var(--light-grey,#ddd);
+    padding-bottom:5px
+}
+.content p{
+    line-height:1.8;
+    margin-bottom:20px
+}
+.content ol,.content ul{
+    margin-left:20px;
+    margin-bottom:20px
+}
+.related-posts{
+    margin-top:40px
+}
+.related-posts h3{
+    margin-bottom:20px;
+    font-size:1.5rem
+}
+.related-posts ul,.table-of-contents ul{
+    list-style:none;
+    padding:0;
+    margin:0
+}
+.table-of-contents{
+    background-color:#fff;
+    border:1px solid var(--light-grey,#ddd);
+    border-radius:var(--border-radius,10px);
+    padding:20px;
+    margin:20px 0;
+    transition:box-shadow .3s
+}
+.side-note,.table-of-contents ul li a{
+    border-radius:var(--border-radius,10px)
+}
+.table-of-contents h2{
+    font-size:1.5rem;
+    margin-bottom:15px;
+    border-bottom:2px solid var(--accent,#0073e6);
+    padding-bottom:10px
+}
+.table-of-contents ul li a{
+    font-size:1.1rem;
+    padding:5px 10px
+}
+.infographic{
+    margin:20px 0
+}
+.image-gallery img,.infographic img{
+    max-width:100%;
+    height:auto;
+    border-radius:var(--border-radius,5px)
+}
+.infographic p{
+    margin-top:10px
+}
+.image-gallery{
+    display:flex;
+    gap:10px;
+    overflow-x:auto
+}
+.content .highlight-text{
+    padding:2px 5px;
+    border-radius:var(--border-radius,5px)
+}
+.side-note{
+    background-color:#f0f4f8;
+    border-left:5px solid var(--accent,#0073e6);
+    padding:10px 15px;
+    margin:20px 0;
+    font-size:.9rem
+}
+@media screen and (max-width:1024px){
+    .content-container{
+        padding:10px
     }
-
-    .compact-list li img {
-        margin-bottom: 15px;
+    .blog-card,.compact-list li{
+        padding:15px
     }
-    .compact-list li .podcast-info {
-        align-items: center;
+    .blog-post{
+        flex-direction:column
     }
-    .compact-list li .producer-name {
-        position: static;
-        margin-top: 5px;
-    }
-
-    .compact-list li .podcast-links {
-        position: static;
-        margin-top: 5px;
-    }
-}
-
-/* Progress Bar */
-#progress-bar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: var(--accent);
-    z-index: 9999;
-    transition: height 0.3s ease;
-}
-
-/* --- Blog Post Page Styles --- */
-.blog-post {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: var(--border-radius);
-    display: flex;
-    gap: 20px;
-}
-
-.blog-post h1 {
-    font-size: 2.5rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: var(--text-color);
-    text-align: center;
-}
-
-.meta-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.meta-info .author a {
-    color: var(--accent-color);
-    text-decoration: none;
-    padding-left: 0.1em;
-}
-
-.meta-info .author a:hover {
-    text-decoration: underline;
-}
-
-.meta-info span {
-    display: flex;
-    align-items: center;
-}
-
-/* Featured Image */
-.blog-post .featured-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: var(--border-radius, 10px);
-    margin-bottom: 20px;
-}
-
-/* Content Styling */
-.content h2,
-.content h3 {
-    color: var(--text, #333);
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--light-grey, #ddd);
-    padding-bottom: 5px;
-}
-
-.content p {
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: var(--text, #333);
-}
-
-.content ol,
-.content ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.content ol li,
-.content ul li {
-    margin-bottom: 10px;
-}
-
-/* Related Posts Section */
-.related-posts {
-    margin-top: 40px;
-}
-
-.related-posts h3 {
-    margin-bottom: 20px;
-    color: var(--text, #333);
-    font-size: 1.5rem;
-}
-
-.related-posts ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.related-posts ul li {
-    margin-bottom: 10px;
-}
-
-.related-posts ul li a {
-    color: var(--accent, #0073e6);
-    text-decoration: none;
-}
-
-.related-posts ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Table of Contents */
-.table-of-contents {
-    background-color: #fff;
-    border: 1px solid var(--light-grey, #ddd);
-    border-radius: var(--border-radius, 10px);
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.table-of-contents:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.table-of-contents h2 {
-    font-size: 1.5rem;
-    color: var(--text, #333);
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--accent, #0073e6);
-    padding-bottom: 10px;
-}
-
-.table-of-contents ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.table-of-contents ul li {
-    margin-bottom: 10px;
-}
-
-.table-of-contents ul li a {
-    color: var(--accent, #0073e6);
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 5px 10px;
-    border-radius: var(--border-radius, 10px);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.table-of-contents ul li a:hover {
-    background-color: var(--accent, #0073e6);
-    color: #fff;
-}
-
-/* Infographics */
-.infographic {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.infographic img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius, 5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.infographic p {
-    margin-top: 10px;
-    font-style: italic;
-    color: var(--text, #333);
-}
-
-/* Image Gallery */
-.image-gallery {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-}
-
-.image-gallery img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius, 5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Typography */
-.content .bold-text {
-    font-weight: bold;
-}
-
-.content .italic-text {
-    font-style: italic;
-}
-
-.content .highlight-text {
-    background-color: var(--accent, #0073e6);
-    color: #fff;
-    padding: 2px 5px;
-    border-radius: var(--border-radius, 5px);
-}
-
-/* Side Notes or Callouts */
-.side-note {
-    background-color: #f0f4f8;
-    border-left: 5px solid var(--accent, #0073e6);
-    padding: 10px 15px;
-    margin: 20px 0;
-    font-size: 0.9rem;
-    color: var(--text, #333);
-    border-radius: var(--border-radius, 10px);
-}
-
-/* --- Media Queries for Responsiveness --- */
-
-/* General adjustments for tablets and smaller devices */
-@media screen and (max-width: 1024px) {
-    .content-container {
-        padding: 10px;
-    }
-
-    .blog-card {
-        padding: 15px;
-    }
-
-    .compact-list li {
-        padding: 15px;
-    }
-
-    .blog-post {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        position: static;
-        width: 100%;
+    .sidebar{
+        position:static;
+        width:100%
     }
 }
-
-/* Adjustments for mobile devices (phones) */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+@media screen and (max-width:768px){
+    .blog-post,.compact-list li{
+        flex-direction:column
     }
-
-    h2 {
-        font-size: 2rem;
+    .compact-list li img,.tab-link{
+        margin-bottom:10px
     }
-
-    h3 {
-        font-size: 1.75rem;
+    h1{
+        font-size:2.5rem
     }
-
-    h4 {
-        font-size: 1.5rem;
+    h2{
+        font-size:2rem
     }
-
-    h5 {
-        font-size: 1.25rem;
+    h3{
+        font-size:1.75rem
     }
-
-    h6 {
-        font-size: 1rem;
+    h4{
+        font-size:1.5rem
     }
-
-    nav {
-        display: none;
+    h5{
+        font-size:1.25rem
     }
-
-    footer .footer-container {
-        flex-direction: column;
-        align-items: center;
+    h6{
+        font-size:1rem
     }
-
-    footer .footer-section {
-        text-align: center;
-        margin-bottom: 20px;
+    nav{
+        display:none
     }
-
-    footer .contact-info p {
-        justify-content: center;
+    .tabs,footer .footer-container{
+        flex-direction:column;
+        align-items:center
     }
-
-    .tabs {
-        flex-direction: column;
-        align-items: center;
+    footer .footer-section{
+        text-align:center;
+        margin-bottom:20px
     }
-
-    .tab-link {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
+    footer .contact-info p{
+        justify-content:center
     }
-
-    .compact-list li {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .tab-link{
+        width:100%;
+        text-align:center
     }
-
-    .compact-list li img {
-        margin-bottom: 10px;
+    .compact-list li{
+        flex-direction:column;
+        align-items:center;
+        text-align:center
     }
-
-    .compact-list li .podcast-info {
-        align-items: center;
+    .compact-list li .podcast-info{
+        align-items:center
     }
-
-    .compact-list li .producer-name,
-    .compact-list li .podcast-links {
-        position: static;
-        margin-top: 10px;
+    .compact-list li .podcast-links,.compact-list li .producer-name{
+        position:static;
+        margin-top:10px
     }
-
-    .blog-post {
-        flex-direction: column;
+    .sidebar{
+        width:100%;
+        position:static;
+        top:auto
     }
-
-    .sidebar {
-        width: 100%;
-        position: static;
-        top: auto;
+    .content h2,.content h3{
+        margin-top:15px;
+        margin-bottom:5px
     }
-
-    .content h2,
-    .content h3 {
-        margin-top: 15px;
-        margin-bottom: 5px;
+    .content p{
+        margin-bottom:15px
     }
-
-    .content p {
-        margin-bottom: 15px;
+    .related-posts h3{
+        font-size:1.2rem
     }
-
-    .related-posts h3 {
-        font-size: 1.2rem;
-    }
-
-    .table-of-contents {
-        padding: 10px;
-        font-size: 0.9rem;
+    .table-of-contents{
+        padding:10px;
+        font-size:.9rem
     }
 }
-
-/* Poem Grid Layout */
-.poem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-    margin: 0 auto;
+.poem-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:20px;
+    max-width:1200px;
+    width:100%;
+    padding:15px;
+    box-sizing:border-box;
+    margin:0 auto
 }
-
-/* Poem Card Styling */
-.poem-card {
-    background-color: #fff;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px;
-    height: auto; /* Allow card height to adjust based on content */
+.poem-card{
+    background-color:#fff;
+    border:1px solid var(--border-color);
+    border-radius:8px;
+    padding:20px;
+    box-shadow:0 4px 8px rgba(0,0,0,.1);
+    transition:transform .2s,box-shadow .3s;
+    margin-bottom:30px;
+    height:auto
 }
-
-.poem-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.poem-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 12px rgba(0,0,0,.15)
 }
-
-/* Poem Title */
-.poem-title {
-    font-family: var(--font-serif), Georgia, 'Times New Roman', serif;
-    font-size: 1.6em;
-    color: var(--accent);
-    margin: 0 0 10px;
-    text-align: center;
+.poem-title{
+    font-family:var(--font-serif),Georgia,'Times New Roman',serif;
+    font-size:1.6em;
+    color:var(--accent);
+    margin:0 0 10px
 }
-
-.poem-author {
-    font-size: 1em;
-    font-weight: 700;
-    color: var(--secondary);
-    text-align: center;
-    margin-bottom: 15px;
-    font-style: italic;
+.poem-author{
+    font-size:1em;
+    color:var(--secondary);
+    margin-bottom:15px
 }
-
-/* Poem Text Styling */
-.poem-text {
-    font-family: var(--font-sans), Arial, sans-serif;
-    font-size: clamp(1em, 1vw + 0.5em, 1.1em);
-    color: var(--text);
-    text-align: left;
-    line-height: 1.6;
-    margin: 0;
-    padding: 10px;
-    background-color: var(--background);
-    font-style: italic;
-    overflow-wrap: break-word;
-    overflow-y: auto;
+.poem-text{
+    font-family:var(--font-sans),Arial,sans-serif;
+    font-size:clamp(1em, 1vw + .5em, 1.1em);
+    color:var(--text);
+    text-align:left;
+    margin:0;
+    padding:10px;
+    background-color:var(--background);
+    overflow-wrap:break-word;
+    overflow-y:auto
 }
-
-.poem-line {
-    display: block;
-    padding: 0.2em 0;
-    font-style: italic;
+.poem-line{
+    display:block;
+    padding:.2em 0
 }
