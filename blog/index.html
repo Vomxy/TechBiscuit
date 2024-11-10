@@ -15,26 +15,24 @@
 
 	<body>
 		<header>
-			<nav class="header-container">
-				<div class="navbar">
-					<span class="navbar-path" aria-label="Website path">TheTechBiscuit:</span>
-					<ul class="navbar-links" role="navigation" aria-label="Main navigation">
-						<li><a href="/index.html" aria-current="page">cd ./home</a></li>
-						<li><a href="/blog/" class="active">cd ./blogs</a></li>
-						<li><a href="/about-me.html">cd ./about-me</a></li>
-					</ul>
-				</div>
-			</nav>
-		</header>
+            <span class="header-path">TheTechBiscuit:</span>
+            <nav aria-label="Main Navigation" role="navigation">
+                <ul>
+                    <li><a href="./index.html">cd ./home</a></li>
+                    <li><a href="./blogs" class="active">cd ./blogs</a></li>
+                    <li><a href="./about-me">cd ./about-me</a></li>
+                </ul>
+            </nav>
+        </header>
 		<main>
 			<section class="blog-listings">
 				<div class="content-container">
-					<section class="section-header">
+					<section class="section-header" class="underline-workaround">
 						<h2>Recent Blogs</h2>
 						<div class="blog-grid">
 							<div class="blog-card" aria-label="Blog Post 1: An Introduction to TechBiscuit">
 								<h3 class="blog-title"><a href="/blog/2024/whatistechbiscuit.html">An Introduction to TechBiscuit</a></h3>
-								<p class="excerpt">TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater...</p>
+								<p class="excerpt">TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater.</p>
 								<p class="post-meta">
 									<span class="date" aria-label="Published on August 06, 2024">August 06, 2024</span>
 									<span class="reading-time" aria-label="Reading time">4 min read</span>
@@ -47,24 +45,30 @@
 								<button onclick="location.href='/blog/2024/whatistechbiscuit.html'" class="read-more" aria-label="Read The Introduction of TechBiscuit">Read More</button>
 							</div>
 							
-							<div class="blog-card" aria-label="Blog Post 2: Understanding Mobile OS Security">
-								<h3 class="blog-title">canary.txt</h3>
-								<p class="excerpt">Learn about the concept of canary.txt, how it can be used for monitoring sensitive information, and its implications for privacy and security.</p>
-								<p class="post-meta">
-									<span class="date" aria-label="Published on August 15, 2024">August 15, 2024</span>
-									<span class="reading-time" aria-label="Reading time">4 min read</span>
+							<div class="blog-card" aria-label="Quiz Archives">
+								<h3 class="blog-title"><a href="quiz.html">Quiz Archives</a></h3>
+								<p class="excerpt">
+									An archive of trivia quizzes I have put together for quiz nights at <a href="https://www.thelittlesaloon.com/">The Grosvenor Arms</a>. If you'd like to attend the pub quiz, you can turn up on the day here: 204 Garratt Lane, London, SW18 4ED.
 								</p>
-								<div class="tags" aria-label="Tags">
-									<span>Website</span>
-									<span>Encryption</span>
-									<span>Draft</span>
+								<p class="excerpt">If you want to participate, see what the quiz looks like!</p>
+								<div class="post-meta">
+									<span class="date" aria-label="Published on November 07, 2024">November 07, 2024</span>
+									<span class="reading-time" aria-label="Reading time">8 min read</span>
 								</div>
-								<button onclick="location.href='/blog/2024/mobile-os-security.html'" class="read-more" aria-label="Read More about Understanding Mobile OS Security">Read More</button>
+								<div class="tags" aria-label="Tags">
+									<span>Local</span>
+									<span>Trivia</span>
+									<span>Published</span>
+								</div>
+								<button onclick="location.href='quiz.html'" class="read-more" aria-label="Read through the previous pub trivia quizzes.">
+									Read More
+								</button>
 							</div>
+							
 	
 							<div class="blog-card" aria-label="Blog Post 3: Archive of Poems">
-								<h3 class="blog-title">Archive of Poems</h3>
-								<p class="excerpt">A selection of poems I like to read and come back too often.</p>
+								<h3 class="blog-title"><a href="/blog/2024/archiveofpoems.html">Archive of Poems</a></h3>
+								<p class="excerpt">A selection of the best short-form literature I've come across.</p>
 								<p class="post-meta">
 									<span class="date" aria-label="Published on August 28, 2024">August 28, 2024</span>
 									<span class="reading-time" aria-label="Reading time">4 min read</span>
