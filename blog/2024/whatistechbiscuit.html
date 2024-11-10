@@ -14,15 +14,13 @@
 </head>
 <body>
     <header>
-        <nav class="header-container">
-            <div class="navbar">
-                <span class="navbar-path" aria-label="Website path">TheTechBiscuit:</span>
-                <ul class="navbar-links" role="navigation" aria-label="Main navigation">
-                    <li><a href="/index.html" aria-current="page">cd ./home</a></li>
-                    <li><a href="/blog/" class="active">cd ./blogs</a></li>
-                    <li><a href="/about-me.html">cd ./about-me</a></li>
-                </ul>
-            </div>
+        <span class="header-path">TheTechBiscuit:</span>
+        <nav aria-label="Main Navigation" role="navigation">
+            <ul>
+                <li><a href="/index.html">cd ./home</a></li>
+                <li><a href="/blog/" class="active">cd ./blogs</a></li>
+                <li><a href="/about-me.html">cd ./about-me</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -118,36 +116,52 @@
     
     <script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        // Progress Bar JavaScript
-        window.onload = function() {
-    adjustProgressBarHeight();
-};
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
 
-window.onresize = function() {
-    adjustProgressBarHeight();
-};
+        // Ensure correct scroll position under fixed header
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            target.style.scrollMarginTop = `${document.querySelector('header').offsetHeight + 10}px`;
+        }
+    });
+});
 
-function adjustProgressBarHeight() {
-    var header = document.querySelector('header');
-    var progressBar = document.getElementById('progress-bar');
-    var headerHeight = header.offsetHeight;
-    progressBar.style.top = headerHeight + 'px';
+// Progress Bar and Header Adjustment on Load, Resize, and Scroll
+const progressBar = document.getElementById('progress-bar');
+const header = document.querySelector('header');
+
+function adjustProgressBarPosition() {
+    progressBar.style.top = `${header.offsetHeight}px`;
 }
 
-window.onscroll = function() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("progress-bar").style.width = scrolled + "%";
-};
+function updateProgressBar() {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolledPercentage = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = `${scrolledPercentage}%`;
+}
+
+// Debounce Function for Performance Optimization
+function debounce(func, delay) {
+    let debounceTimer;
+    return function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(func, delay);
+    };
+}
+
+// Event Listeners
+window.addEventListener('load', () => {
+    adjustProgressBarPosition();
+    updateProgressBar();
+});
+
+window.addEventListener('resize', debounce(adjustProgressBarPosition, 100));
+window.addEventListener('scroll', debounce(updateProgressBar, 20));
 
 
     </script>
