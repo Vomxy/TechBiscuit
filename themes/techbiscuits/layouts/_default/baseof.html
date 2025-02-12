@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+
+        {{ if .IsHome }}
+            {{ block "pre-main" . }}{{ end }}
+        {{ end }}
+
+        {{ $excludeMain := eq .Type "poems" }}
+        {{ $mainClass := "" }}
+
+        {{ if not $excludeMain }}
+            {{ if .IsPage }}
+                {{ if eq .Type "blog" }}
+                    {{ $mainClass = "blog-post" }}
+                {{ end }}
+            {{ end }}
+
+            <main{{ with $mainClass }} class="{{ . }}"{{ end }}>
+        {{ end }}
+
+            {{ block "main" . }}{{ end }}
+
+        {{ if not $excludeMain }}
+            </main>
+        {{ end }}
+
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

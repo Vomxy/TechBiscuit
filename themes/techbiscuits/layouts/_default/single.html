@@ -1,0 +1,30 @@
+{{ define "main" }}
+    <article style="max-width:900px">
+        <h1>{{ .Title }}</h1>
+        <div class="meta-info">
+            <span class="author">By <a href="#">{{ .Params.author | default "Zack Baxter" }}</a></span>
+            <span class="date">Published on {{ .Date.Format "January 2, 2006" }}</span>
+            <span class="reading-time">{{ .ReadingTime }} min read</span>
+        </div>
+
+        {{ with .TableOfContents }}
+        <div class="table-of-contents">
+            <h2>Contents</h2>
+            {{ . | replaceRE "^<nav[^>]*>" "" | replaceRE "</nav>$" "" | safeHTML }}
+        </div>
+        {{ end }}
+
+        <section class="content">
+            {{ .Content }}
+        </section>
+
+        <aside class="related-posts">
+            <h3>Related Posts</h3>
+            <ul>
+                {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </aside>
+    </article>
+{{ end }}

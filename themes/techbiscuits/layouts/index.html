@@ -1,0 +1,162 @@
+{{ define "pre-main" }}
+<section id="my-story">
+    <div class="content-container">
+        <h2>A Short Introduction</h2>
+        <p>Welcome! I'm Zack Baxter & I created this blog to share my insights, research, and projects. Start reading <a target="_blank" href="https://www.thetechbiscuit.com/blog/2024/whatistechbiscuit.html">What is TechBiscuit?</a> or explore my favourite short-form literature by clicking <a target="_blank" href="https://www.thetechbiscuit.com/blog/2024/archiveofpoems.html">here.</a></p>
+    </div>
+</section>
+{{ end }}
+
+{{ define "main" }}
+    <div class="content-container">
+        <section class="section-header" class="underline-workaround">
+            <h2>Recent Blogs</h2>
+            <div class="blog-grid">
+                <div class="blog-card" aria-label="Blog Post 1: An Introduction to TechBiscuit">
+                    <h3 class="blog-title"><a href="/blog/2024/whatistechbiscuit.html">An Introduction to TechBiscuit</a></h3>
+                    <p class="excerpt">TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater.</p>
+                    <p class="post-meta">
+                        <span class="date" aria-label="Published on August 06, 2024">August 06, 2024</span>
+                        <span class="reading-time" aria-label="Reading time">4 min read</span>
+                    </p>
+                    <div class="tags" aria-label="Tags">
+                        <span>Website</span>
+                        <span>Introduction</span>
+                        <span>Published</span>
+                    </div>
+                    <button onclick="location.href='/blog/2024/whatistechbiscuit.html'" class="read-more" aria-label="Read The Introduction of TechBiscuit">Read More</button>
+                </div>
+                
+                <div class="blog-card" aria-label="Quiz Archives">
+                    <h3 class="blog-title"><a href="quiz.html">Quiz Archives</a></h3>
+                    <p class="excerpt">
+                        An archive of trivia quizzes I have put together for quiz nights at <a href="https://www.thelittlesaloon.com/">The Grosvenor Arms</a>. If you'd like to attend the pub quiz, you can turn up on the day here: 204 Garratt Lane, London, SW18 4ED.
+                    </p>
+                    <p class="excerpt">If you want to participate, see what the quiz looks like!</p>
+                    <div class="post-meta">
+                        <span class="date" aria-label="Published on November 07, 2024">November 07, 2024</span>
+                        <span class="reading-time" aria-label="Reading time">8 min read</span>
+                    </div>
+                    <div class="tags" aria-label="Tags">
+                        <span>Local</span>
+                        <span>Trivia</span>
+                        <span>Published</span>
+                    </div>
+                    <button onclick="location.href='quiz.html'" class="read-more" aria-label="Read through the previous pub trivia quizzes.">
+                        Read More
+                    </button>
+                </div>
+                
+
+                <div class="blog-card" aria-label="Blog Post 3: Archive of Poems">
+                    <h3 class="blog-title"><a href="/poems">Archive of Poems</a></h3>
+                    <p class="excerpt">A selection of the best short-form literature I've come across.</p>
+                    <p class="post-meta">
+                        <span class="date" aria-label="Published on August 28, 2024">August 28, 2024</span>
+                        <span class="reading-time" aria-label="Reading time">4 min read</span>
+                    </p>
+                    <div class="tags" aria-label="Tags">
+                        <span>Literature</span>
+                        <span>Poem</span>
+                        <span>Published</span>
+                    </div>
+                    <button onclick="location.href='/poems'" class="read-more" aria-label="Read through my favourite poems">Read More</button>
+                </div>
+            </div>			
+        </section>
+    </div>
+    <section id="favorites">
+        <div class="content-container">
+            <div class="tabs">
+                <button class="tab-link" onclick="openTab(event, 'favorite-books')">Favorite Books</button>
+                <button class="tab-link" onclick="openTab(event, 'favorite-websites-tools')">Websites & Tools</button>
+                <button class="tab-link" onclick="openTab(event, 'recommended-podcasts')">Podcasts</button>
+            </div>
+            <div id="favorite-books" class="tab-content">
+                <h2>My Favorite Books</h2>
+                <ul class="compact-list">
+                    <li>
+                        <strong>12 Rules for Life: An Antidote to Chaos</strong> by Jordan B. Peterson <p>Dr Petersons practical and life-changing 12 rules for changing your perspective in a way that builds resilience. It's a 10/10 recommended book to anyone willing to read it.</p>
+                        <a href="https://www.goodreads.com/book/show/30257963-12-rules-for-life" target="_blank">View on Goodreads</a>
+                    </li>
+                    <li>
+                        <strong>Extreme Privacy: What It Takes to Disappear</strong> by Michael Bazzell <p>A fantastic must-read for high profile individuals, and a recomendation to anyone trying to keep their private life private, each book is as interesting as his last and is all you need to read to learn about privacy to the extreme. </p>
+                        <a href="https://www.goodreads.com/book/show/54033555-extreme-privacy" target="_blank">View on Goodreads</a>
+                    </li>
+                    <li>
+                        <strong>Digital Forensic Diaries</strong> by Mike Sheward <p>Digital Forensics Diaries follows a digital forensics investigator through the artistic and scientific process that leads to cracking cases without physical evidence. Based on the author's real-world experiences.</p>
+                        <a href="https://www.goodreads.com/book/show/36682186-digital-forensic-diaries" target="_blank">View on Goodreads</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="favorite-websites-tools" class="tab-content">
+                <h2>Websites and Tools I Love</h2>
+                <ul class="compact-list">
+                    <li>
+                        <strong>
+                            <a href="https://untools.co" target="_blank">Untools</a>
+                        </strong>
+                        <p>Thinking tools and frameworks to help you solve problems, make decisions and understand systems.</p>
+                    </li>
+                    <li>
+                        <strong>
+                            <a href="https://ground.news" target="_blank">Ground News</a>
+                        </strong>
+                        <p>Thinking tools and frameworks to help you solve problems, make decisions and understand systems.</p>
+                    </li>
+                    <li>
+                        <strong>
+                            <a href="https://untools.co" target="_blank">Thinkspot</a>
+                        </strong>
+                        <p>Thinking tools and frameworks to help you solve problems, make decisions and understand systems.</p>
+                    </li>
+                    <li>
+                        <strong>
+                            <a href="https://yourdigitalrights.org/" target="_blank">yourdigitalrights.org</a>
+                        </strong>
+                        <p>A tool to automise data reguests and deletions, includes many options to customize your email and has done wonders for what I needed it to do.</p>
+                    </li>
+                    <li>
+                        <strong>
+                            <a href="https://roadmap.sh/" target="_blank">roadmap.sh</a>
+                        </strong>
+                        <p>A tool to create and look at a selection of developer roadmaps for particular skills, roles and best-practices. I reference this site often in my own work. </p>
+                    </li>
+                </ul>
+            </div>
+            <div id="recommended-podcasts" class="tab-content">
+                <h2>Podcasts I Highly Recommend</h2>
+                <ul class="compact-list">
+                  <li>
+                    <img class="podcast-cover" src="/images/jack-splat.jpg" alt="Podcast Cover">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">Darknet Diaries</strong>
+                      <span class="producer-name">by Jack Rhysider</span>
+                      <div class="podcast-links">
+                        <a href="https://open.spotify.com/show/4XPl3uEEL9hvqMkoZrzbx5" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify"></a>
+                        <a href="https://podcasts.apple.com/us/podcast/darknet-diaries/id1296350485" target="_blank"><img src="/images/itunes-logo.png" alt="iTunes"></a>
+                        <a href="https://www.youtube.com/@JackRhysider" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube"></a>
+                        <a href="https://darknetdiaries.com/" target="_blank"><img src="/images/link-icon.svg" alt="Website"></a>
+                      </div>
+                      <p>This podcast is about hackers, breaches, shadow government activity, hacktivism, cybercrime, and all the things that dwell on the hidden parts of the network.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/CYBER-podcast.webp" alt="Podcast Cover">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">CYBER</strong>
+                      <span class="producer-name">by VICE</span>
+                      <div class="podcast-links">
+                        <a href="https://open.spotify.com/show/3smcGJaAF6F7sioqFDQjzn" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify"></a>
+                        <a href="https://podcasts.apple.com/us/podcast/cyber/id1441708044" target="_blank"><img src="/images/itunes-logo.png" alt="iTunes"></a>
+                        <a href="https://www.youtube.com/@Motherboard" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube"></a>
+                        <a href="https://www.vice.com/en/section/tech" target="_blank"><img src="/images/link-icon.svg" alt="Website"></a>
+                      </div>
+                      <p>Cybersecurity focused podcast that covers topics like disinformation campaigns, encryption, and other cybersecurity topics.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+        </div>
+    </section>
+{{ end }}

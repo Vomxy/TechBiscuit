@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="blog-listings">
+    <div class="content-container">
+        <section class="section-header">
+            <h2>Recent Blogs</h2>
+            <div class="blog-grid">
+                {{ range .Pages }}
+                <div class="blog-card">
+                    <h3 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p class="excerpt">{{ .Summary }}</p>
+                    <p class="post-meta">
+                        <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+                        <span class="reading-time">{{ .ReadingTime }} min read</span>
+                    </p>
+                    <div class="tags">
+                        {{ range .Params.tags }}
+                            <span>{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    <button onclick="location.href='{{ .RelPermalink }}'" class="read-more">Read More</button>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+    </div>
+</section>
+{{ end }}

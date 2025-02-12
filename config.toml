@@ -1,0 +1,5 @@
+baseURL = 'https://www.thetechbiscuit.com'
+languageCode = 'en-us'
+title = 'TheTechBiscuit'
+theme = "techbiscuits"
+contentDir = "content"

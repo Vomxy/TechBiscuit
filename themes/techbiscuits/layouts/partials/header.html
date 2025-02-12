@@ -1,0 +1,26 @@
+<header>
+    <span class="header-path">TheTechBiscuit:</span>
+    <nav aria-label="Main Navigation" role="navigation">
+        <ul>
+            <li>
+                <a href="{{ .Site.BaseURL }}" 
+                   class="{{ if eq .RelPermalink "/" }}active{{ end }}">
+                   cd ./home
+                </a>
+            </li>
+            <li>
+                <a href="{{ "blog/" | relURL }}" 
+                   class="{{ if or (eq .Section "blog") (eq .Type "blog") }}active{{ end }}">
+                   cd ./blogs
+                </a>
+            </li>
+            <li>
+                <a href="{{ "poems/" | relURL }}" 
+                   class="{{ if or (eq .Section "poems") (eq .Type "poems") }}active{{ end }}">
+                   cd ./poems
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="progress-bar"></div>
