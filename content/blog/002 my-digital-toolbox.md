@@ -3,6 +3,9 @@ title: "My Digital Toolbox"
 date: 2025-01-30
 draft: true
 summary: ""
+description: ""
+keywords: ""
+og_image: ""
 tags: privacy, software, collection
 ---
 

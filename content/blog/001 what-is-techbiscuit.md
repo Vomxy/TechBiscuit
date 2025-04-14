@@ -15,7 +15,9 @@ TechBiscuit is that creation. It might not be the most extravagant site on the w
   
 ## The Journey to TechBiscuit
   
-I’ve built several websites, each intended to be a personal blog and a platform to share my thoughts. The journey began with HackBabble—or, more accurately, it started even earlier with my first WordPress site and a YouTube channel where I dreamt of becoming a great content creator. HackBabble was where I published articles comparing different file systems and examining the distinctions between Linux, Mac OS, and Windows. It was the first site that felt truly mine, even though it was inspired by the code from websites I admired. I built a brand by creating Instagram accounts and posts that condensed my articles into bite-sized, informative pieces. Researching for HackBabble led me down some of the most fascinating rabbit holes in information security—one of my favorites being Google dorking, a technique I believe everyone should learn.
+I’ve built several websites, each intended to be a personal blog and a platform to share my thoughts. The journey began with my first WordPress site and a YouTube channel where I dreamt of becoming a great content creator.!![Image Description](/images/001%20what-is-techbiscuit-1744662084555.webp)
+
+HackBabble was where I published articles comparing different file systems and examining the distinctions between Linux, Mac OS, and Windows. It was the first site that felt truly mine, even though it was inspired by the code from websites I admired. I built a brand by creating Instagram accounts and posts that condensed my articles into bite-sized, informative pieces. Researching for HackBabble led me down some of the most fascinating rabbit holes in information security—one of my favorites being Google dorking, a technique I believe everyone should learn.
   
 The second iteration of HackBabble evolved into the first version of TechBiscuit (techbiscuit.co). This site featured a darker aesthetic with a striking purple accent. It was intended to be the front desk to a grand hotel of open-source software, a collaborative enterprise between my friend and me. Unfortunately, while our ambition was high, our work ethic didn’t sustain after the website was built.
   
@@ -40,3 +42,4 @@ I also needed a personal website to help me develop my ability to express though
 Of course, my thoughts and feelings will evolve. I’m human, and I expect to make mistakes, hold incorrect views, and sometimes fail to communicate my ideas as clearly as I’d like. But I’m committed to learning from these experiences. I welcome criticism because it’s essential for growth.
   
 At the heart of it, I simply have things I want to share. Thoughts and ideas often cycle through my mind, and I find peace in knowing that once I’ve shared them—once I’ve seen that they’ve made a difference to someone else—that mental circuit can finally rest.
+

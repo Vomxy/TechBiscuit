@@ -7,7 +7,7 @@ cd "$SCRIPT_DIR"
 
 # Set variables for Obsidian to Hugo copy
 sourcePath="/home/natefletcher/Documents/TheTechBiscuit Vault/01 - Projects/TheTechBiscuit/blog"
-destinationPath="/home/natefletcher/Documents/thetechbiscuit/content/blog"
+destinationPath="/home/natefletcher/Documents/thetechbiscuit/content/"
 
 # Set GitHub Repo
 myrepo="git@github.com:vomxy/techbiscuit.git"
