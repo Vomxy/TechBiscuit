@@ -6,7 +6,25 @@
     <description>Recent content on TheTechBiscuit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.thetechbiscuit.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.thetechbiscuit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GrapheneOS: The Ultimate Guide to Privacy and Security on Android</title>
+      <link>https://www.thetechbiscuit.com/blog/008-grapheneos/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.thetechbiscuit.com/blog/008-grapheneos/</guid>
+      <description>A comprehensive guide to installing and using GrapheneOS for enhanced privacy and security.</description>
+    </item>
+    
+    <item>
+      <title>The Privacy-folk Guide to RSS</title>
+      <link>https://www.thetechbiscuit.com/blog/rss/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.thetechbiscuit.com/blog/rss/</guid>
+      <description>Explore unconventional ways to use RSS on Android for privacy and digital sovereignty.</description>
+    </item>
+    
     <item>
       <title>What is TechBiscuit?</title>
       <link>https://www.thetechbiscuit.com/blog/001-what-is-techbiscuit/</link>

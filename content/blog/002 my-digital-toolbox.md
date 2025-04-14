@@ -8,7 +8,6 @@ keywords: ""
 og_image: ""
 tags: privacy, software, collection
 ---
-
 ## Introduction
 The software and tools we dictate what we are able to do with our computers; the same machine can be a solitaire champion, or a movie making powerhouse. We think about these tools by their purpose, it’s intuitiveness, and how they do what they do. Some tools share the same purpose, they do the exact same thing for us, but one makes it easier to use than the other, so we use that. Some apps make it easy to use, but we don’t like how they do it.
 
