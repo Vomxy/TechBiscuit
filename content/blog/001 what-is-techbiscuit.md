@@ -3,9 +3,11 @@ title: "What is TechBiscuit?"
 date: 2024-08-06
 draft: false
 summary: "An introduction to the TechBiscuit project and its vision."
+description: "Learn about how my blog, TheTechBiscuit, came to be." 
+keywords: "TechBiscuit, personal blog, technology, projects" 
+og_image: "/images/what-is-techbiscuit.jpg"
 tags: ["Website", "Introduction", "Published"]
 ---
-
 ## Introduction
 TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater. Every project started with the goal of being unique, a fresh idea different from the last. Yet, they often fell apart, either because I was too eager to start the next big thing or because my enthusiasm waned. Despite this, I preserved the code, knowing that these spare parts, would eventually be the parts I needed to build my great Frankenstein's monster.
 

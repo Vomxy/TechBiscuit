@@ -8,63 +8,29 @@
 {{ end }}
 
 {{ define "main" }}
-    <div class="content-container">
-        <section class="section-header" class="underline-workaround">
-            <h2>Recent Blogs</h2>
-            <div class="blog-grid">
-                <div class="blog-card" aria-label="Blog Post 1: An Introduction to TechBiscuit">
-                    <h3 class="blog-title"><a href="/blog/2024/whatistechbiscuit.html">An Introduction to TechBiscuit</a></h3>
-                    <p class="excerpt">TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater.</p>
-                    <p class="post-meta">
-                        <span class="date" aria-label="Published on August 06, 2024">August 06, 2024</span>
-                        <span class="reading-time" aria-label="Reading time">4 min read</span>
-                    </p>
-                    <div class="tags" aria-label="Tags">
-                        <span>Website</span>
-                        <span>Introduction</span>
-                        <span>Published</span>
-                    </div>
-                    <button onclick="location.href='/blog/2024/whatistechbiscuit.html'" class="read-more" aria-label="Read The Introduction of TechBiscuit">Read More</button>
+<div class="content-container">
+    <section class="section-header" class="underline-workaround">
+        <h2>Recent Blogs</h2>
+        <div class="blog-grid">
+            {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+            <div class="blog-card" aria-label="Blog Post: {{ .Title }}">
+                <h3 class="blog-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="excerpt">{{ .Summary }}</p>
+                <p class="post-meta">
+                    <span class="date" aria-label="Published on {{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</span>
+                    <span class="reading-time" aria-label="Reading time">{{ .ReadingTime }} min read</span>
+                </p>
+                <div class="tags" aria-label="Tags">
+                    {{ range .Params.tags }}
+                    <span>{{ . }}</span>
+                    {{ end }}
                 </div>
-                
-                <div class="blog-card" aria-label="Quiz Archives">
-                    <h3 class="blog-title"><a href="quiz.html">Quiz Archives</a></h3>
-                    <p class="excerpt">
-                        An archive of trivia quizzes I have put together for quiz nights at <a href="https://www.thelittlesaloon.com/">The Grosvenor Arms</a>. If you'd like to attend the pub quiz, you can turn up on the day here: 204 Garratt Lane, London, SW18 4ED.
-                    </p>
-                    <p class="excerpt">If you want to participate, see what the quiz looks like!</p>
-                    <div class="post-meta">
-                        <span class="date" aria-label="Published on November 07, 2024">November 07, 2024</span>
-                        <span class="reading-time" aria-label="Reading time">8 min read</span>
-                    </div>
-                    <div class="tags" aria-label="Tags">
-                        <span>Local</span>
-                        <span>Trivia</span>
-                        <span>Published</span>
-                    </div>
-                    <button onclick="location.href='quiz.html'" class="read-more" aria-label="Read through the previous pub trivia quizzes.">
-                        Read More
-                    </button>
-                </div>
-                
-
-                <div class="blog-card" aria-label="Blog Post 3: Archive of Poems">
-                    <h3 class="blog-title"><a href="/poems">Archive of Poems</a></h3>
-                    <p class="excerpt">A selection of the best short-form literature I've come across.</p>
-                    <p class="post-meta">
-                        <span class="date" aria-label="Published on August 28, 2024">August 28, 2024</span>
-                        <span class="reading-time" aria-label="Reading time">4 min read</span>
-                    </p>
-                    <div class="tags" aria-label="Tags">
-                        <span>Literature</span>
-                        <span>Poem</span>
-                        <span>Published</span>
-                    </div>
-                    <button onclick="location.href='/poems'" class="read-more" aria-label="Read through my favourite poems">Read More</button>
-                </div>
-            </div>			
-        </section>
-    </div>
+                <button onclick="location.href='{{ .Permalink }}'" class="read-more" aria-label="Read {{ .Title }}">Read More</button>
+            </div>
+            {{ end }}
+        </div>			
+    </section>
+</div>
     <section id="favorites">
         <div class="content-container">
             <div class="tabs">
