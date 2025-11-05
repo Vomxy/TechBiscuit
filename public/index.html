@@ -184,11 +184,16 @@
                 </div>
             </article>
             
-        </div>			
+        </div>
     </section>
 </div>
-    <section id="favorites">
+
+
+<div class="section-divider"></div>
+
+<section id="favorites">
         <div class="content-container">
+            <h2>My Favorites</h2>
             <div class="tabs" role="tablist" aria-label="Favorites sections">
                 <button class="tab-link" role="tab" data-tab="favorite-books" id="tab-favorite-books" aria-controls="favorite-books" aria-selected="false">Favorite Books</button>
                 <button class="tab-link" role="tab" data-tab="favorite-websites-tools" id="tab-favorite-websites-tools" aria-controls="favorite-websites-tools" aria-selected="false">Websites & Tools</button>
@@ -456,6 +461,71 @@ if (siteHeader) {
         lastScrollTop = scrollTop;
     }, 20));
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', function() {
+                img.classList.add('loaded');
+            });
+            img.addEventListener('error', function() {
+                img.classList.add('loaded'); 
+            });
+        }
+    });
+});
+
+
+if ('IntersectionObserver' in window) {
+    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const lazyElements = document.querySelectorAll('.lazy-load');
+        lazyElements.forEach(el => lazyLoadObserver.observe(el));
+    });
+}
+
+
+if ('IntersectionObserver' in window) {
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('stagger-animation');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const blogGrid = document.querySelector('.blog-grid');
+        if (blogGrid) {
+            staggerObserver.observe(blogGrid);
+        }
+    });
+}
+
+
+window.addEventListener('load', function() {
+    const contentContainer = document.querySelector('.content-container');
+    if (contentContainer) {
+        contentContainer.classList.add('content-loaded');
+    }
+});
 
 </script>
 </body>
