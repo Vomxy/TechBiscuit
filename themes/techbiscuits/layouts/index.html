@@ -2,7 +2,7 @@
 <section id="my-story">
     <div class="content-container">
         <h2>A Short Introduction</h2>
-        <p>Welcome! I'm Zack Baxter & I created this blog to share my insights, research, and projects. Start reading <a target="_blank" href="https://www.thetechbiscuit.com/blog/2024/whatistechbiscuit.html">What is TechBiscuit?</a> or explore my favourite short-form literature by clicking <a target="_blank" href="https://www.thetechbiscuit.com/blog/2024/archiveofpoems.html">here.</a></p>
+        <p>Welcome! I'm Zack Baxter & I created this blog to share my insights, research, and projects. Start reading <a href="/blog/001-what-is-techbiscuit/">What is TechBiscuit?</a> or explore my favourite short-form literature by clicking <a href="/poems/">here.</a></p>
     </div>
 </section>
 {{ end }}
@@ -25,7 +25,7 @@
                     <span>{{ . }}</span>
                     {{ end }}
                 </div>
-                <button onclick="location.href='{{ .Permalink }}'" class="read-more" aria-label="Read {{ .Title }}">Read More</button>
+                <a href="{{ .Permalink }}" class="read-more" aria-label="Read {{ .Title }}">Read More</a>
             </div>
             {{ end }}
         </div>			
@@ -33,12 +33,12 @@
 </div>
     <section id="favorites">
         <div class="content-container">
-            <div class="tabs">
-                <button class="tab-link" onclick="openTab(event, 'favorite-books')">Favorite Books</button>
-                <button class="tab-link" onclick="openTab(event, 'favorite-websites-tools')">Websites & Tools</button>
-                <button class="tab-link" onclick="openTab(event, 'recommended-podcasts')">Podcasts</button>
+            <div class="tabs" role="tablist" aria-label="Favorites sections">
+                <button class="tab-link" role="tab" data-tab="favorite-books" id="tab-favorite-books" aria-controls="favorite-books" aria-selected="false">Favorite Books</button>
+                <button class="tab-link" role="tab" data-tab="favorite-websites-tools" id="tab-favorite-websites-tools" aria-controls="favorite-websites-tools" aria-selected="false">Websites & Tools</button>
+                <button class="tab-link" role="tab" data-tab="recommended-podcasts" id="tab-recommended-podcasts" aria-controls="recommended-podcasts" aria-selected="false">Podcasts</button>
             </div>
-            <div id="favorite-books" class="tab-content">
+            <div id="favorite-books" class="tab-content" role="tabpanel" aria-labelledby="tab-favorite-books">
                 <h2>My Favorite Books</h2>
                 <ul class="compact-list">
                     <li>
@@ -55,7 +55,7 @@
                     </li>
                 </ul>
             </div>
-            <div id="favorite-websites-tools" class="tab-content">
+            <div id="favorite-websites-tools" class="tab-content" role="tabpanel" aria-labelledby="tab-favorite-websites-tools">
                 <h2>Websites and Tools I Love</h2>
                 <ul class="compact-list">
                     <li>
@@ -90,33 +90,33 @@
                     </li>
                 </ul>
             </div>
-            <div id="recommended-podcasts" class="tab-content">
+            <div id="recommended-podcasts" class="tab-content" role="tabpanel" aria-labelledby="tab-recommended-podcasts">
                 <h2>Podcasts I Highly Recommend</h2>
                 <ul class="compact-list">
                   <li>
-                    <img class="podcast-cover" src="/images/jack-splat.jpg" alt="Podcast Cover">
+                    <img class="podcast-cover" src="/images/jack-splat.webp" alt="Darknet Diaries podcast cover featuring Jack Rhysider's portrait" loading="lazy">
                     <div class="podcast-info">
                       <strong class="podcast-name">Darknet Diaries</strong>
                       <span class="producer-name">by Jack Rhysider</span>
                       <div class="podcast-links">
-                        <a href="https://open.spotify.com/show/4XPl3uEEL9hvqMkoZrzbx5" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify"></a>
-                        <a href="https://podcasts.apple.com/us/podcast/darknet-diaries/id1296350485" target="_blank"><img src="/images/itunes-logo.png" alt="iTunes"></a>
-                        <a href="https://www.youtube.com/@JackRhysider" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube"></a>
-                        <a href="https://darknetdiaries.com/" target="_blank"><img src="/images/link-icon.svg" alt="Website"></a>
+                        <a href="https://open.spotify.com/show/4XPl3uEEL9hvqMkoZrzbx5" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify" loading="lazy"></a>
+                        <a href="https://podcasts.apple.com/us/podcast/darknet-diaries/id1296350485" target="_blank"><img src="/images/itunes-logo.webp" alt="iTunes" loading="lazy"></a>
+                        <a href="https://www.youtube.com/@JackRhysider" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://darknetdiaries.com/" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
                       </div>
                       <p>This podcast is about hackers, breaches, shadow government activity, hacktivism, cybercrime, and all the things that dwell on the hidden parts of the network.</p>
                     </div>
                   </li>
                   <li>
-                    <img class="podcast-cover" src="/images/CYBER-podcast.webp" alt="Podcast Cover">
+                    <img class="podcast-cover" src="/images/CYBER-podcast.webp" alt="CYBER podcast cover from VICE Media" loading="lazy">
                     <div class="podcast-info">
                       <strong class="podcast-name">CYBER</strong>
                       <span class="producer-name">by VICE</span>
                       <div class="podcast-links">
-                        <a href="https://open.spotify.com/show/3smcGJaAF6F7sioqFDQjzn" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify"></a>
-                        <a href="https://podcasts.apple.com/us/podcast/cyber/id1441708044" target="_blank"><img src="/images/itunes-logo.png" alt="iTunes"></a>
-                        <a href="https://www.youtube.com/@Motherboard" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube"></a>
-                        <a href="https://www.vice.com/en/section/tech" target="_blank"><img src="/images/link-icon.svg" alt="Website"></a>
+                        <a href="https://open.spotify.com/show/3smcGJaAF6F7sioqFDQjzn" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify" loading="lazy"></a>
+                        <a href="https://podcasts.apple.com/us/podcast/cyber/id1441708044" target="_blank"><img src="/images/itunes-logo.webp" alt="iTunes" loading="lazy"></a>
+                        <a href="https://www.youtube.com/@Motherboard" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://www.vice.com/en/section/tech" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
                       </div>
                       <p>Cybersecurity focused podcast that covers topics like disinformation campaigns, encryption, and other cybersecurity topics.</p>
                     </div>

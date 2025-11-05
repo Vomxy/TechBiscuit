@@ -8,11 +8,26 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e69e56">
     
+    <link rel="canonical" href="https://www.thetechbiscuit.com/blog/001-what-is-techbiscuit/">
+    
     <meta property="og:title" content="What is TechBiscuit? | TheTechBiscuit">
     <meta property="og:description" content="Learn about how my blog, TheTechBiscuit, came to be.">
     <meta property="og:image" content="/images/what-is-techbiscuit.jpg">
     <meta property="og:url" content="https://www.thetechbiscuit.com/blog/001-what-is-techbiscuit/">
-    <meta property="og:type" content="website">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2024-08-06T00:00:00Z">
+    
+    
+    <meta property="article:tag" content="Website">
+    
+    <meta property="article:tag" content="Introduction">
+    
+    <meta property="article:tag" content="Published">
+    
+    
+    <meta property="article:author" content="Zack Baxter">
+    
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="What is TechBiscuit? | TheTechBiscuit">
@@ -89,7 +104,8 @@
 <p>TechBiscuit is the amalgamation of numerous projects I’ve built over the years—each one a stepping stone towards something greater. Every project started with the goal of being unique, a fresh idea different from the last. Yet, they often fell apart, either because I was too eager to start the next big thing or because my enthusiasm waned. Despite this, I preserved the code, knowing that these spare parts, would eventually be the parts I needed to build my great Frankenstein&rsquo;s monster.</p>
 <p>TechBiscuit is that creation. It might not be the most extravagant site on the web, but it’s mine, and it does exactly what it’s meant to do. I encourage you to explore it—you might find it more interesting than you expect.</p>
 <h2 id="the-journey-to-techbiscuit">The Journey to TechBiscuit</h2>
-<p>I’ve built several websites, each intended to be a personal blog and a platform to share my thoughts. The journey began with my first WordPress site and a YouTube channel where I dreamt of becoming a great content creator.!<img src="/images/001%20what-is-techbiscuit-1744662084555.webp" alt="Image Description"></p>
+<p>I’ve built several websites, each intended to be a personal blog and a platform to share my thoughts. The journey began with my first WordPress site and a YouTube channel where I dreamt of becoming a great content creator.!<img src="/images/001%20what-is-techbiscuit-1744662084555.webp" alt="Image Description"  loading="lazy" />
+</p>
 <p>HackBabble was where I published articles comparing different file systems and examining the distinctions between Linux, Mac OS, and Windows. It was the first site that felt truly mine, even though it was inspired by the code from websites I admired. I built a brand by creating Instagram accounts and posts that condensed my articles into bite-sized, informative pieces. Researching for HackBabble led me down some of the most fascinating rabbit holes in information security—one of my favorites being Google dorking, a technique I believe everyone should learn.</p>
 <p>The second iteration of HackBabble evolved into the first version of TechBiscuit (techbiscuit.co). This site featured a darker aesthetic with a striking purple accent. It was intended to be the front desk to a grand hotel of open-source software, a collaborative enterprise between my friend and me. Unfortunately, while our ambition was high, our work ethic didn’t sustain after the website was built.</p>
 <p>My third website took some of the styling from its predecessor and laid the foundation for what TechBiscuit would become. This site was themed around the classic hangman game but had a much deeper purpose—it was a platform for internet theories and conspiracies, designed to foster research and critical thinking. Users could submit their theories, which would undergo a vetting process before being published alongside any supporting evidence. Others could then add their own evidence, critique the theories, and engage in thoughtful discussions.</p>
@@ -160,33 +176,82 @@
         <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
     </div>
 </footer>
-<script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 		<script>
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					document.querySelector(this.getAttribute('href')).scrollIntoView({
-						behavior: 'smooth'
+			
+			document.addEventListener('DOMContentLoaded', function() {
+				const tabLinks = document.querySelectorAll('.tab-link');
+				const tabContents = document.querySelectorAll('.tab-content');
+
+				function openTab(tabName) {
+					
+					tabContents.forEach(content => {
+						content.style.display = 'none';
+						content.setAttribute('aria-hidden', 'true');
+					});
+
+					
+					tabLinks.forEach(link => {
+						link.classList.remove('active');
+						link.setAttribute('aria-selected', 'false');
+						link.setAttribute('tabindex', '-1');
+					});
+
+					
+					const selectedTab = document.getElementById(tabName);
+					const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+
+					if (selectedTab) {
+						selectedTab.style.display = 'block';
+						selectedTab.setAttribute('aria-hidden', 'false');
+					}
+					if (selectedLink) {
+						selectedLink.classList.add('active');
+						selectedLink.setAttribute('aria-selected', 'true');
+						selectedLink.setAttribute('tabindex', '0');
+						selectedLink.focus();
+					}
+				}
+
+				
+				tabLinks.forEach(link => {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						const tabName = this.getAttribute('data-tab');
+						openTab(tabName);
+					});
+
+					
+					link.addEventListener('keydown', function(e) {
+						const currentIndex = Array.from(tabLinks).indexOf(this);
+						let targetIndex;
+
+						if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+							e.preventDefault();
+							targetIndex = (currentIndex + 1) % tabLinks.length;
+						} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+							e.preventDefault();
+							targetIndex = (currentIndex - 1 + tabLinks.length) % tabLinks.length;
+						} else if (e.key === 'Home') {
+							e.preventDefault();
+							targetIndex = 0;
+						} else if (e.key === 'End') {
+							e.preventDefault();
+							targetIndex = tabLinks.length - 1;
+						}
+
+						if (targetIndex !== undefined) {
+							const targetTab = tabLinks[targetIndex].getAttribute('data-tab');
+							openTab(targetTab);
+						}
 					});
 				});
+
+				
+				if (tabLinks.length > 0) {
+					const firstTab = tabLinks[0].getAttribute('data-tab');
+					openTab(firstTab);
+				}
 			});
-		</script>
-		<script>
-			function openTab(evt, tabName) {
-				var i, tabcontent, tablinks;
-				tabcontent = document.getElementsByClassName("tab-content");
-				for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = "none";
-				}
-				tablinks = document.getElementsByClassName("tab-link");
-				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" active", "");
-				}
-				document.getElementById(tabName).style.display = "block";
-				evt.currentTarget.className += " active";
-			}
-			
-			document.getElementsByClassName("tab-link")[0].click();
 		</script>
 <script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 <script>

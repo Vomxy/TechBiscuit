@@ -8,11 +8,28 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e69e56">
     
+    <link rel="canonical" href="https://www.thetechbiscuit.com/blog/008-grapheneos/">
+    
     <meta property="og:title" content="GrapheneOS: The Ultimate Guide to Privacy and Security on Android | TheTechBiscuit">
     <meta property="og:description" content="Learn how to install GrapheneOS on your Android device and discover its best privacy and security features.">
     <meta property="og:image" content="/images/grapheneos-hero.jpg">
     <meta property="og:url" content="https://www.thetechbiscuit.com/blog/008-grapheneos/">
-    <meta property="og:type" content="website">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2024-11-15T00:00:00Z">
+    
+    
+    <meta property="article:tag" content="privacy">
+    
+    <meta property="article:tag" content="security">
+    
+    <meta property="article:tag" content="Android">
+    
+    <meta property="article:tag" content="GrapheneOS">
+    
+    
+    <meta property="article:author" content="Zack Baxter">
+    
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GrapheneOS: The Ultimate Guide to Privacy and Security on Android | TheTechBiscuit">
@@ -140,7 +157,8 @@
 <li>Connect your Pixel to the computer with a USB cable.</li>
 <li>Follow the on-screen steps—it’ll guide you to unlock the bootloader and flash GrapheneOS.</li>
 </ol>
-<p><img src="https://example.com/web-installer-screenshot.png" alt="Web Installer Screenshot"><br>
+<p><img src="https://example.com/web-installer-screenshot.png" alt="Web Installer Screenshot"  loading="lazy" />
+<br>
 <em>Caption: The GrapheneOS web installer makes installation a breeze.</em></p>
 <p><strong>Tip</strong>: Use a good-quality USB cable to avoid connection issues.</p>
 <h3 id="step-4-lock-the-bootloader">Step 4: Lock the Bootloader</h3>
@@ -170,7 +188,8 @@
 <p>GrapheneOS pushes <strong>automatic updates</strong> in the background. No waiting around—you’re always protected against the latest threats.</p>
 <h3 id="5-make-it-yours">5. Make It Yours</h3>
 <p>It’s secure, but it’s not boring. Customize your phone with apps from <strong>F-Droid</strong> (open-source app store) or <strong>Aurora Store</strong> (Google Play apps without a Google account). Change the look, tweak the settings—it’s your phone, your rules.</p>
-<p><img src="https://example.com/grapheneos-features.png" alt="GrapheneOS Features"><br>
+<p><img src="https://example.com/grapheneos-features.png" alt="GrapheneOS Features"  loading="lazy" />
+<br>
 <em>Caption: Privacy and customization go hand in hand with GrapheneOS.</em></p>
 <hr>
 <h2 id="getting-the-most-out-of-grapheneos-tips-and-tricks">Getting the Most Out of GrapheneOS: Tips and Tricks</h2>
@@ -237,33 +256,82 @@
         <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
     </div>
 </footer>
-<script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 		<script>
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					document.querySelector(this.getAttribute('href')).scrollIntoView({
-						behavior: 'smooth'
+			
+			document.addEventListener('DOMContentLoaded', function() {
+				const tabLinks = document.querySelectorAll('.tab-link');
+				const tabContents = document.querySelectorAll('.tab-content');
+
+				function openTab(tabName) {
+					
+					tabContents.forEach(content => {
+						content.style.display = 'none';
+						content.setAttribute('aria-hidden', 'true');
+					});
+
+					
+					tabLinks.forEach(link => {
+						link.classList.remove('active');
+						link.setAttribute('aria-selected', 'false');
+						link.setAttribute('tabindex', '-1');
+					});
+
+					
+					const selectedTab = document.getElementById(tabName);
+					const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+
+					if (selectedTab) {
+						selectedTab.style.display = 'block';
+						selectedTab.setAttribute('aria-hidden', 'false');
+					}
+					if (selectedLink) {
+						selectedLink.classList.add('active');
+						selectedLink.setAttribute('aria-selected', 'true');
+						selectedLink.setAttribute('tabindex', '0');
+						selectedLink.focus();
+					}
+				}
+
+				
+				tabLinks.forEach(link => {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						const tabName = this.getAttribute('data-tab');
+						openTab(tabName);
+					});
+
+					
+					link.addEventListener('keydown', function(e) {
+						const currentIndex = Array.from(tabLinks).indexOf(this);
+						let targetIndex;
+
+						if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+							e.preventDefault();
+							targetIndex = (currentIndex + 1) % tabLinks.length;
+						} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+							e.preventDefault();
+							targetIndex = (currentIndex - 1 + tabLinks.length) % tabLinks.length;
+						} else if (e.key === 'Home') {
+							e.preventDefault();
+							targetIndex = 0;
+						} else if (e.key === 'End') {
+							e.preventDefault();
+							targetIndex = tabLinks.length - 1;
+						}
+
+						if (targetIndex !== undefined) {
+							const targetTab = tabLinks[targetIndex].getAttribute('data-tab');
+							openTab(targetTab);
+						}
 					});
 				});
+
+				
+				if (tabLinks.length > 0) {
+					const firstTab = tabLinks[0].getAttribute('data-tab');
+					openTab(firstTab);
+				}
 			});
-		</script>
-		<script>
-			function openTab(evt, tabName) {
-				var i, tabcontent, tablinks;
-				tabcontent = document.getElementsByClassName("tab-content");
-				for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = "none";
-				}
-				tablinks = document.getElementsByClassName("tab-link");
-				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" active", "");
-				}
-				document.getElementById(tabName).style.display = "block";
-				evt.currentTarget.className += " active";
-			}
-			
-			document.getElementsByClassName("tab-link")[0].click();
 		</script>
 <script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 <script>

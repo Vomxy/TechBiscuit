@@ -8,11 +8,15 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e69e56">
     
+    <link rel="canonical" href="https://www.thetechbiscuit.com/tags/security/">
+    
     <meta property="og:title" content="Security | TheTechBiscuit">
     <meta property="og:description" content="Read TheTechBiscuit, authored by Zack Baxter.">
     <meta property="og:image" content="/images/social-preview.jpg">
     <meta property="og:url" content="https://www.thetechbiscuit.com/tags/security/">
+    
     <meta property="og:type" content="website">
+    
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Security | TheTechBiscuit">
@@ -83,7 +87,7 @@
                             <span>GrapheneOS</span>
                         
                     </div>
-                    <button onclick="location.href='\/blog\/008-grapheneos\/'" class="read-more">Read More</button>
+                    <a href="/blog/008-grapheneos/" class="read-more">Read More</a>
                 </div>
                 
             </div>
@@ -125,33 +129,82 @@
         <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
     </div>
 </footer>
-<script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 		<script>
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					document.querySelector(this.getAttribute('href')).scrollIntoView({
-						behavior: 'smooth'
+			
+			document.addEventListener('DOMContentLoaded', function() {
+				const tabLinks = document.querySelectorAll('.tab-link');
+				const tabContents = document.querySelectorAll('.tab-content');
+
+				function openTab(tabName) {
+					
+					tabContents.forEach(content => {
+						content.style.display = 'none';
+						content.setAttribute('aria-hidden', 'true');
+					});
+
+					
+					tabLinks.forEach(link => {
+						link.classList.remove('active');
+						link.setAttribute('aria-selected', 'false');
+						link.setAttribute('tabindex', '-1');
+					});
+
+					
+					const selectedTab = document.getElementById(tabName);
+					const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+
+					if (selectedTab) {
+						selectedTab.style.display = 'block';
+						selectedTab.setAttribute('aria-hidden', 'false');
+					}
+					if (selectedLink) {
+						selectedLink.classList.add('active');
+						selectedLink.setAttribute('aria-selected', 'true');
+						selectedLink.setAttribute('tabindex', '0');
+						selectedLink.focus();
+					}
+				}
+
+				
+				tabLinks.forEach(link => {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						const tabName = this.getAttribute('data-tab');
+						openTab(tabName);
+					});
+
+					
+					link.addEventListener('keydown', function(e) {
+						const currentIndex = Array.from(tabLinks).indexOf(this);
+						let targetIndex;
+
+						if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+							e.preventDefault();
+							targetIndex = (currentIndex + 1) % tabLinks.length;
+						} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+							e.preventDefault();
+							targetIndex = (currentIndex - 1 + tabLinks.length) % tabLinks.length;
+						} else if (e.key === 'Home') {
+							e.preventDefault();
+							targetIndex = 0;
+						} else if (e.key === 'End') {
+							e.preventDefault();
+							targetIndex = tabLinks.length - 1;
+						}
+
+						if (targetIndex !== undefined) {
+							const targetTab = tabLinks[targetIndex].getAttribute('data-tab');
+							openTab(targetTab);
+						}
 					});
 				});
+
+				
+				if (tabLinks.length > 0) {
+					const firstTab = tabLinks[0].getAttribute('data-tab');
+					openTab(firstTab);
+				}
 			});
-		</script>
-		<script>
-			function openTab(evt, tabName) {
-				var i, tabcontent, tablinks;
-				tabcontent = document.getElementsByClassName("tab-content");
-				for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = "none";
-				}
-				tablinks = document.getElementsByClassName("tab-link");
-				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" active", "");
-				}
-				document.getElementById(tabName).style.display = "block";
-				evt.currentTarget.className += " active";
-			}
-			
-			document.getElementsByClassName("tab-link")[0].click();
 		</script>
 <script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
 <script>

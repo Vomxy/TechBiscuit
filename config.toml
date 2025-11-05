@@ -4,6 +4,9 @@ title = 'TheTechBiscuit'
 theme = "techbiscuits"
 contentDir = "content"
 
+[permalinks]
+    blog = "/blog/:filename/"
+
 [params]
     description = "Read TheTechBiscuit, authored by Zack Baxter."
     keywords = "TechBiscuit, blog, personal website"
