@@ -155,5 +155,19 @@ updateProgressBar();
 window.addEventListener('resize', debounce(adjustProgressBarPosition, 100));
 window.addEventListener('scroll', debounce(updateProgressBar, 20));
 
+// Header scroll effect
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', debounce(function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 50) {
+            siteHeader.classList.add('scrolled');
+        } else {
+            siteHeader.classList.remove('scrolled');
+        }
+        lastScrollTop = scrollTop;
+    }, 20));
+}
 
 </script>

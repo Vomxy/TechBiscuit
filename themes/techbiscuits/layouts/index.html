@@ -1,8 +1,24 @@
 {{ define "pre-main" }}
-<section id="my-story">
-    <div class="content-container">
-        <h2>A Short Introduction</h2>
-        <p>Welcome! I'm Zack Baxter & I created this blog to share my insights, research, and projects. Start reading <a href="/blog/001-what-is-techbiscuit/">What is TechBiscuit?</a> or explore my creative works collection by clicking <a href="/creative/">here.</a></p>
+<section class="hero-section">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+        <div class="hero-logo">
+            <img src="/images/TheTechBiscuit-logo.svg" alt="TheTechBiscuit Logo" class="logo-image">
+        </div>
+        <h1 class="hero-title">
+            <span class="hero-title-line">Welcome to</span>
+            <span class="hero-title-main">TheTechBiscuit</span>
+        </h1>
+        <p class="hero-subtitle">Insights, research, and projects on technology, privacy, and digital life</p>
+        <p class="hero-intro">I'm Zack Baxter, and I created this space to share my journey through the digital world</p>
+        <div class="hero-cta">
+            <a href="/blog/" class="cta-button primary">Explore Articles</a>
+            <a href="/creative/" class="cta-button secondary">Creative Works</a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Scroll to discover</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
     </div>
 </section>
 {{ end }}
@@ -13,20 +29,27 @@
         <h2>Recent Blogs</h2>
         <div class="blog-grid">
             {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-            <div class="blog-card" aria-label="Blog Post: {{ .Title }}">
-                <h3 class="blog-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                <p class="excerpt">{{ .Summary }}</p>
-                <p class="post-meta">
-                    <span class="date" aria-label="Published on {{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</span>
-                    <span class="reading-time" aria-label="Reading time">{{ .ReadingTime }} min read</span>
-                </p>
-                <div class="tags" aria-label="Tags">
-                    {{ range .Params.tags }}
-                    <span>{{ . }}</span>
-                    {{ end }}
+            <article class="blog-card" aria-label="Blog Post: {{ .Title }}">
+                <div class="blog-card-image">
+                    <div class="blog-card-image-inner">
+                        <div class="blog-card-icon">📝</div>
+                    </div>
                 </div>
-                <a href="{{ .Permalink }}" class="read-more" aria-label="Read {{ .Title }}">Read More</a>
-            </div>
+                <div class="blog-card-content">
+                    <h3 class="blog-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p class="excerpt">{{ .Summary }}</p>
+                    <p class="post-meta">
+                        <span class="date" aria-label="Published on {{ .Date.Format "January 02, 2006" }}">{{ .Date.Format "January 02, 2006" }}</span>
+                        <span class="reading-time" aria-label="Reading time">{{ .ReadingTime }} min read</span>
+                    </p>
+                    <div class="tags" aria-label="Tags">
+                        {{ range .Params.tags }}
+                        <span>{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    <a href="{{ .Permalink }}" class="read-more" aria-label="Read {{ .Title }}">Read More →</a>
+                </div>
+            </article>
             {{ end }}
         </div>			
     </section>

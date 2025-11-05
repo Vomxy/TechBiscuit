@@ -25,30 +25,38 @@
     <title>Invictus | TheTechBiscuit</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
-</head><body><header>
-    <span class="header-path">TheTechBiscuit:</span>
-    <nav aria-label="Main Navigation" role="navigation">
-        <ul>
-            <li>
-                <a href="https://www.thetechbiscuit.com/" 
-                   class="">
-                   cd ./home
-                </a>
-            </li>
-            <li>
-                <a href="/blog/" 
-                   class="">
-                   cd ./blogs
-                </a>
-            </li>
-            <li>
-                <a href="/creative/"
-                   class="active">
-                   cd ./creative
-                </a>
-            </li>
-        </ul>
-    </nav>
+</head><body><header class="site-header">
+    <div class="header-container">
+        <a href="https://www.thetechbiscuit.com/" class="header-logo-link">
+            <img src="/images/TheTechBiscuit-logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
+            <span class="header-path">TheTechBiscuit</span>
+        </a>
+        <nav aria-label="Main Navigation" role="navigation" class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="https://www.thetechbiscuit.com/"
+                       class="nav-link ">
+                       <span class="nav-icon">🏠</span>
+                       <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog/"
+                       class="nav-link ">
+                       <span class="nav-icon">📝</span>
+                       <span class="nav-text">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/creative/"
+                       class="nav-link active">
+                       <span class="nav-icon">🎨</span>
+                       <span class="nav-text">Creative</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <div id="progress-bar"></div>
 
@@ -250,6 +258,20 @@ updateProgressBar();
 window.addEventListener('resize', debounce(adjustProgressBarPosition, 100));
 window.addEventListener('scroll', debounce(updateProgressBar, 20));
 
+
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', debounce(function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 50) {
+            siteHeader.classList.add('scrolled');
+        } else {
+            siteHeader.classList.remove('scrolled');
+        }
+        lastScrollTop = scrollTop;
+    }, 20));
+}
 
 </script>
 </body>

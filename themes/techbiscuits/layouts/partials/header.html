@@ -1,26 +1,34 @@
-<header>
-    <span class="header-path">TheTechBiscuit:</span>
-    <nav aria-label="Main Navigation" role="navigation">
-        <ul>
-            <li>
-                <a href="{{ .Site.BaseURL }}" 
-                   class="{{ if eq .RelPermalink "/" }}active{{ end }}">
-                   cd ./home
-                </a>
-            </li>
-            <li>
-                <a href="{{ "blog/" | relURL }}" 
-                   class="{{ if or (eq .Section "blog") (eq .Type "blog") }}active{{ end }}">
-                   cd ./blogs
-                </a>
-            </li>
-            <li>
-                <a href="{{ "creative/" | relURL }}"
-                   class="{{ if or (eq .Section "creative") (eq .Type "creative") }}active{{ end }}">
-                   cd ./creative
-                </a>
-            </li>
-        </ul>
-    </nav>
+<header class="site-header">
+    <div class="header-container">
+        <a href="{{ .Site.BaseURL }}" class="header-logo-link">
+            <img src="/images/TheTechBiscuit-logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
+            <span class="header-path">TheTechBiscuit</span>
+        </a>
+        <nav aria-label="Main Navigation" role="navigation" class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ .Site.BaseURL }}"
+                       class="nav-link {{ if eq .RelPermalink "/" }}active{{ end }}">
+                       <span class="nav-icon">🏠</span>
+                       <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ "blog/" | relURL }}"
+                       class="nav-link {{ if or (eq .Section "blog") (eq .Type "blog") }}active{{ end }}">
+                       <span class="nav-icon">📝</span>
+                       <span class="nav-text">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ "creative/" | relURL }}"
+                       class="nav-link {{ if or (eq .Section "creative") (eq .Type "creative") }}active{{ end }}">
+                       <span class="nav-icon">🎨</span>
+                       <span class="nav-text">Creative</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <div id="progress-bar"></div>
