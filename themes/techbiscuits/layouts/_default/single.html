@@ -1,8 +1,8 @@
 {{ define "main" }}
-    <article style="max-width:900px">
+    <article class="single-post-article">
         <h1>{{ .Title }}</h1>
         <div class="meta-info">
-            <span class="author">By <a href="#">{{ .Params.author | default "Zack Baxter" }}</a></span>
+            <span class="author">By {{ .Params.author | default "Zack Baxter" }}</span>
             <span class="date">Published on {{ .Date.Format "January 2, 2006" }}</span>
             <span class="reading-time">{{ .ReadingTime }} min read</span>
         </div>

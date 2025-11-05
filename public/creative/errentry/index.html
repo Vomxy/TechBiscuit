@@ -23,14 +23,21 @@
     <meta name="twitter:description" content="A whimsical Tolkien poem of adventure, love, and magical journeys">
     <meta name="twitter:site" content="@onlytechbiscuit">
     <title>Errantry | TheTechBiscuit</title>
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="/images/logo-180.png">
+    <link rel="apple-touch-icon" href="/images/logo-180.png">
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 </head><body><header class="site-header">
     <div class="header-container">
         <a href="https://www.thetechbiscuit.com/" class="header-logo-link">
-            <img src="/images/TheTechBiscuit-logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
+            <img src="/images/logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
             <span class="header-path">TheTechBiscuit</span>
         </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span class="menu-icon">☰</span>
+        </button>
         <nav aria-label="Main Navigation" role="navigation" class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item">
@@ -67,10 +74,10 @@
         
 
             
-    <article style="max-width:900px">
+    <article class="single-post-article">
         <h1>Errantry</h1>
         <div class="meta-info">
-            <span class="author">By <a href="#">J.R.R. Tolkien</a></span>
+            <span class="author">By J.R.R. Tolkien</span>
             <span class="date">Published on January 1, 0001</span>
             <span class="reading-time">0 min read</span>
         </div>
@@ -105,8 +112,8 @@
     <div class="footer-container">
         <div class="footer-section contact-info">
             <h3>Contact</h3>
-            <p><i class="fas fa-envelope" style="margin-right: 10px; font-size: 1.2em;"></i><strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
-            <p><i class="fas fa-key" style="margin-right: 10px; font-size: 1.2em;"></i> <strong><a href="/public-key.asc" download>Download PGP Public Key</a></strong></p>
+            <p><i class="fas fa-envelope"></i><strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
+            <p><i class="fas fa-key"></i> <strong><a href="/public-key.asc" download>Download PGP Public Key</a></strong></p>
         </div>
         <div class="footer-section btc-donations">
             <h3>Support My Work</h3>
@@ -115,8 +122,7 @@
         
         <div class="footer-section social-media">
             <h3>Follow Me</h3>
-            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-            <a href="https://x.com/onlytechbiscuit" aria-label="X (formally Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://x.com/onlytechbiscuit" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
         </div>
@@ -129,7 +135,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
+        <p>&copy; 2024 TheTechBiscuit. All rights reserved.</p>
     </div>
 </footer>
 		<script>
@@ -335,6 +341,66 @@ window.addEventListener('load', function() {
     const contentContainer = document.querySelector('.content-container');
     if (contentContainer) {
         contentContainer.classList.add('content-loaded');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = mainNav.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+
+            
+            const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+            if (menuIcon) {
+                menuIcon.textContent = isExpanded ? '✕' : '☰';
+            }
+        });
+
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+                    if (menuIcon) {
+                        menuIcon.textContent = '☰';
+                    }
+                }
+            });
+        });
+
+        
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 768) {
+                if (!event.target.closest('.site-header') && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+                    if (menuIcon) {
+                        menuIcon.textContent = '☰';
+                    }
+                }
+            }
+        });
+
+        
+        window.addEventListener('resize', debounce(function() {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+                if (menuIcon) {
+                    menuIcon.textContent = '☰';
+                }
+            }
+        }, 100));
     }
 });
 

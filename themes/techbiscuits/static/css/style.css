@@ -18,6 +18,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 @media (max-width: 768px) {
@@ -29,6 +31,27 @@ html {
 @media (max-width: 480px) {
     html {
         font-size: 14px;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    a, button, .nav-link, .cta-button, .read-more, .tab-link {
+        -webkit-tap-highlight-color: rgba(230, 158, 86, 0.2);
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Reduce animations on mobile for better performance */
+    * {
+        animation-duration: 0.3s !important;
+    }
+
+    /* Improve scrolling on iOS */
+    body {
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -111,7 +134,7 @@ a,footer a,footer p{
     margin-bottom:20px
 }
 .related-posts ul li a,.table-of-contents ul li a{
-    color:var(--accent,#0073e6);
+    color:var(--accent);
     text-decoration:none
 }
 .button,.compact-list li a,.meta-info .author a,.read-more,.related-posts ul li a,a,footer a,footer p{
@@ -420,35 +443,100 @@ a:hover{
     font-weight: 600;
 }
 
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    background: rgba(230, 158, 86, 0.1);
+    border: 2px solid rgba(230, 158, 86, 0.3);
+    color: #e69e56;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(230, 158, 86, 0.2);
+    border-color: #e69e56;
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.menu-icon {
+    pointer-events: none;
+}
+
 /* Header Mobile */
 @media screen and (max-width: 768px) {
     .header-container {
         padding: 0.75rem 1rem;
+        flex-wrap: wrap;
     }
 
     .header-logo {
-        width: 40px;
+        width: 45px;
     }
 
     .header-path {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+        order: 3;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .nav-list {
-        gap: 0.25rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
     }
 
     .nav-link {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.9rem;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        justify-content: center;
+        border-radius: 12px;
     }
 
     .nav-text {
-        display: none;
+        display: inline;
     }
 
     .nav-icon {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -543,34 +631,24 @@ a:hover{
         border: 1px solid #ccc;
     }
 }
+/* Additional mobile improvements */
 @media screen and (max-width:768px){
-    header{
-        flex-direction:column;
-        align-items:flex-start
-    }
-    .header-path{
-        margin-bottom:10px
-    }
-    nav ul{
-        flex-direction:column;
-        width:100%
-    }
-    nav ul li{
-        margin-left:0;
-        margin-bottom:5px;
-        width:100%;
-        text-align:center
-    }
     button{
         padding:10px 20px;
         font-size:.9em
     }
     .blog-card{
-        padding:20px
+        padding: 1.5rem;
     }
     .section-parallax{
         padding:40px 10px;
         font-size:1.2em
+    }
+    main {
+        padding: 1rem;
+    }
+    .content-container {
+        padding: 0.5rem;
     }
 }
 
@@ -831,26 +909,123 @@ a:hover{
 
 /* Hero Responsive */
 @media screen and (max-width: 768px) {
+    .hero-section {
+        min-height: 90vh;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .logo-image {
+        width: 90px;
+    }
+
+    .hero-title-line {
+        font-size: 1.2rem;
+    }
+
     .hero-title-main {
         font-size: 2.5rem;
+        letter-spacing: 1px;
     }
 
     .hero-subtitle {
         font-size: 1.1rem;
+        margin-bottom: 0.75rem;
     }
 
     .hero-intro {
         font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
     .cta-button {
         padding: 0.85rem 2rem;
         font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
     }
 
     .hero-cta {
         flex-direction: column;
         gap: 1rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-scroll-indicator {
+        bottom: 1rem;
+    }
+
+    .scroll-text {
+        font-size: 0.8rem;
+    }
+
+    .scroll-arrow {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    .hero-title-main {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-intro {
+        font-size: 0.95rem;
+    }
+
+    .header-logo {
+        width: 40px;
+    }
+
+    .header-path {
+        font-size: 1rem;
+    }
+
+    .blog-card {
+        padding: 1.25rem;
+    }
+
+    .blog-card-image {
+        height: 140px;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .tab-link {
+        font-size: 0.9rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .compact-list li {
+        padding: 1.25rem;
+    }
+
+    .content-container {
+        padding: 0.25rem;
     }
 }
 
@@ -1239,7 +1414,7 @@ footer .contact-info p,footer .quick-links a{
 }
 footer .contact-info i{
     margin-right:10px;
-    font-size:1.3em;
+    font-size:1.2em;
     color:#fff
 }
 footer .quick-links a{
@@ -1410,7 +1585,7 @@ footer .footer-bottom{
     color: var(--secondary);
 }
 .content .highlight-text,.table-of-contents ul li a:hover{
-    background-color:var(--accent,#0073e6);
+    background-color:var(--accent);
     color:#fff
 }
 /* Enhanced Compact List Items */
@@ -1589,6 +1764,10 @@ footer .footer-bottom{
     display:flex;
     gap:var(--spacing-lg)
 }
+
+.single-post-article {
+    max-width: 900px;
+}
 .blog-post h1{
     font-size:2.5rem;
     margin-top:20px;
@@ -1720,7 +1899,7 @@ footer .footer-bottom{
 .table-of-contents h2{
     font-size:1.5rem;
     margin-bottom:15px;
-    border-bottom:2px solid var(--accent,#0073e6);
+    border-bottom:2px solid var(--accent);
     padding-bottom:10px
 }
 .table-of-contents ul li a{
@@ -1749,7 +1928,7 @@ footer .footer-bottom{
 }
 .side-note{
     background-color:#f0f4f8;
-    border-left:5px solid var(--accent,#0073e6);
+    border-left:5px solid var(--accent);
     padding:10px 15px;
     margin:20px 0;
     font-size:.9rem
@@ -1773,33 +1952,49 @@ footer .footer-bottom{
     .blog-post,.compact-list li{
         flex-direction:column
     }
+    .blog-post {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
     .compact-list li img,.tab-link{
         margin-bottom:10px
     }
     h1{
-        font-size:2.5rem
+        font-size:2.2rem
     }
     h2{
-        font-size:2rem
+        font-size:1.8rem
     }
     h3{
-        font-size:1.75rem
-    }
-    h4{
         font-size:1.5rem
     }
+    h4{
+        font-size:1.3rem
+    }
     h5{
-        font-size:1.25rem
+        font-size:1.15rem
     }
     h6{
         font-size:1rem
     }
-    nav{
-        display:none
+    /* Mobile navigation is handled by header mobile styles above */
+    .tabs{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        gap: 0.5rem;
     }
-    .tabs,footer .footer-container{
+    .tab-link{
+        flex: 1 1 auto;
+        min-width: calc(50% - 0.5rem);
+        text-align:center;
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+    footer .footer-container{
         flex-direction:column;
-        align-items:center
+        align-items:center;
+        gap: 2rem;
     }
     footer .footer-section{
         text-align:center;
@@ -1808,14 +2003,15 @@ footer .footer-bottom{
     footer .contact-info p{
         justify-content:center
     }
-    .tab-link{
-        width:100%;
-        text-align:center
+    .compact-list{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     .compact-list li{
         flex-direction:column;
         align-items:center;
-        text-align:center
+        text-align:center;
+        padding: 1.5rem;
     }
     .compact-list li .podcast-info{
         align-items:center
@@ -1836,12 +2032,26 @@ footer .footer-bottom{
     .content p{
         margin-bottom:15px
     }
+    .content img {
+        margin: 1.5rem auto;
+    }
     .related-posts h3{
         font-size:1.2rem
     }
     .table-of-contents{
-        padding:10px;
-        font-size:.9rem
+        padding:15px;
+        font-size:.95rem
+    }
+    /* Improve blog grid spacing */
+    .blog-grid {
+        padding: 1rem 0;
+        gap: 1.5rem;
+    }
+    .section-header {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+    .section-header h2 {
+        font-size: 2.2rem;
     }
 }
 .poem-grid{

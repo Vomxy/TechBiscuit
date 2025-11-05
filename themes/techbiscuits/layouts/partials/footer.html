@@ -2,8 +2,8 @@
     <div class="footer-container">
         <div class="footer-section contact-info">
             <h3>Contact</h3>
-            <p><i class="fas fa-envelope" style="margin-right: 10px; font-size: 1.2em;"></i><strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
-            <p><i class="fas fa-key" style="margin-right: 10px; font-size: 1.2em;"></i> <strong><a href="/public-key.asc" download>Download PGP Public Key</a></strong></p>
+            <p><i class="fas fa-envelope"></i><strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
+            <p><i class="fas fa-key"></i> <strong><a href="/public-key.asc" download>Download PGP Public Key</a></strong></p>
         </div>
         <div class="footer-section btc-donations">
             <h3>Support My Work</h3>
@@ -12,8 +12,7 @@
         <!-- Social Media Links -->
         <div class="footer-section social-media">
             <h3>Follow Me</h3>
-            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-            <a href="https://x.com/onlytechbiscuit" aria-label="X (formally Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://x.com/onlytechbiscuit" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
         </div>
@@ -26,7 +25,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 The Tech Biscuit. All rights reserved.</p>
+        <p>&copy; 2024 TheTechBiscuit. All rights reserved.</p>
     </div>
 </footer>
 		<script>
@@ -232,6 +231,66 @@ window.addEventListener('load', function() {
     const contentContainer = document.querySelector('.content-container');
     if (contentContainer) {
         contentContainer.classList.add('content-loaded');
+    }
+});
+
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            const isExpanded = mainNav.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+
+            // Animate the menu icon
+            const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+            if (menuIcon) {
+                menuIcon.textContent = isExpanded ? '✕' : '☰';
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+                    if (menuIcon) {
+                        menuIcon.textContent = '☰';
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 768) {
+                if (!event.target.closest('.site-header') && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+                    if (menuIcon) {
+                        menuIcon.textContent = '☰';
+                    }
+                }
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', debounce(function() {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
+                if (menuIcon) {
+                    menuIcon.textContent = '☰';
+                }
+            }
+        }, 100));
     }
 });
 
