@@ -1,6 +1,10 @@
 ---
 title: "Thinking"
 author: "Walter D. Wintle"
+category: "poetry"
+theme: "mindset"
+year: "1905"
+description: "A powerful reminder that success begins with belief in oneself"
 lines:
   - "If you think you are beaten, you are;"
   - "If you think you dare not, you don't."

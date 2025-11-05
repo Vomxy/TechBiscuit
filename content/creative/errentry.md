@@ -1,6 +1,10 @@
 ---
 title: "Errantry"
 author: "J.R.R. Tolkien"
+category: "poetry"
+theme: "adventure"
+year: "1933"
+description: "A whimsical Tolkien poem of adventure, love, and magical journeys"
 lines:
   - "There was a merry passenger,"
   - "a messenger, a mariner:"

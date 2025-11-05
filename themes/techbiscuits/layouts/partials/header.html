@@ -15,9 +15,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{ "poems/" | relURL }}" 
-                   class="{{ if or (eq .Section "poems") (eq .Type "poems") }}active{{ end }}">
-                   cd ./poems
+                <a href="{{ "creative/" | relURL }}"
+                   class="{{ if or (eq .Section "creative") (eq .Type "creative") }}active{{ end }}">
+                   cd ./creative
                 </a>
             </li>
         </ul>

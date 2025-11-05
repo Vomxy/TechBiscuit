@@ -1,6 +1,10 @@
 ---
 title: "Equipment"
 author: "Edgar A. Guest"
+category: "poetry"
+theme: "empowerment"
+year: "1916"
+description: "An inspiring poem reminding us we have everything we need to succeed"
 lines:
   - "Figure it out for yourself, my lad,"
   - "You've all that the greatest of men have had,"

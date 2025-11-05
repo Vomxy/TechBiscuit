@@ -1,6 +1,10 @@
 ---
 title: "If—"
 author: "Rudyard Kipling"
+category: "poetry"
+theme: "wisdom"
+year: "1895"
+description: "Kipling's timeless advice on virtue, self-control, and what it means to be a person of character"
 lines:
   - "If you can keep your head when all about you"
   - "Are losing theirs and blaming it on you;"

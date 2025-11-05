@@ -1,6 +1,10 @@
 ---
 title: "The Road Not Taken"
 author: "Robert Frost"
+category: "poetry"
+theme: "choice"
+year: "1915"
+description: "Frost's meditation on choices, paths, and the difference they make in our lives"
 lines:
   - "Two roads diverged in a yellow wood,"
   - "And sorry I could not travel both"

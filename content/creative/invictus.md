@@ -1,6 +1,10 @@
 ---
 title: "Invictus"
 author: "William Ernest Henley"
+category: "poetry"
+theme: "resilience"
+year: "1875"
+description: "A powerful Victorian poem about unconquerable spirit and mastery over one's fate"
 lines:
   - "Out of the night that covers me,"
   - "Black as the pit from pole to pole,"

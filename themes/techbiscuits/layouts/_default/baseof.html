@@ -8,7 +8,7 @@
             {{ block "pre-main" . }}{{ end }}
         {{ end }}
 
-        {{ $excludeMain := eq .Type "poems" }}
+        {{ $excludeMain := eq .Type "creative" }}
         {{ $mainClass := "" }}
 
         {{ if not $excludeMain }}
