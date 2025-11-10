@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on TheTechBiscuit</title>
+    <link>http://localhost:1313/tags/software/</link>
+    <description>Recent content in Software on TheTechBiscuit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Digital Toolbox</title>
+      <link>http://localhost:1313/blog/002-my-digital-toolbox/</link>
+      <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/002-my-digital-toolbox/</guid>
+      <description>Introduction The software and tools we dictate what we are able to do with our computers; the same machine can be a solitaire champion, or a movie making powerhouse. We think about these tools by their purpose, it’s intuitiveness, and how they do what they do. Some tools share the same purpose, they do the exact same thing for us, but one makes it easier to use than the other, so we use that.</description>
+    </item>
+  </channel>
+</rss>

@@ -18,7 +18,7 @@
                 {{ end }}
             {{ end }}
 
-            <main{{ with $mainClass }} class="{{ . }}"{{ end }}>
+            <main{{ with $mainClass }} class="{{ . }}"{{ end }} id="main-content">
         {{ end }}
 
             {{ block "main" . }}{{ end }}
@@ -28,5 +28,52 @@
         {{ end }}
 
         {{- partial "footer.html" . -}}
+    </body>
+</html>
+
+        <!-- Cookie Consent Banner -->
+        <div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none;">
+            <div class="cookie-consent-content">
+                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
+                <div class="cookie-buttons">
+                    <button id="accept-cookies" class="btn-accept">Accept</button>
+                    <button id="decline-cookies" class="btn-decline">Decline</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const banner = document.getElementById("cookie-consent-banner");
+                const acceptBtn = document.getElementById("accept-cookies");
+                const declineBtn = document.getElementById("decline-cookies");
+                const consentGiven = localStorage.getItem("cookieConsent");
+
+                if (!consentGiven) {
+                    banner.style.display = "block";
+                } else if (consentGiven === "accepted") {
+                    loadAnalytics();
+                }
+
+                acceptBtn.addEventListener("click", function() {
+                    localStorage.setItem("cookieConsent", "accepted");
+                    banner.style.display = "none";
+                    loadAnalytics();
+                });
+
+                declineBtn.addEventListener("click", function() {
+                    localStorage.setItem("cookieConsent", "declined");
+                    banner.style.display = "none";
+                });
+
+                function loadAnalytics() {
+                    const script = document.createElement("script");
+                    script.defer = true;
+                    script.setAttribute("data-domain", "www.thetechbiscuit.com");
+                    script.src = "https://plausible.io/js/script.js";
+                    document.head.appendChild(script);
+                }
+            });
+        </script>
     </body>
 </html>

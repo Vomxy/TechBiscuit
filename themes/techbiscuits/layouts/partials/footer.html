@@ -35,33 +35,45 @@
 				const tabContents = document.querySelectorAll('.tab-content');
 
 				function openTab(tabName) {
-					// Hide all tab contents and update ARIA attributes
+					// Remove active class from all tabs
 					tabContents.forEach(content => {
-						content.style.display = 'none';
-						content.setAttribute('aria-hidden', 'true');
+						content.classList.remove('active-tab');
 					});
 
-					// Remove active class and update ARIA selected for all tab links
-					tabLinks.forEach(link => {
-						link.classList.remove('active');
-						link.setAttribute('aria-selected', 'false');
-						link.setAttribute('tabindex', '-1');
-					});
+					// Wait for fade out, then hide and show new tab
+					setTimeout(() => {
+						// Hide all tab contents and update ARIA attributes
+						tabContents.forEach(content => {
+							content.style.display = 'none';
+							content.setAttribute('aria-hidden', 'true');
+						});
 
-					// Show selected tab and mark link as active
-					const selectedTab = document.getElementById(tabName);
-					const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+						// Remove active class and update ARIA selected for all tab links
+						tabLinks.forEach(link => {
+							link.classList.remove('active');
+							link.setAttribute('aria-selected', 'false');
+							link.setAttribute('tabindex', '-1');
+						});
 
-					if (selectedTab) {
-						selectedTab.style.display = 'block';
-						selectedTab.setAttribute('aria-hidden', 'false');
-					}
-					if (selectedLink) {
-						selectedLink.classList.add('active');
-						selectedLink.setAttribute('aria-selected', 'true');
-						selectedLink.setAttribute('tabindex', '0');
-						selectedLink.focus();
-					}
+						// Show selected tab and mark link as active
+						const selectedTab = document.getElementById(tabName);
+						const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+
+						if (selectedTab) {
+							selectedTab.style.display = 'block';
+							selectedTab.setAttribute('aria-hidden', 'false');
+							// Trigger fade in animation
+							setTimeout(() => {
+								selectedTab.classList.add('active-tab');
+							}, 10);
+						}
+						if (selectedLink) {
+							selectedLink.classList.add('active');
+							selectedLink.setAttribute('aria-selected', 'true');
+							selectedLink.setAttribute('tabindex', '0');
+							selectedLink.focus();
+						}
+					}, 200);
 				}
 
 				// Add click listeners to all tab links
@@ -291,6 +303,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }, 100));
+    }
+
+    // ===================================
+    // DARK MODE TOGGLE
+    // ===================================
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Update aria-label
+            themeToggle.setAttribute('aria-label', `Switch to ${newTheme === 'dark' ? 'light' : 'dark'} mode`);
+        });
     }
 });
 

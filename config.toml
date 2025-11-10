@@ -4,6 +4,9 @@ title = 'TheTechBiscuit'
 theme = "techbiscuits"
 contentDir = "content"
 
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
 [permalinks]
     blog = "/blog/:filename/"
 
@@ -11,4 +14,4 @@ contentDir = "content"
     description = "Read TheTechBiscuit, authored by Zack Baxter."
     keywords = "TechBiscuit, blog, personal website"
     author = "Zack Baxter"
-    og_image = "/images/social-preview.jpg"
+    og_image = "/images/social-card.png"

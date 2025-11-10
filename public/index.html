@@ -2,6 +2,7 @@
 <html lang="en-us"><head>
 	<meta name="generator" content="Hugo 0.123.7">
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Read TheTechBiscuit, authored by Zack Baxter.">
     <meta name="keywords" content="TechBiscuit, blog, personal website">
@@ -13,7 +14,7 @@
     
     <meta property="og:title" content="TheTechBiscuit | TheTechBiscuit">
     <meta property="og:description" content="Read TheTechBiscuit, authored by Zack Baxter.">
-    <meta property="og:image" content="/images/social-preview.jpg">
+    <meta property="og:image" content="/images/social-card.png">
     <meta property="og:url" content="https://www.thetechbiscuit.com/">
     
     <meta property="og:type" content="website">
@@ -22,6 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TheTechBiscuit | TheTechBiscuit">
     <meta name="twitter:description" content="Read TheTechBiscuit, authored by Zack Baxter.">
+    <meta name="twitter:image" content="/images/social-card.png">
     <meta name="twitter:site" content="@onlytechbiscuit">
     <title>TheTechBiscuit | TheTechBiscuit</title>
     
@@ -29,8 +31,71 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
     <link rel="icon" type="image/png" sizes="180x180" href="/images/logo-180.png">
     <link rel="apple-touch-icon" href="/images/logo-180.png">
-    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
-</head><body><header class="site-header">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    <link rel="dns-prefetch" href="https://plausible.io">
+    
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="/css/base.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/components.css" type="text/css" media="all" />
+    
+    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TheTechBiscuit",
+    "url": "https:\/\/www.thetechbiscuit.com\/",
+    "description": "Read TheTechBiscuit, authored by Zack Baxter.",
+    "author": {
+        "@type": "Person",
+        "name": "Zack Baxter"
+    },
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https:\/\/www.thetechbiscuit.com\/search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TheTechBiscuit",
+    "url": "https:\/\/www.thetechbiscuit.com\/",
+    "logo": "https:\/\/www.thetechbiscuit.com\/images\/logo-512.png",
+    "sameAs": [
+        "https://twitter.com/onlytechbiscuit"
+    ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Author",
+        "url": "https:\/\/www.thetechbiscuit.com\/"
+    }
+}
+</script>
+
+
+
+
+<body><a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
     <div class="header-container">
         <a href="https://www.thetechbiscuit.com/" class="header-logo-link">
             <img src="/images/logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
@@ -38,6 +103,22 @@
         </a>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
             <span class="menu-icon">☰</span>
+        </button>
+        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
         </button>
         <nav aria-label="Main Navigation" role="navigation" class="main-nav">
             <ul class="nav-list">
@@ -60,6 +141,13 @@
                        class="nav-link ">
                        <span class="nav-icon">🎨</span>
                        <span class="nav-text">Creative</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/search/"
+                       class="nav-link ">
+                       <span class="nav-icon">🔍</span>
+                       <span class="nav-text">Search</span>
                     </a>
                 </li>
             </ul>
@@ -100,7 +188,7 @@
         
             
 
-            <main>
+            <main id="main-content">
         
 
             
@@ -336,31 +424,43 @@
 				function openTab(tabName) {
 					
 					tabContents.forEach(content => {
-						content.style.display = 'none';
-						content.setAttribute('aria-hidden', 'true');
+						content.classList.remove('active-tab');
 					});
 
 					
-					tabLinks.forEach(link => {
-						link.classList.remove('active');
-						link.setAttribute('aria-selected', 'false');
-						link.setAttribute('tabindex', '-1');
-					});
+					setTimeout(() => {
+						
+						tabContents.forEach(content => {
+							content.style.display = 'none';
+							content.setAttribute('aria-hidden', 'true');
+						});
 
-					
-					const selectedTab = document.getElementById(tabName);
-					const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+						
+						tabLinks.forEach(link => {
+							link.classList.remove('active');
+							link.setAttribute('aria-selected', 'false');
+							link.setAttribute('tabindex', '-1');
+						});
 
-					if (selectedTab) {
-						selectedTab.style.display = 'block';
-						selectedTab.setAttribute('aria-hidden', 'false');
-					}
-					if (selectedLink) {
-						selectedLink.classList.add('active');
-						selectedLink.setAttribute('aria-selected', 'true');
-						selectedLink.setAttribute('tabindex', '0');
-						selectedLink.focus();
-					}
+						
+						const selectedTab = document.getElementById(tabName);
+						const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
+
+						if (selectedTab) {
+							selectedTab.style.display = 'block';
+							selectedTab.setAttribute('aria-hidden', 'false');
+							
+							setTimeout(() => {
+								selectedTab.classList.add('active-tab');
+							}, 10);
+						}
+						if (selectedLink) {
+							selectedLink.classList.add('active');
+							selectedLink.setAttribute('aria-selected', 'true');
+							selectedLink.setAttribute('tabindex', '0');
+							selectedLink.focus();
+						}
+					}, 200);
 				}
 
 				
@@ -591,8 +691,73 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 100));
     }
+
+    
+    
+    
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            
+            themeToggle.setAttribute('aria-label', `Switch to ${newTheme === 'dark' ? 'light' : 'dark'} mode`);
+        });
+    }
 });
 
 </script>
 </body>
+</html>
+
+        
+        <div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none;">
+            <div class="cookie-consent-content">
+                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
+                <div class="cookie-buttons">
+                    <button id="accept-cookies" class="btn-accept">Accept</button>
+                    <button id="decline-cookies" class="btn-decline">Decline</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const banner = document.getElementById("cookie-consent-banner");
+                const acceptBtn = document.getElementById("accept-cookies");
+                const declineBtn = document.getElementById("decline-cookies");
+                const consentGiven = localStorage.getItem("cookieConsent");
+
+                if (!consentGiven) {
+                    banner.style.display = "block";
+                } else if (consentGiven === "accepted") {
+                    loadAnalytics();
+                }
+
+                acceptBtn.addEventListener("click", function() {
+                    localStorage.setItem("cookieConsent", "accepted");
+                    banner.style.display = "none";
+                    loadAnalytics();
+                });
+
+                declineBtn.addEventListener("click", function() {
+                    localStorage.setItem("cookieConsent", "declined");
+                    banner.style.display = "none";
+                });
+
+                function loadAnalytics() {
+                    const script = document.createElement("script");
+                    script.defer = true;
+                    script.setAttribute("data-domain", "www.thetechbiscuit.com");
+                    script.src = "https://plausible.io/js/script.js";
+                    document.head.appendChild(script);
+                }
+            });
+        </script>
+    </body>
 </html>

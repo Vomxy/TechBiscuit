@@ -1,0 +1,25 @@
+{{ if or (eq .Section "blog") (eq .Type "blog") }}
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ .Site.BaseURL }}">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">›</li>
+        <li class="breadcrumb-item">
+            <a href="{{ .Site.BaseURL }}blog/">Blog</a>
+        </li>
+        {{ if not .IsSection }}
+        <li class="breadcrumb-separator" aria-hidden="true">›</li>
+        <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+            <span>{{ .Title }}</span>
+        </li>
+        {{ end }}
+    </ol>
+</nav>
+{{ end }}
