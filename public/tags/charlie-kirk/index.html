@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=33659&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,12 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e69e56">
     
-    <link rel="canonical" href="http://localhost:1313/tags/charlie-kirk/">
+    <link rel="canonical" href="http://localhost:33659/tags/charlie-kirk/">
     
     <meta property="og:title" content="Charlie Kirk | TheTechBiscuit">
     <meta property="og:description" content="Read TheTechBiscuit, authored by Zack Baxter.">
     <meta property="og:image" content="/images/social-card.png">
-    <meta property="og:url" content="http://localhost:1313/tags/charlie-kirk/">
+    <meta property="og:url" content="http://localhost:33659/tags/charlie-kirk/">
     
     <meta property="og:type" content="website">
     
@@ -36,13 +36,6 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style">
     <link rel="dns-prefetch" href="https://plausible.io">
-    
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
     <link rel="stylesheet" href="/css/base.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/css/components.css" type="text/css" media="all" />
     
@@ -52,7 +45,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "TheTechBiscuit",
-    "url": "http:\/\/localhost:1313\/",
+    "url": "http:\/\/localhost:33659\/",
     "description": "Read TheTechBiscuit, authored by Zack Baxter.",
     "author": {
         "@type": "Person",
@@ -62,7 +55,7 @@
         "@type": "SearchAction",
         "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "http:\/\/localhost:1313\/search/?q={search_term_string}"
+            "urlTemplate": "http:\/\/localhost:33659\/search/?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
     }
@@ -78,33 +71,17 @@
 <body><a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header">
     <div class="header-container">
-        <a href="http://localhost:1313/" class="header-logo-link">
+        <a href="http://localhost:33659/" class="header-logo-link">
             <img src="/images/logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
             <span class="header-path">TheTechBiscuit</span>
         </a>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
             <span class="menu-icon">☰</span>
         </button>
-        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
         <nav aria-label="Main Navigation" role="navigation" class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="http://localhost:1313/"
+                    <a href="http://localhost:33659/"
                        class="nav-link ">
                        <span class="nav-icon">🏠</span>
                        <span class="nav-text">Home</span>
@@ -491,24 +468,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }, 100));
-    }
-
-    
-    
-    
-    const themeToggle = document.querySelector('.theme-toggle');
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-
-            
-            themeToggle.setAttribute('aria-label', `Switch to ${newTheme === 'dark' ? 'light' : 'dark'} mode`);
-        });
     }
 });
 

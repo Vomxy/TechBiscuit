@@ -304,24 +304,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 100));
     }
-
-    // ===================================
-    // DARK MODE TOGGLE
-    // ===================================
-    const themeToggle = document.querySelector('.theme-toggle');
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-
-            // Update aria-label
-            themeToggle.setAttribute('aria-label', `Switch to ${newTheme === 'dark' ? 'light' : 'dark'} mode`);
-        });
-    }
 });
 
 </script>

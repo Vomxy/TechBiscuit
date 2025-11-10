@@ -168,30 +168,30 @@ a,footer a,footer p{
     font-style:italic
 }
 :root{
-    /* Color Palette */
-    --text:#333333;
-    --text-light:#666666;
-    --text-lighter:#777777;
-    --text-lightest:#999999;
-    --background:#f5f5f5;
+    /* Color Palette - Dark Mode Default */
+    --text:#e5e5e5;
+    --text-light:#b8b8b8;
+    --text-lighter:#999999;
+    --text-lightest:#777777;
+    --background:#0f0f0f;
     --accent:#e69e56;
     --accent-hover:#d88b42;
-    --secondary:#1a1a1a;
-    --secondary-hover:#444444;
-    --light-grey:#dcdcdc;
-    --card-bg:#ffffff;
-    --border-color:#ddd;
-    --footer-bg:#0d131a;
+    --secondary:#e5e5e5;
+    --secondary-hover:#cccccc;
+    --light-grey:#2a2a2a;
+    --card-bg:#1a1a1a;
+    --border-color:#333333;
+    --footer-bg:#050505;
     --footer-text:#cccccc;
-    --footer-border:#555555;
-    --heading-color:#2c2c2c;
+    --footer-border:#333333;
+    --heading-color:#f5f5f5;
 
     /* Shadows */
     --shadow-sm:0 2px 4px rgba(0, 0, 0, 0.08);
     --shadow-md:0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-lg:0 8px 20px rgba(0, 0, 0, 0.15);
     --shadow-xl:0 12px 28px rgba(0, 0, 0, 0.2);
-    --shadow-color:rgba(0, 0, 0, 0.1);
+    --shadow-color:rgba(0, 0, 0, 0.4);
 
     /* Spacing */
     --base-spacing:1.2em;
@@ -226,9 +226,9 @@ a,footer a,footer p{
     --radius-full:9999px;
 
     /* Surface Colors */
-    --surface:#ffffff;
-    --surface-hover:#f9f9f9;
-    --border:#ddd;
+    --surface:#1a1a1a;
+    --surface-hover:#252525;
+    --border:#333333;
 
     /* Transitions */
     --transition-fast:0.15s ease;
@@ -236,32 +236,9 @@ a,footer a,footer p{
     --transition-smooth:0.3s ease;
 }
 
-/* Dark Mode Variables */
-[data-theme="dark"] {
-    --text:#e5e5e5;
-    --text-light:#b8b8b8;
-    --text-lighter:#999999;
-    --text-lightest:#777777;
-    --background:#0f0f0f;
-    --accent:#e69e56;
-    --accent-hover:#d88b42;
-    --secondary:#e5e5e5;
-    --secondary-hover:#cccccc;
-    --light-grey:#2a2a2a;
-    --card-bg:#1a1a1a;
-    --border-color:#333333;
-    --footer-bg:#050505;
-    --footer-text:#cccccc;
-    --footer-border:#333333;
-    --heading-color:#f5f5f5;
-    --shadow-color:rgba(0, 0, 0, 0.4);
-    --surface:#1a1a1a;
-    --surface-hover:#252525;
-    --border:#333333;
-}
-
-/* Light Mode Variables (explicit) */
-[data-theme="light"] {
+/* Light Mode - System Preference */
+@media (prefers-color-scheme: light) {
+:root {
     --text:#333333;
     --text-light:#666666;
     --text-lighter:#777777;
@@ -282,6 +259,7 @@ a,footer a,footer p{
     --surface:#ffffff;
     --surface-hover:#f9f9f9;
     --border:#ddd;
+}
 }
 
 /* ===================================

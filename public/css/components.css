@@ -52,7 +52,7 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
 }
 
 .header-logo-link {
@@ -109,7 +109,7 @@ a:hover{
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid transparent;
@@ -198,7 +198,7 @@ a:hover{
 /* Header Mobile */
 @media screen and (max-width: 768px) {
     .header-container {
-        padding: 0.75rem 1rem;
+        padding: 0.6rem 0.75rem;
         flex-wrap: wrap;
     }
 
@@ -378,7 +378,7 @@ a:hover{
    =================================== */
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 55vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -641,7 +641,7 @@ a:hover{
 /* Hero Responsive */
 @media screen and (max-width: 768px) {
     .hero-section {
-        min-height: 90vh;
+        min-height: 50vh;
         padding: 2rem 1rem;
     }
 
@@ -1111,7 +1111,9 @@ footer a,footer p{
     color:var(--footer-text)
 }
 #btc-wallet{
-    word-break:break-all
+    word-break:break-all;
+    color:#ffffff !important;
+    font-weight:500
 }
 footer .social-media a{
     margin:0 10px;
@@ -1119,6 +1121,7 @@ footer .social-media a{
     display:inline-block;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    color:#ffffff !important
 }
 
 footer .social-media a::before {
@@ -1152,7 +1155,13 @@ footer .contact-info p,footer .quick-links a{
 footer .contact-info i{
     margin-right:10px;
     font-size:1.2em;
-    color:#fff
+    color:#ffffff !important
+}
+footer .btc-donations strong{
+    color:#ffffff !important
+}
+footer .fa,footer .fas,footer .fab,footer .fa-brands,footer i{
+    color:#ffffff !important
 }
 footer .quick-links a{
     display:block;

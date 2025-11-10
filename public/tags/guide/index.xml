@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guide on TheTechBiscuit</title>
-    <link>http://localhost:1313/tags/guide/</link>
+    <link>http://localhost:33659/tags/guide/</link>
     <description>Recent content in Guide on TheTechBiscuit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:33659/tags/guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Privacy-folk Guide to RSS</title>
-      <link>http://localhost:1313/blog/007-the-privacy-folk-guide-to-rss/</link>
+      <link>http://localhost:33659/blog/007-the-privacy-folk-guide-to-rss/</link>
       <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/007-the-privacy-folk-guide-to-rss/</guid>
+      <guid>http://localhost:33659/blog/007-the-privacy-folk-guide-to-rss/</guid>
       <description>RSS Really Simple Syndication is a computer readable web feed often utilized by podcast, blog &amp;amp; news site’s for sharing updates. It mean’s that websites directly provide two formats their information can be found: Human readable - where the website is viewable in natural language, it’s ready, begging to be read. Computer readable - where the website (primarily the blog posts, podcast’s etc) are predictably structured, with labels to help identify wether the following content is the title or description or publication date of the post.</description>
     </item>
   </channel>
