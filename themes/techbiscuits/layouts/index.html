@@ -15,6 +15,20 @@
             <a href="/blog/" class="cta-button primary">Explore Articles</a>
             <a href="/creative/" class="cta-button secondary">Creative Works</a>
         </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-value">{{ len (where .Site.RegularPages "Section" "blog") }}</span>
+                <span class="stat-label">Published Articles</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">{{ len (where .Site.RegularPages "Section" "creative") }}</span>
+                <span class="stat-label">Creative Pieces</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">Since 2024</span>
+                <span class="stat-label">Independent & Privacy-first</span>
+            </div>
+        </div>
         <div class="hero-scroll-indicator">
             <span class="scroll-text">Scroll to discover</span>
             <div class="scroll-arrow">↓</div>
@@ -28,11 +42,14 @@
     <section class="section-header">
         <h2>Recent Blogs</h2>
         <div class="blog-grid">
-            {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+            {{ $recent := first 3 (sort (where .Site.RegularPages "Section" "blog") "Date" "desc") }}
+            {{ range $recent }}
             <article class="blog-card" aria-label="Blog Post: {{ .Title }}">
                 <div class="blog-card-image">
                     <div class="blog-card-image-inner">
-                        <div class="blog-card-icon">📝</div>
+                        <div class="blog-card-icon">
+                            <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                        </div>
                     </div>
                 </div>
                 <div class="blog-card-content">

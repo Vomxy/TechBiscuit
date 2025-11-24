@@ -15,7 +15,7 @@ TechBiscuit is that creation. It might not be the most extravagant site on the w
   
 ## The Journey to TechBiscuit
   
-I’ve built several websites, each intended to be a personal blog and a platform to share my thoughts. The journey began with my first WordPress site and a YouTube channel where I dreamt of becoming a great content creator.!![Image Description](/images/001%20what-is-techbiscuit-1744662084555.webp)
+I’ve built several websites, each intended to be a personal blog and a platform to share my thoughts. The journey began with my first WordPress site and a YouTube channel where I dreamt of becoming a great content creator.!![001 what is techbiscuit 1744662084555](/images/001%20what-is-techbiscuit-1744662084555.webp)
 
 HackBabble was where I published articles comparing different file systems and examining the distinctions between Linux, Mac OS, and Windows. It was the first site that felt truly mine, even though it was inspired by the code from websites I admired. I built a brand by creating Instagram accounts and posts that condensed my articles into bite-sized, informative pieces. Researching for HackBabble led me down some of the most fascinating rabbit holes in information security—one of my favorites being Google dorking, a technique I believe everyone should learn.
   

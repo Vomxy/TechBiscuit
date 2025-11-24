@@ -1,38 +1,121 @@
 {{ define "main" }}
-<section class="creative-gallery">
+{{ $categoryGroups := .Pages.GroupByParam "category" }}
+{{ $sortedAsc := sort .Pages ".Params.year" "asc" }}
+{{ $sortedDesc := sort .Pages ".Params.year" "desc" }}
+
+<section class="creative-gallery" id="creative-gallery">
     <div class="content-container">
         <header class="gallery-header">
+            <p class="eyebrow">Creative vault</p>
             <h1 class="gallery-title">Creative Works</h1>
-            <p class="gallery-subtitle">A curated collection of poetry, art, and timeless wisdom</p>
+            <p class="gallery-subtitle">A curated collection of poetry, art, and timeless wisdom — ready to flip, skim, and savor.</p>
+
+            <div class="gallery-meta-grid">
+                <div class="meta-card">
+                    <span class="meta-label">Pieces</span>
+                    <span class="meta-value">{{ len .Pages }}</span>
+                    <span class="meta-hint">Flip any card to read instantly</span>
+                </div>
+                <div class="meta-card">
+                    <span class="meta-label">Categories</span>
+                    <div class="meta-pill-row">
+                        {{ range $categoryGroups }}
+                        <span class="meta-pill">{{ .Key | default "Uncategorized" | title }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+                <div class="meta-card">
+                    <span class="meta-label">Timeline</span>
+                    {{ if gt (len $sortedAsc) 0 }}
+                        <span class="meta-value">
+                            {{ with (index $sortedAsc 0) }}{{ .Params.year }}{{ end }} – {{ with (index $sortedDesc 0) }}{{ .Params.year }}{{ end }}
+                        </span>
+                        <span class="meta-hint">Across {{ len $categoryGroups }} moods</span>
+                    {{ else }}
+                        <span class="meta-value">Coming soon</span>
+                        <span class="meta-hint">Add creative entries to populate the timeline</span>
+                    {{ end }}
+                </div>
+            </div>
         </header>
 
-        <!-- Filter buttons -->
-        <div class="creative-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="poetry">Poetry</button>
-            <button class="filter-btn" data-filter="resilience">Resilience</button>
-            <button class="filter-btn" data-filter="wisdom">Wisdom</button>
-            <button class="filter-btn" data-filter="adventure">Adventure</button>
+        <div class="creative-toolbar" aria-label="Creative controls">
+            <div class="creative-filters" role="tablist" aria-label="Filter creative works">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                {{ range $categoryGroups }}
+                    {{ $filterValue := (urlize (.Key | default "uncategorized")) }}
+                    <button class="filter-btn" data-filter="{{ $filterValue }}" aria-pressed="false">
+                        {{ .Key | default "Uncategorized" | title }}
+                    </button>
+                {{ end }}
+            </div>
+
+            <div class="creative-controls">
+                <div class="control search-control">
+                    <label class="sr-only" for="creative-search">Search creative works</label>
+                    <div class="input-shell">
+                        <svg class="icon icon-inline" aria-hidden="true"><use xlink:href="/icons/sprite.svg#search"></use></svg>
+                        <input id="creative-search" type="search" name="search" placeholder="Search title, author, or theme..." autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="control select-control">
+                    <label class="sr-only" for="creative-sort">Sort creative works</label>
+                    <select id="creative-sort" class="sort-select">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="title">Title A–Z</option>
+                    </select>
+                </div>
+
+                <button type="button" class="ghost-button" id="creative-reset">Reset</button>
+
+                <div class="results-pill" id="creative-results-count" role="status" aria-live="polite">
+                    Showing {{ len .Pages }} pieces
+                </div>
+            </div>
         </div>
 
-        <!-- Creative works grid -->
-        <div class="creative-grid">
-            {{ range .Pages }}
-            <article class="creative-card" data-category="{{ .Params.category }}" data-theme="{{ .Params.theme }}">
+        <div class="creative-empty is-hidden" id="creative-empty" role="status" aria-live="polite">
+            <p>No pieces match those filters yet.</p>
+            <button type="button" class="cta-button" data-reset-filters>Show everything</button>
+        </div>
+
+        <div class="creative-grid" id="creative-grid">
+            {{ range $sortedDesc }}
+            <article class="creative-card"
+                data-category="{{ urlize .Params.category }}"
+                data-theme="{{ urlize .Params.theme }}"
+                data-year="{{ .Params.year }}"
+                data-search="{{ printf "%s %s %s %s %s" .Title .Params.description .Params.author .Params.theme .Params.category | plainify | lower }}">
                 <div class="card-inner">
                     <!-- Card front -->
                     <div class="card-front">
+                        <div class="card-badge">
+                            {{ if eq (urlize .Params.category) "poetry" }}
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            {{ else if eq (urlize .Params.category) "resilience" }}
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#spark"></use></svg>
+                            {{ else if eq (urlize .Params.category) "wisdom" }}
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
+                            {{ else }}
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
+                            {{ end }}
+                            <span class="badge-text">{{ .Params.category | title }}</span>
+                        </div>
+
                         <div class="card-icon">
-                            {{ if eq .Params.category "poetry" }}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                            {{ if eq (urlize .Params.category) "poetry" }}
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            {{ else if eq (urlize .Params.category) "resilience" }}
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#spark"></use></svg>
+                            {{ else if eq (urlize .Params.category) "wisdom" }}
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
+                            {{ else }}
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
                             {{ end }}
                         </div>
+
                         <h2 class="card-title">{{ .Title }}</h2>
                         <p class="card-author">by {{ .Params.author }}</p>
                         <div class="card-meta">
@@ -40,6 +123,9 @@
                             <span class="card-year">{{ .Params.year }}</span>
                         </div>
                         <p class="card-description">{{ .Params.description }}</p>
+                        {{ with index .Params.lines 0 }}
+                        <p class="card-preview">&ldquo;{{ . }}&rdquo;</p>
+                        {{ end }}
                         <button class="read-more-btn" aria-label="Read {{ .Title }}">Read</button>
                     </div>
 
@@ -64,58 +150,8 @@
         </div>
     </div>
 </section>
+{{ end }}
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const creativeCards = document.querySelectorAll('.creative-card');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filterValue = this.getAttribute('data-filter');
-
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            // Filter cards
-            creativeCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                const cardTheme = card.getAttribute('data-theme');
-
-                if (filterValue === 'all' ||
-                    cardCategory === filterValue ||
-                    cardTheme === filterValue) {
-                    card.style.display = 'block';
-                    card.classList.add('fade-in');
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Card flip functionality
-    creativeCards.forEach(card => {
-        const readButton = card.querySelector('.read-more-btn');
-        const closeButton = card.querySelector('.close-btn');
-        const cardInner = card.querySelector('.card-inner');
-
-        if (readButton) {
-            readButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                cardInner.classList.add('flipped');
-            });
-        }
-
-        if (closeButton) {
-            closeButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                cardInner.classList.remove('flipped');
-            });
-        }
-    });
-});
-</script>
+{{ define "page-scripts" }}
+<script src="/js/creative.js" defer></script>
 {{ end }}

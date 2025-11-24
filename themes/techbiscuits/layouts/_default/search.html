@@ -20,7 +20,7 @@
                     autocomplete="off"
                     aria-label="Search blog posts"
                 />
-                <button id="clear-search" class="clear-button" aria-label="Clear search" style="display: none;">
+                <button id="clear-search" class="clear-button is-hidden" aria-label="Clear search">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -37,14 +37,14 @@
         </div>
 
         <div class="search-stats" id="search-stats">
-            <span id="results-count">Loading posts...</span>
+            <span id="results-count" aria-live="polite">Loading posts...</span>
         </div>
 
         <div id="search-results" class="search-results">
             <!-- Results populated by JavaScript -->
         </div>
 
-        <div id="no-results" class="no-results" style="display: none;">
+        <div id="no-results" class="no-results is-hidden">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.35-4.35"></path>
@@ -52,185 +52,26 @@
             <h3>No results found</h3>
             <p>Try adjusting your search terms or filters</p>
         </div>
+
+        <div id="search-error" class="search-error is-hidden" role="alert">
+            <p>We couldn't load the search index right now. Please try again later or browse all posts below.</p>
+        </div>
+
+        <noscript>
+            <div class="search-noscript">
+                <h3>Browse all posts</h3>
+                <ul>
+                    {{ range sort (where .Site.RegularPages "Section" "blog") "Date" "desc" }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+                <p>Enable JavaScript for full search and filtering.</p>
+            </div>
+        </noscript>
     </div>
 </section>
+{{ end }}
 
-<script>
-(function() {
-    let searchIndex = [];
-    let allTags = new Set();
-    let selectedTags = new Set();
-
-    const searchInput = document.getElementById('search-input');
-    const clearButton = document.getElementById('clear-search');
-    const resultsContainer = document.getElementById('search-results');
-    const noResults = document.getElementById('no-results');
-    const resultsCount = document.getElementById('results-count');
-    const tagFiltersContainer = document.getElementById('tag-filters');
-
-    // Fetch search index
-    fetch('/index.json')
-        .then(response => response.json())
-        .then(data => {
-            searchIndex = data;
-
-            // Extract all unique tags
-            searchIndex.forEach(post => {
-                if (post.tags && Array.isArray(post.tags)) {
-                    post.tags.forEach(tag => {
-                        if (tag && tag.trim()) allTags.add(tag);
-                    });
-                }
-            });
-
-            // Render tag filters
-            renderTagFilters();
-
-            // Initial display (show all posts)
-            displayResults(searchIndex);
-            updateResultsCount(searchIndex.length, searchIndex.length);
-        })
-        .catch(error => {
-            console.error('Error loading search index:', error);
-            resultsCount.textContent = 'Error loading search index';
-        });
-
-    // Render tag filter chips
-    function renderTagFilters() {
-        const sortedTags = Array.from(allTags).sort();
-
-        tagFiltersContainer.innerHTML = sortedTags.map(tag => `
-            <button
-                class="tag-filter"
-                data-tag="${tag}"
-                aria-pressed="false"
-            >
-                ${tag}
-            </button>
-        `).join('');
-
-        // Add click handlers
-        tagFiltersContainer.querySelectorAll('.tag-filter').forEach(button => {
-            button.addEventListener('click', () => toggleTagFilter(button));
-        });
-    }
-
-    // Toggle tag filter
-    function toggleTagFilter(button) {
-        const tag = button.dataset.tag;
-
-        if (selectedTags.has(tag)) {
-            selectedTags.delete(tag);
-            button.classList.remove('active');
-            button.setAttribute('aria-pressed', 'false');
-        } else {
-            selectedTags.add(tag);
-            button.classList.add('active');
-            button.setAttribute('aria-pressed', 'true');
-        }
-
-        performSearch();
-    }
-
-    // Search input handler
-    searchInput.addEventListener('input', (e) => {
-        clearButton.style.display = e.target.value ? 'flex' : 'none';
-        performSearch();
-    });
-
-    // Clear button handler
-    clearButton.addEventListener('click', () => {
-        searchInput.value = '';
-        clearButton.style.display = 'none';
-        searchInput.focus();
-        performSearch();
-    });
-
-    // Perform search
-    function performSearch() {
-        const query = searchInput.value.toLowerCase().trim();
-
-        let results = searchIndex;
-
-        // Filter by search query
-        if (query) {
-            results = results.filter(post => {
-                const searchableText = `${post.title} ${post.summary} ${post.content}`.toLowerCase();
-                const searchableTags = post.tags ? post.tags.join(' ').toLowerCase() : '';
-                return searchableText.includes(query) || searchableTags.includes(query);
-            });
-        }
-
-        // Filter by selected tags
-        if (selectedTags.size > 0) {
-            results = results.filter(post => {
-                if (!post.tags || !Array.isArray(post.tags)) return false;
-                return Array.from(selectedTags).some(tag => post.tags.includes(tag));
-            });
-        }
-
-        displayResults(results);
-        updateResultsCount(results.length, searchIndex.length);
-    }
-
-    // Update results count
-    function updateResultsCount(count, total) {
-        if (count === total) {
-            resultsCount.textContent = `Showing all ${total} posts`;
-        } else {
-            resultsCount.textContent = `Found ${count} of ${total} posts`;
-        }
-    }
-
-    // Display results
-    function displayResults(results) {
-        if (results.length === 0) {
-            resultsContainer.style.display = 'none';
-            noResults.style.display = 'flex';
-            return;
-        }
-
-        noResults.style.display = 'none';
-        resultsContainer.style.display = 'grid';
-
-        resultsContainer.innerHTML = results.map(post => `
-            <article class="search-result-card">
-                <div class="search-result-content">
-                    <h3 class="search-result-title">
-                        <a href="${post.permalink}">${post.title}</a>
-                    </h3>
-                    <p class="search-result-summary">${post.summary || 'No summary available'}</p>
-                    <div class="search-result-meta">
-                        <span class="date">${formatDate(post.date)}</span>
-                        <span class="reading-time">${post.readingTime} min read</span>
-                    </div>
-                    ${post.tags && post.tags.length > 0 ? `
-                        <div class="search-result-tags">
-                            ${post.tags.filter(t => t).map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                </div>
-            </article>
-        `).join('');
-    }
-
-    // Format date
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    }
-
-    // Focus search input on page load
-    searchInput.focus();
-
-    // Handle URL query parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlQuery = urlParams.get('q');
-    if (urlQuery) {
-        searchInput.value = urlQuery;
-        clearButton.style.display = 'flex';
-        performSearch();
-    }
-})();
-</script>
+{{ define "page-scripts" }}
+<script src="/js/search.js" defer></script>
 {{ end }}

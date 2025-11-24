@@ -4,11 +4,15 @@
         <section class="section-header">
             <h2>All Blog Posts</h2>
             <div class="blog-grid">
-                {{ range .Pages }}
+                {{ $sorted := sort .Pages "Date" "desc" }}
+                {{ $paginator := .Paginate $sorted }}
+                {{ range $paginator.Pages }}
                 <article class="blog-card">
                     <div class="blog-card-image">
                         <div class="blog-card-image-inner">
-                            <div class="blog-card-icon">📝</div>
+                            <div class="blog-card-icon">
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            </div>
                         </div>
                     </div>
                     <div class="blog-card-content">
@@ -29,6 +33,18 @@
                 {{ end }}
             </div>
         </section>
+
+        {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination" aria-label="Pagination">
+            {{ if $paginator.HasPrev }}
+                <a class="page-link prev" href="{{ $paginator.Prev.URL }}" rel="prev">← Newer Posts</a>
+            {{ end }}
+            <span class="page-status">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+            {{ if $paginator.HasNext }}
+                <a class="page-link next" href="{{ $paginator.Next.URL }}" rel="next">Older Posts →</a>
+            {{ end }}
+        </nav>
+        {{ end }}
     </div>
 </section>
 {{ end }}

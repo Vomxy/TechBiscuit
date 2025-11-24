@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io;">
+    
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-187b15192f6d166d' https://plausible.io https://kit.fontawesome.com; style-src 'self' https://fonts.googleapis.com https://kit.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io https://kit.fontawesome.com https://ka-f.fontawesome.com; base-uri 'self'; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Read TheTechBiscuit, authored by Zack Baxter.">
     <meta name="keywords" content="TechBiscuit, blog, personal website">
@@ -13,7 +15,7 @@
     
     <meta property="og:title" content="Creatives | TheTechBiscuit">
     <meta property="og:description" content="Read TheTechBiscuit, authored by Zack Baxter.">
-    <meta property="og:image" content="/images/social-card.png">
+    <meta property="og:image" content="https://www.thetechbiscuit.com/images/social-card.png">
     <meta property="og:url" content="https://www.thetechbiscuit.com/creative/">
     
     <meta property="og:type" content="website">
@@ -22,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Creatives | TheTechBiscuit">
     <meta name="twitter:description" content="Read TheTechBiscuit, authored by Zack Baxter.">
-    <meta name="twitter:image" content="/images/social-card.png">
+    <meta name="twitter:image" content="https://www.thetechbiscuit.com/images/social-card.png">
     <meta name="twitter:site" content="@onlytechbiscuit">
     <title>Creatives | TheTechBiscuit</title>
     
@@ -35,12 +37,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap">
     <link rel="dns-prefetch" href="https://plausible.io">
     <link rel="stylesheet" href="/css/base.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/css/components.css" type="text/css" media="all" />
     
     
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="187b15192f6d166d">
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -83,28 +86,28 @@
                 <li class="nav-item">
                     <a href="https://www.thetechbiscuit.com/"
                        class="nav-link ">
-                       <span class="nav-icon">🏠</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
                        <span class="nav-text">Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/blog/"
                        class="nav-link ">
-                       <span class="nav-icon">📝</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                        <span class="nav-text">Blog</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/creative/"
                        class="nav-link active">
-                       <span class="nav-icon">🎨</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
                        <span class="nav-text">Creative</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/search/"
                        class="nav-link ">
-                       <span class="nav-icon">🔍</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#search"></use></svg>
                        <span class="nav-text">Search</span>
                     </a>
                 </li>
@@ -119,149 +122,112 @@
         
 
         
+            <div id="main-content" class="sr-only" tabindex="-1"></div>
+        
 
             
-<section class="creative-gallery">
+
+
+
+
+<section class="creative-gallery" id="creative-gallery">
     <div class="content-container">
         <header class="gallery-header">
+            <p class="eyebrow">Creative vault</p>
             <h1 class="gallery-title">Creative Works</h1>
-            <p class="gallery-subtitle">A curated collection of poetry, art, and timeless wisdom</p>
-        </header>
+            <p class="gallery-subtitle">A curated collection of poetry, art, and timeless wisdom — ready to flip, skim, and savor.</p>
 
-        
-        <div class="creative-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="poetry">Poetry</button>
-            <button class="filter-btn" data-filter="resilience">Resilience</button>
-            <button class="filter-btn" data-filter="wisdom">Wisdom</button>
-            <button class="filter-btn" data-filter="adventure">Adventure</button>
-        </div>
-
-        
-        <div class="creative-grid">
-            
-            <article class="creative-card" data-category="poetry" data-theme="empowerment">
-                <div class="card-inner">
-                    
-                    <div class="card-front">
-                        <div class="card-icon">
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            
-                        </div>
-                        <h2 class="card-title">Equipment</h2>
-                        <p class="card-author">by Edgar A. Guest</p>
-                        <div class="card-meta">
-                            <span class="card-theme">empowerment</span>
-                            <span class="card-year">1916</span>
-                        </div>
-                        <p class="card-description">An inspiring poem reminding us we have everything we need to succeed</p>
-                        <button class="read-more-btn" aria-label="Read Equipment">Read</button>
-                    </div>
-
-                    
-                    <div class="card-back">
-                        <div class="poem-content">
-                            
-                            <div class="poem-lines">
-                                
-                                <p class="poem-line">Figure it out for yourself, my lad,</p>
-                                
-                                <p class="poem-line">You&#39;ve all that the greatest of men have had,</p>
-                                
-                                <p class="poem-line">Two arms, two hands, two legs, two eyes,</p>
-                                
-                                <p class="poem-line">And a brain to use if you would be wise.</p>
-                                
-                                <p class="poem-line">With this equipment they all began,</p>
-                                
-                                <p class="poem-line">So start for the top and say, &#39;I can.&#39;</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">Look them over, the wise and great,</p>
-                                
-                                <p class="poem-line">They take their food from a common plate,</p>
-                                
-                                <p class="poem-line">And similar knives and forks they use,</p>
-                                
-                                <p class="poem-line">With similar laces they tie their shoes,</p>
-                                
-                                <p class="poem-line">The world considers them brave and smart,</p>
-                                
-                                <p class="poem-line">But you&#39;ve all they had when they made their start.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">You can triumph and come to skill,</p>
-                                
-                                <p class="poem-line">You can be great if only you will,</p>
-                                
-                                <p class="poem-line">You&#39;re well equipped for what fight you choose,</p>
-                                
-                                <p class="poem-line">You have legs and arms and a brain to use,</p>
-                                
-                                <p class="poem-line">And the man who has risen, great deeds to do</p>
-                                
-                                <p class="poem-line">Began his life with no more than you.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">You are the handicap you must face,</p>
-                                
-                                <p class="poem-line">You are the one who must choose your place,</p>
-                                
-                                <p class="poem-line">You must say where you want to go,</p>
-                                
-                                <p class="poem-line">How much you will study the truth to know.</p>
-                                
-                                <p class="poem-line">God has equipped you for life,</p>
-                                
-                                <p class="poem-line">But He Lets you decide what you want to be.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">Courage must come from the soul within,</p>
-                                
-                                <p class="poem-line">The man must furnish the will to win,</p>
-                                
-                                <p class="poem-line">So figure it out for yourself, my lad,</p>
-                                
-                                <p class="poem-line">You were born with all that the great have had,</p>
-                                
-                                <p class="poem-line">With your equipment they all began.</p>
-                                
-                                <p class="poem-line">Get hold of yourself, and say: &#39;I can.&#39;</p>
-                                
-                            </div>
-                            
-                        </div>
-                        <button class="close-btn" aria-label="Close">×</button>
+            <div class="gallery-meta-grid">
+                <div class="meta-card">
+                    <span class="meta-label">Pieces</span>
+                    <span class="meta-value">6</span>
+                    <span class="meta-hint">Flip any card to read instantly</span>
+                </div>
+                <div class="meta-card">
+                    <span class="meta-label">Categories</span>
+                    <div class="meta-pill-row">
+                        
+                        <span class="meta-pill">Poetry</span>
+                        
                     </div>
                 </div>
-            </article>
+                <div class="meta-card">
+                    <span class="meta-label">Timeline</span>
+                    
+                        <span class="meta-value">
+                            1875 – 1933
+                        </span>
+                        <span class="meta-hint">Across 1 moods</span>
+                    
+                </div>
+            </div>
+        </header>
+
+        <div class="creative-toolbar" aria-label="Creative controls">
+            <div class="creative-filters" role="tablist" aria-label="Filter creative works">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                
+                    
+                    <button class="filter-btn" data-filter="poetry" aria-pressed="false">
+                        Poetry
+                    </button>
+                
+            </div>
+
+            <div class="creative-controls">
+                <div class="control search-control">
+                    <label class="sr-only" for="creative-search">Search creative works</label>
+                    <div class="input-shell">
+                        <svg class="icon icon-inline" aria-hidden="true"><use xlink:href="/icons/sprite.svg#search"></use></svg>
+                        <input id="creative-search" type="search" name="search" placeholder="Search title, author, or theme..." autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="control select-control">
+                    <label class="sr-only" for="creative-sort">Sort creative works</label>
+                    <select id="creative-sort" class="sort-select">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="title">Title A–Z</option>
+                    </select>
+                </div>
+
+                <button type="button" class="ghost-button" id="creative-reset">Reset</button>
+
+                <div class="results-pill" id="creative-results-count" role="status" aria-live="polite">
+                    Showing 6 pieces
+                </div>
+            </div>
+        </div>
+
+        <div class="creative-empty is-hidden" id="creative-empty" role="status" aria-live="polite">
+            <p>No pieces match those filters yet.</p>
+            <button type="button" class="cta-button" data-reset-filters>Show everything</button>
+        </div>
+
+        <div class="creative-grid" id="creative-grid">
             
-            <article class="creative-card" data-category="poetry" data-theme="adventure">
+            <article class="creative-card"
+                data-category="poetry"
+                data-theme="adventure"
+                data-year="1933"
+                data-search="errantry a whimsical tolkien poem of adventure, love, and magical journeys j.r.r. tolkien adventure poetry">
                 <div class="card-inner">
                     
                     <div class="card-front">
+                        <div class="card-badge">
+                            
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                            <span class="badge-text">Poetry</span>
+                        </div>
+
                         <div class="card-icon">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                             
                         </div>
+
                         <h2 class="card-title">Errantry</h2>
                         <p class="card-author">by J.R.R. Tolkien</p>
                         <div class="card-meta">
@@ -269,6 +235,9 @@
                             <span class="card-year">1933</span>
                         </div>
                         <p class="card-description">A whimsical Tolkien poem of adventure, love, and magical journeys</p>
+                        
+                        <p class="card-preview">&ldquo;There was a merry passenger,&rdquo;</p>
+                        
                         <button class="read-more-btn" aria-label="Read Errantry">Read</button>
                     </div>
 
@@ -470,21 +439,323 @@
                 </div>
             </article>
             
-            <article class="creative-card" data-category="poetry" data-theme="wisdom">
+            <article class="creative-card"
+                data-category="poetry"
+                data-theme="empowerment"
+                data-year="1916"
+                data-search="equipment an inspiring poem reminding us we have everything we need to succeed edgar a. guest empowerment poetry">
                 <div class="card-inner">
                     
                     <div class="card-front">
+                        <div class="card-badge">
+                            
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                            <span class="badge-text">Poetry</span>
+                        </div>
+
                         <div class="card-icon">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                             
                         </div>
+
+                        <h2 class="card-title">Equipment</h2>
+                        <p class="card-author">by Edgar A. Guest</p>
+                        <div class="card-meta">
+                            <span class="card-theme">empowerment</span>
+                            <span class="card-year">1916</span>
+                        </div>
+                        <p class="card-description">An inspiring poem reminding us we have everything we need to succeed</p>
+                        
+                        <p class="card-preview">&ldquo;Figure it out for yourself, my lad,&rdquo;</p>
+                        
+                        <button class="read-more-btn" aria-label="Read Equipment">Read</button>
+                    </div>
+
+                    
+                    <div class="card-back">
+                        <div class="poem-content">
+                            
+                            <div class="poem-lines">
+                                
+                                <p class="poem-line">Figure it out for yourself, my lad,</p>
+                                
+                                <p class="poem-line">You&#39;ve all that the greatest of men have had,</p>
+                                
+                                <p class="poem-line">Two arms, two hands, two legs, two eyes,</p>
+                                
+                                <p class="poem-line">And a brain to use if you would be wise.</p>
+                                
+                                <p class="poem-line">With this equipment they all began,</p>
+                                
+                                <p class="poem-line">So start for the top and say, &#39;I can.&#39;</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">Look them over, the wise and great,</p>
+                                
+                                <p class="poem-line">They take their food from a common plate,</p>
+                                
+                                <p class="poem-line">And similar knives and forks they use,</p>
+                                
+                                <p class="poem-line">With similar laces they tie their shoes,</p>
+                                
+                                <p class="poem-line">The world considers them brave and smart,</p>
+                                
+                                <p class="poem-line">But you&#39;ve all they had when they made their start.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">You can triumph and come to skill,</p>
+                                
+                                <p class="poem-line">You can be great if only you will,</p>
+                                
+                                <p class="poem-line">You&#39;re well equipped for what fight you choose,</p>
+                                
+                                <p class="poem-line">You have legs and arms and a brain to use,</p>
+                                
+                                <p class="poem-line">And the man who has risen, great deeds to do</p>
+                                
+                                <p class="poem-line">Began his life with no more than you.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">You are the handicap you must face,</p>
+                                
+                                <p class="poem-line">You are the one who must choose your place,</p>
+                                
+                                <p class="poem-line">You must say where you want to go,</p>
+                                
+                                <p class="poem-line">How much you will study the truth to know.</p>
+                                
+                                <p class="poem-line">God has equipped you for life,</p>
+                                
+                                <p class="poem-line">But He Lets you decide what you want to be.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">Courage must come from the soul within,</p>
+                                
+                                <p class="poem-line">The man must furnish the will to win,</p>
+                                
+                                <p class="poem-line">So figure it out for yourself, my lad,</p>
+                                
+                                <p class="poem-line">You were born with all that the great have had,</p>
+                                
+                                <p class="poem-line">With your equipment they all began.</p>
+                                
+                                <p class="poem-line">Get hold of yourself, and say: &#39;I can.&#39;</p>
+                                
+                            </div>
+                            
+                        </div>
+                        <button class="close-btn" aria-label="Close">×</button>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="creative-card"
+                data-category="poetry"
+                data-theme="choice"
+                data-year="1915"
+                data-search="the road not taken frost&#39;s meditation on choices, paths, and the difference they make in our lives robert frost choice poetry">
+                <div class="card-inner">
+                    
+                    <div class="card-front">
+                        <div class="card-badge">
+                            
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                            <span class="badge-text">Poetry</span>
+                        </div>
+
+                        <div class="card-icon">
+                            
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                        </div>
+
+                        <h2 class="card-title">The Road Not Taken</h2>
+                        <p class="card-author">by Robert Frost</p>
+                        <div class="card-meta">
+                            <span class="card-theme">choice</span>
+                            <span class="card-year">1915</span>
+                        </div>
+                        <p class="card-description">Frost&#39;s meditation on choices, paths, and the difference they make in our lives</p>
+                        
+                        <p class="card-preview">&ldquo;Two roads diverged in a yellow wood,&rdquo;</p>
+                        
+                        <button class="read-more-btn" aria-label="Read The Road Not Taken">Read</button>
+                    </div>
+
+                    
+                    <div class="card-back">
+                        <div class="poem-content">
+                            
+                            <div class="poem-lines">
+                                
+                                <p class="poem-line">Two roads diverged in a yellow wood,</p>
+                                
+                                <p class="poem-line">And sorry I could not travel both</p>
+                                
+                                <p class="poem-line">And be one traveler, long I stood</p>
+                                
+                                <p class="poem-line">And looked down one as far as I could</p>
+                                
+                                <p class="poem-line">To where it bent in the undergrowth;</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">Then took the other, as just as fair,</p>
+                                
+                                <p class="poem-line">And having perhaps the better claim,</p>
+                                
+                                <p class="poem-line">Because it was grassy and wanted wear;</p>
+                                
+                                <p class="poem-line">Though as for that the passing there</p>
+                                
+                                <p class="poem-line">Had worn them really about the same,</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">And both that morning equally lay</p>
+                                
+                                <p class="poem-line">In leaves no step had trodden black.</p>
+                                
+                                <p class="poem-line">Oh, I kept the first for another day!</p>
+                                
+                                <p class="poem-line">Yet knowing how way leads on to way,</p>
+                                
+                                <p class="poem-line">I doubted if I should ever come back.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">I shall be telling this with a sigh</p>
+                                
+                                <p class="poem-line">Somewhere ages and ages hence:</p>
+                                
+                                <p class="poem-line">Two roads diverged in a wood, and I—</p>
+                                
+                                <p class="poem-line">I took the one less traveled by,</p>
+                                
+                                <p class="poem-line">And that has made all the difference.</p>
+                                
+                            </div>
+                            
+                        </div>
+                        <button class="close-btn" aria-label="Close">×</button>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="creative-card"
+                data-category="poetry"
+                data-theme="mindset"
+                data-year="1905"
+                data-search="thinking a powerful reminder that success begins with belief in oneself walter d. wintle mindset poetry">
+                <div class="card-inner">
+                    
+                    <div class="card-front">
+                        <div class="card-badge">
+                            
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                            <span class="badge-text">Poetry</span>
+                        </div>
+
+                        <div class="card-icon">
+                            
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                        </div>
+
+                        <h2 class="card-title">Thinking</h2>
+                        <p class="card-author">by Walter D. Wintle</p>
+                        <div class="card-meta">
+                            <span class="card-theme">mindset</span>
+                            <span class="card-year">1905</span>
+                        </div>
+                        <p class="card-description">A powerful reminder that success begins with belief in oneself</p>
+                        
+                        <p class="card-preview">&ldquo;If you think you are beaten, you are;&rdquo;</p>
+                        
+                        <button class="read-more-btn" aria-label="Read Thinking">Read</button>
+                    </div>
+
+                    
+                    <div class="card-back">
+                        <div class="poem-content">
+                            
+                            <div class="poem-lines">
+                                
+                                <p class="poem-line">If you think you are beaten, you are;</p>
+                                
+                                <p class="poem-line">If you think you dare not, you don&#39;t.</p>
+                                
+                                <p class="poem-line">If you like to win, but you think you can&#39;t,</p>
+                                
+                                <p class="poem-line">It&#39;s almost a cinch you won&#39;t.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">If you think you&#39;ll lose, you&#39;ve lost;</p>
+                                
+                                <p class="poem-line">For out in this world we find</p>
+                                
+                                <p class="poem-line">Success begins with a fellow&#39;s will,</p>
+                                
+                                <p class="poem-line">It&#39;s all in the state of mind.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">If you think you&#39;re outclassed, you are;</p>
+                                
+                                <p class="poem-line">You&#39;ve got to think high to rise.</p>
+                                
+                                <p class="poem-line">You&#39;ve got to be sure of yourself before</p>
+                                
+                                <p class="poem-line">You can ever win a prize.</p>
+                                
+                                <p class="poem-line"></p>
+                                
+                                <p class="poem-line">Life&#39;s battles don&#39;t always go</p>
+                                
+                                <p class="poem-line">To the stronger or faster man;</p>
+                                
+                                <p class="poem-line">But sooner or later the man who wins</p>
+                                
+                                <p class="poem-line">Is the one who thinks he can.</p>
+                                
+                            </div>
+                            
+                        </div>
+                        <button class="close-btn" aria-label="Close">×</button>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="creative-card"
+                data-category="poetry"
+                data-theme="wisdom"
+                data-year="1895"
+                data-search="if— kipling&#39;s timeless advice on virtue, self-control, and what it means to be a person of character rudyard kipling wisdom poetry">
+                <div class="card-inner">
+                    
+                    <div class="card-front">
+                        <div class="card-badge">
+                            
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                            <span class="badge-text">Poetry</span>
+                        </div>
+
+                        <div class="card-icon">
+                            
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                        </div>
+
                         <h2 class="card-title">If—</h2>
                         <p class="card-author">by Rudyard Kipling</p>
                         <div class="card-meta">
@@ -492,6 +763,9 @@
                             <span class="card-year">1895</span>
                         </div>
                         <p class="card-description">Kipling&#39;s timeless advice on virtue, self-control, and what it means to be a person of character</p>
+                        
+                        <p class="card-preview">&ldquo;If you can keep your head when all about you&rdquo;</p>
+                        
                         <button class="read-more-btn" aria-label="Read If—">Read</button>
                     </div>
 
@@ -557,21 +831,27 @@
                 </div>
             </article>
             
-            <article class="creative-card" data-category="poetry" data-theme="resilience">
+            <article class="creative-card"
+                data-category="poetry"
+                data-theme="resilience"
+                data-year="1875"
+                data-search="invictus a powerful victorian poem about unconquerable spirit and mastery over one&#39;s fate william ernest henley resilience poetry">
                 <div class="card-inner">
                     
                     <div class="card-front">
+                        <div class="card-badge">
+                            
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                            
+                            <span class="badge-text">Poetry</span>
+                        </div>
+
                         <div class="card-icon">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                             
                         </div>
+
                         <h2 class="card-title">Invictus</h2>
                         <p class="card-author">by William Ernest Henley</p>
                         <div class="card-meta">
@@ -579,6 +859,9 @@
                             <span class="card-year">1875</span>
                         </div>
                         <p class="card-description">A powerful Victorian poem about unconquerable spirit and mastery over one&#39;s fate</p>
+                        
+                        <p class="card-preview">&ldquo;Out of the night that covers me,&rdquo;</p>
+                        
                         <button class="read-more-btn" aria-label="Read Invictus">Read</button>
                     </div>
 
@@ -634,228 +917,23 @@
                 </div>
             </article>
             
-            <article class="creative-card" data-category="poetry" data-theme="choice">
-                <div class="card-inner">
-                    
-                    <div class="card-front">
-                        <div class="card-icon">
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            
-                        </div>
-                        <h2 class="card-title">The Road Not Taken</h2>
-                        <p class="card-author">by Robert Frost</p>
-                        <div class="card-meta">
-                            <span class="card-theme">choice</span>
-                            <span class="card-year">1915</span>
-                        </div>
-                        <p class="card-description">Frost&#39;s meditation on choices, paths, and the difference they make in our lives</p>
-                        <button class="read-more-btn" aria-label="Read The Road Not Taken">Read</button>
-                    </div>
-
-                    
-                    <div class="card-back">
-                        <div class="poem-content">
-                            
-                            <div class="poem-lines">
-                                
-                                <p class="poem-line">Two roads diverged in a yellow wood,</p>
-                                
-                                <p class="poem-line">And sorry I could not travel both</p>
-                                
-                                <p class="poem-line">And be one traveler, long I stood</p>
-                                
-                                <p class="poem-line">And looked down one as far as I could</p>
-                                
-                                <p class="poem-line">To where it bent in the undergrowth;</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">Then took the other, as just as fair,</p>
-                                
-                                <p class="poem-line">And having perhaps the better claim,</p>
-                                
-                                <p class="poem-line">Because it was grassy and wanted wear;</p>
-                                
-                                <p class="poem-line">Though as for that the passing there</p>
-                                
-                                <p class="poem-line">Had worn them really about the same,</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">And both that morning equally lay</p>
-                                
-                                <p class="poem-line">In leaves no step had trodden black.</p>
-                                
-                                <p class="poem-line">Oh, I kept the first for another day!</p>
-                                
-                                <p class="poem-line">Yet knowing how way leads on to way,</p>
-                                
-                                <p class="poem-line">I doubted if I should ever come back.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">I shall be telling this with a sigh</p>
-                                
-                                <p class="poem-line">Somewhere ages and ages hence:</p>
-                                
-                                <p class="poem-line">Two roads diverged in a wood, and I—</p>
-                                
-                                <p class="poem-line">I took the one less traveled by,</p>
-                                
-                                <p class="poem-line">And that has made all the difference.</p>
-                                
-                            </div>
-                            
-                        </div>
-                        <button class="close-btn" aria-label="Close">×</button>
-                    </div>
-                </div>
-            </article>
-            
-            <article class="creative-card" data-category="poetry" data-theme="mindset">
-                <div class="card-inner">
-                    
-                    <div class="card-front">
-                        <div class="card-icon">
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                            
-                        </div>
-                        <h2 class="card-title">Thinking</h2>
-                        <p class="card-author">by Walter D. Wintle</p>
-                        <div class="card-meta">
-                            <span class="card-theme">mindset</span>
-                            <span class="card-year">1905</span>
-                        </div>
-                        <p class="card-description">A powerful reminder that success begins with belief in oneself</p>
-                        <button class="read-more-btn" aria-label="Read Thinking">Read</button>
-                    </div>
-
-                    
-                    <div class="card-back">
-                        <div class="poem-content">
-                            
-                            <div class="poem-lines">
-                                
-                                <p class="poem-line">If you think you are beaten, you are;</p>
-                                
-                                <p class="poem-line">If you think you dare not, you don&#39;t.</p>
-                                
-                                <p class="poem-line">If you like to win, but you think you can&#39;t,</p>
-                                
-                                <p class="poem-line">It&#39;s almost a cinch you won&#39;t.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">If you think you&#39;ll lose, you&#39;ve lost;</p>
-                                
-                                <p class="poem-line">For out in this world we find</p>
-                                
-                                <p class="poem-line">Success begins with a fellow&#39;s will,</p>
-                                
-                                <p class="poem-line">It&#39;s all in the state of mind.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">If you think you&#39;re outclassed, you are;</p>
-                                
-                                <p class="poem-line">You&#39;ve got to think high to rise.</p>
-                                
-                                <p class="poem-line">You&#39;ve got to be sure of yourself before</p>
-                                
-                                <p class="poem-line">You can ever win a prize.</p>
-                                
-                                <p class="poem-line"></p>
-                                
-                                <p class="poem-line">Life&#39;s battles don&#39;t always go</p>
-                                
-                                <p class="poem-line">To the stronger or faster man;</p>
-                                
-                                <p class="poem-line">But sooner or later the man who wins</p>
-                                
-                                <p class="poem-line">Is the one who thinks he can.</p>
-                                
-                            </div>
-                            
-                        </div>
-                        <button class="close-btn" aria-label="Close">×</button>
-                    </div>
-                </div>
-            </article>
-            
         </div>
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const creativeCards = document.querySelectorAll('.creative-card');
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filterValue = this.getAttribute('data-filter');
+        
 
-            
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-
-            
-            creativeCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                const cardTheme = card.getAttribute('data-theme');
-
-                if (filterValue === 'all' ||
-                    cardCategory === filterValue ||
-                    cardTheme === filterValue) {
-                    card.style.display = 'block';
-                    card.classList.add('fade-in');
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    
-    creativeCards.forEach(card => {
-        const readButton = card.querySelector('.read-more-btn');
-        const closeButton = card.querySelector('.close-btn');
-        const cardInner = card.querySelector('.card-inner');
-
-        if (readButton) {
-            readButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                cardInner.classList.add('flipped');
-            });
-        }
-
-        if (closeButton) {
-            closeButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                cardInner.classList.remove('flipped');
-            });
-        }
-    });
-});
-</script>
-
-
-        <footer>
+        
+        <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
+            <div class="cookie-consent-content">
+                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
+                <div class="cookie-buttons">
+                    <button id="accept-cookies" class="btn-accept">Accept</button>
+                    <button id="decline-cookies" class="btn-decline">Decline</button>
+                </div>
+            </div>
+        </div><footer>
     <div class="footer-container">
         <div class="footer-section contact-info">
             <h3>Contact</h3>
@@ -869,9 +947,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <div class="footer-section social-media">
             <h3>Follow Me</h3>
-            <a href="https://x.com/onlytechbiscuit" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/onlytechbiscuit" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-social" aria-hidden="true"><use xlink:href="/icons/sprite.svg#x"></use></svg>
+            </a>
+            <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-social" aria-hidden="true"><use xlink:href="/icons/sprite.svg#instagram"></use></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-social" aria-hidden="true"><use xlink:href="/icons/sprite.svg#linkedin"></use></svg>
+            </a>
         </div>
         
         <div class="footer-section quick-links">
@@ -885,331 +969,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>&copy; 2024 TheTechBiscuit. All rights reserved.</p>
     </div>
 </footer>
-		<script>
-			
-			document.addEventListener('DOMContentLoaded', function() {
-				const tabLinks = document.querySelectorAll('.tab-link');
-				const tabContents = document.querySelectorAll('.tab-content');
-
-				function openTab(tabName) {
-					
-					tabContents.forEach(content => {
-						content.classList.remove('active-tab');
-					});
-
-					
-					setTimeout(() => {
-						
-						tabContents.forEach(content => {
-							content.style.display = 'none';
-							content.setAttribute('aria-hidden', 'true');
-						});
-
-						
-						tabLinks.forEach(link => {
-							link.classList.remove('active');
-							link.setAttribute('aria-selected', 'false');
-							link.setAttribute('tabindex', '-1');
-						});
-
-						
-						const selectedTab = document.getElementById(tabName);
-						const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
-
-						if (selectedTab) {
-							selectedTab.style.display = 'block';
-							selectedTab.setAttribute('aria-hidden', 'false');
-							
-							setTimeout(() => {
-								selectedTab.classList.add('active-tab');
-							}, 10);
-						}
-						if (selectedLink) {
-							selectedLink.classList.add('active');
-							selectedLink.setAttribute('aria-selected', 'true');
-							selectedLink.setAttribute('tabindex', '0');
-							selectedLink.focus();
-						}
-					}, 200);
-				}
-
-				
-				tabLinks.forEach(link => {
-					link.addEventListener('click', function(e) {
-						e.preventDefault();
-						const tabName = this.getAttribute('data-tab');
-						openTab(tabName);
-					});
-
-					
-					link.addEventListener('keydown', function(e) {
-						const currentIndex = Array.from(tabLinks).indexOf(this);
-						let targetIndex;
-
-						if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-							e.preventDefault();
-							targetIndex = (currentIndex + 1) % tabLinks.length;
-						} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-							e.preventDefault();
-							targetIndex = (currentIndex - 1 + tabLinks.length) % tabLinks.length;
-						} else if (e.key === 'Home') {
-							e.preventDefault();
-							targetIndex = 0;
-						} else if (e.key === 'End') {
-							e.preventDefault();
-							targetIndex = tabLinks.length - 1;
-						}
-
-						if (targetIndex !== undefined) {
-							const targetTab = tabLinks[targetIndex].getAttribute('data-tab');
-							openTab(targetTab);
-						}
-					});
-				});
-
-				
-				if (tabLinks.length > 0) {
-					const firstTab = tabLinks[0].getAttribute('data-tab');
-					openTab(firstTab);
-				}
-			});
-		</script>
-<script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
-<script>
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
-
-    
-    if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        target.style.scrollMarginTop = `${document.querySelector('header').offsetHeight + 10}px`;
-    }
-});
-});
-
-
-const progressBar = document.getElementById('progress-bar');
-const header = document.querySelector('header');
-
-function adjustProgressBarPosition() {
-progressBar.style.top = `${header.offsetHeight}px`;
-}
-
-function updateProgressBar() {
-const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-const scrolledPercentage = (scrollTop / scrollHeight) * 100;
-progressBar.style.width = `${scrolledPercentage}%`;
-}
-
-
-function debounce(func, delay) {
-let debounceTimer;
-return function() {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(func, delay);
-};
-}
-
-
-window.addEventListener('load', () => {
-adjustProgressBarPosition();
-updateProgressBar();
-});
-
-window.addEventListener('resize', debounce(adjustProgressBarPosition, 100));
-window.addEventListener('scroll', debounce(updateProgressBar, 20));
-
-
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader) {
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', debounce(function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 50) {
-            siteHeader.classList.add('scrolled');
-        } else {
-            siteHeader.classList.remove('scrolled');
-        }
-        lastScrollTop = scrollTop;
-    }, 20));
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img');
-
-    images.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', function() {
-                img.classList.add('loaded');
-            });
-            img.addEventListener('error', function() {
-                img.classList.add('loaded'); 
-            });
-        }
-    });
-});
-
-
-if ('IntersectionObserver' in window) {
-    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        rootMargin: '50px'
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const lazyElements = document.querySelectorAll('.lazy-load');
-        lazyElements.forEach(el => lazyLoadObserver.observe(el));
-    });
-}
-
-
-if ('IntersectionObserver' in window) {
-    const staggerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('stagger-animation');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const blogGrid = document.querySelector('.blog-grid');
-        if (blogGrid) {
-            staggerObserver.observe(blogGrid);
-        }
-    });
-}
-
-
-window.addEventListener('load', function() {
-    const contentContainer = document.querySelector('.content-container');
-    if (contentContainer) {
-        contentContainer.classList.add('content-loaded');
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', function() {
-            const isExpanded = mainNav.classList.toggle('active');
-            mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-
-            
-            const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-            if (menuIcon) {
-                menuIcon.textContent = isExpanded ? '✕' : '☰';
-            }
-        });
-
+<script src="/js/main.js" defer></script>
+        <link rel="preload" href="/icons/sprite.svg" as="image" type="image/svg+xml">
         
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    mainNav.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-                    if (menuIcon) {
-                        menuIcon.textContent = '☰';
-                    }
-                }
-            });
-        });
+<script src="/js/creative.js" defer></script>
 
-        
-        document.addEventListener('click', function(event) {
-            if (window.innerWidth <= 768) {
-                if (!event.target.closest('.site-header') && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-                    if (menuIcon) {
-                        menuIcon.textContent = '☰';
-                    }
-                }
-            }
-        });
-
-        
-        window.addEventListener('resize', debounce(function() {
-            if (window.innerWidth > 768) {
-                mainNav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-                if (menuIcon) {
-                    menuIcon.textContent = '☰';
-                }
-            }
-        }, 100));
-    }
-});
-
-</script>
-</body>
-</html>
-
-        
-        <div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none;">
-            <div class="cookie-consent-content">
-                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
-                <div class="cookie-buttons">
-                    <button id="accept-cookies" class="btn-accept">Accept</button>
-                    <button id="decline-cookies" class="btn-decline">Decline</button>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const banner = document.getElementById("cookie-consent-banner");
-                const acceptBtn = document.getElementById("accept-cookies");
-                const declineBtn = document.getElementById("decline-cookies");
-                const consentGiven = localStorage.getItem("cookieConsent");
-
-                if (!consentGiven) {
-                    banner.style.display = "block";
-                } else if (consentGiven === "accepted") {
-                    loadAnalytics();
-                }
-
-                acceptBtn.addEventListener("click", function() {
-                    localStorage.setItem("cookieConsent", "accepted");
-                    banner.style.display = "none";
-                    loadAnalytics();
-                });
-
-                declineBtn.addEventListener("click", function() {
-                    localStorage.setItem("cookieConsent", "declined");
-                    banner.style.display = "none";
-                });
-
-                function loadAnalytics() {
-                    const script = document.createElement("script");
-                    script.defer = true;
-                    script.setAttribute("data-domain", "www.thetechbiscuit.com");
-                    script.src = "https://plausible.io/js/script.js";
-                    document.head.appendChild(script);
-                }
-            });
-        </script>
     </body>
 </html>

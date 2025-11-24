@@ -1,5 +1,5 @@
 {{- $.Scratch.Add "index" slice -}}
-{{- range where .Site.RegularPages "Section" "blog" -}}
+{{- range sort (where .Site.RegularPages "Section" "blog") "Date" "desc" -}}
   {{- if not .Draft -}}
     {{- $.Scratch.Add "index" (dict
       "title" .Title

@@ -13,28 +13,28 @@
                 <li class="nav-item">
                     <a href="{{ .Site.BaseURL }}"
                        class="nav-link {{ if eq .RelPermalink "/" }}active{{ end }}">
-                       <span class="nav-icon">🏠</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
                        <span class="nav-text">Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ "blog/" | relURL }}"
                        class="nav-link {{ if or (eq .Section "blog") (eq .Type "blog") }}active{{ end }}">
-                       <span class="nav-icon">📝</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                        <span class="nav-text">Blog</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ "creative/" | relURL }}"
                        class="nav-link {{ if or (eq .Section "creative") (eq .Type "creative") }}active{{ end }}">
-                       <span class="nav-icon">🎨</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
                        <span class="nav-text">Creative</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ "search/" | relURL }}"
                        class="nav-link {{ if eq .RelPermalink "/search/" }}active{{ end }}">
-                       <span class="nav-icon">🔍</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#search"></use></svg>
                        <span class="nav-text">Search</span>
                     </a>
                 </li>

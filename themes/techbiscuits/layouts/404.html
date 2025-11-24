@@ -1,11 +1,18 @@
 {{ define "main" }}
-  <div class="content-container">
+  <div class="content-container error-hero">
     <h1>404 Error: Page Not Found</h1>
-    <p>Oops! The page you're looking for doesn't exist. But don't worry, you can still have some fun while you're here!</p>
-    <p id="attempts">Attempts: 0</p>
-    <div id="game-container"></div>
-    <button id="retry-button">Play Again</button>
-    <p>Or, if you'd rather just get back to the site, <a href="/">click here</a> to go to the homepage.</p>
+    <p>Oops! The page you're looking for doesn't exist. Try the mini-game below or head back home.</p>
+    <p id="attempts" aria-live="polite">Attempts: 0</p>
+    <p id="game-status" class="game-status" aria-live="polite"></p>
+    <div class="game-area card" aria-label="Find the biscuit game">
+      <div id="game-container" role="grid" aria-live="polite"></div>
+      <button id="retry-button">Play Again</button>
+    </div>
+    <p class="game-skip">Prefer to skip the game? <a href="/">Return to the homepage</a>.</p>
+    <a class="cta-button primary back-home" href="/">Back to Home</a>
   </div>
-  {{ partial "game.html" . }}
+{{ end }}
+
+{{ define "page-scripts" }}
+<script src="/js/game.js" defer></script>
 {{ end }}

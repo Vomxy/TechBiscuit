@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io;">
+    
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-187b15192fb44370' https://plausible.io https://kit.fontawesome.com; style-src 'self' https://fonts.googleapis.com https://kit.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io https://kit.fontawesome.com https://ka-f.fontawesome.com; base-uri 'self'; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="An inspiring poem reminding us we have everything we need to succeed">
     <meta name="keywords" content="TechBiscuit, blog, personal website">
@@ -13,7 +15,7 @@
     
     <meta property="og:title" content="Equipment | TheTechBiscuit">
     <meta property="og:description" content="An inspiring poem reminding us we have everything we need to succeed">
-    <meta property="og:image" content="/images/social-card.png">
+    <meta property="og:image" content="https://www.thetechbiscuit.com/images/social-card.png">
     <meta property="og:url" content="https://www.thetechbiscuit.com/creative/equipment/">
     
     <meta property="og:type" content="website">
@@ -22,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Equipment | TheTechBiscuit">
     <meta name="twitter:description" content="An inspiring poem reminding us we have everything we need to succeed">
-    <meta name="twitter:image" content="/images/social-card.png">
+    <meta name="twitter:image" content="https://www.thetechbiscuit.com/images/social-card.png">
     <meta name="twitter:site" content="@onlytechbiscuit">
     <title>Equipment | TheTechBiscuit</title>
     
@@ -35,12 +37,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap">
     <link rel="dns-prefetch" href="https://plausible.io">
     <link rel="stylesheet" href="/css/base.css" type="text/css" media="all" />
     <link rel="stylesheet" href="/css/components.css" type="text/css" media="all" />
     
     
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="187b15192fb44370">
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -83,28 +86,28 @@
                 <li class="nav-item">
                     <a href="https://www.thetechbiscuit.com/"
                        class="nav-link ">
-                       <span class="nav-icon">🏠</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
                        <span class="nav-text">Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/blog/"
                        class="nav-link ">
-                       <span class="nav-icon">📝</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                        <span class="nav-text">Blog</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/creative/"
                        class="nav-link active">
-                       <span class="nav-icon">🎨</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
                        <span class="nav-text">Creative</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/search/"
                        class="nav-link ">
-                       <span class="nav-icon">🔍</span>
+                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#search"></use></svg>
                        <span class="nav-text">Search</span>
                     </a>
                 </li>
@@ -119,17 +122,27 @@
         
 
         
+            <div id="main-content" class="sr-only" tabindex="-1"></div>
+        
 
             
     
 
-    <article class="single-post-article">
-        <h1>Equipment</h1>
-        <div class="meta-info">
-            <span class="author">By Edgar A. Guest</span>
-            <span class="date">Published on January 1, 0001</span>
-            <span class="reading-time">0 min read</span>
+
+    <section class="post-hero">
+        <div class="post-hero__content">
+            <p class="eyebrow">Featured Article</p>
+            <h1>Equipment</h1>
+            <div class="meta-info">
+                <span class="author">By Edgar A. Guest</span>
+                <span class="date">Published on January 1, 0001</span>
+                <span class="reading-time">0 min read</span>
+            </div>
+            
         </div>
+    </section>
+
+    <article class="single-post-article">
 
         
         <div class="table-of-contents">
@@ -146,18 +159,54 @@
             <h3>Related Posts</h3>
             <ul>
                 
-                <li><a href="/blog/008-grapheneos/">GrapheneOS: The Ultimate Guide to Privacy and Security on Android</a></li>
                 
-                <li><a href="/blog/rss/">The Privacy-folk Guide to RSS</a></li>
                 
-                <li><a href="/blog/001-what-is-techbiscuit/">What is TechBiscuit?</a></li>
+                
+
+                
+
+                
+                    
+                        
+                            
+                        
+                        
+                    
+                        
+                            
+                        
+                        
+                    
+                        
+                            
+                        
+                        
+                
+
+                
+                    <li><a href="/blog/008-grapheneos/">GrapheneOS: The Ultimate Guide to Privacy and Security on Android</a></li>
+                
+                    <li><a href="/blog/rss/">The Privacy-folk Guide to RSS</a></li>
+                
+                    <li><a href="/blog/001-what-is-techbiscuit/">What is TechBiscuit?</a></li>
                 
             </ul>
         </aside>
     </article>
 
 
-        <footer>
+        
+
+        
+        <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
+            <div class="cookie-consent-content">
+                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
+                <div class="cookie-buttons">
+                    <button id="accept-cookies" class="btn-accept">Accept</button>
+                    <button id="decline-cookies" class="btn-decline">Decline</button>
+                </div>
+            </div>
+        </div><footer>
     <div class="footer-container">
         <div class="footer-section contact-info">
             <h3>Contact</h3>
@@ -171,9 +220,15 @@
         
         <div class="footer-section social-media">
             <h3>Follow Me</h3>
-            <a href="https://x.com/onlytechbiscuit" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/onlytechbiscuit" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-social" aria-hidden="true"><use xlink:href="/icons/sprite.svg#x"></use></svg>
+            </a>
+            <a href="https://www.instagram.com/thetechbiscuit" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-social" aria-hidden="true"><use xlink:href="/icons/sprite.svg#instagram"></use></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/zackbaxter" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg class="icon icon-social" aria-hidden="true"><use xlink:href="/icons/sprite.svg#linkedin"></use></svg>
+            </a>
         </div>
         
         <div class="footer-section quick-links">
@@ -187,331 +242,8 @@
         <p>&copy; 2024 TheTechBiscuit. All rights reserved.</p>
     </div>
 </footer>
-		<script>
-			
-			document.addEventListener('DOMContentLoaded', function() {
-				const tabLinks = document.querySelectorAll('.tab-link');
-				const tabContents = document.querySelectorAll('.tab-content');
-
-				function openTab(tabName) {
-					
-					tabContents.forEach(content => {
-						content.classList.remove('active-tab');
-					});
-
-					
-					setTimeout(() => {
-						
-						tabContents.forEach(content => {
-							content.style.display = 'none';
-							content.setAttribute('aria-hidden', 'true');
-						});
-
-						
-						tabLinks.forEach(link => {
-							link.classList.remove('active');
-							link.setAttribute('aria-selected', 'false');
-							link.setAttribute('tabindex', '-1');
-						});
-
-						
-						const selectedTab = document.getElementById(tabName);
-						const selectedLink = document.querySelector(`[data-tab="${tabName}"]`);
-
-						if (selectedTab) {
-							selectedTab.style.display = 'block';
-							selectedTab.setAttribute('aria-hidden', 'false');
-							
-							setTimeout(() => {
-								selectedTab.classList.add('active-tab');
-							}, 10);
-						}
-						if (selectedLink) {
-							selectedLink.classList.add('active');
-							selectedLink.setAttribute('aria-selected', 'true');
-							selectedLink.setAttribute('tabindex', '0');
-							selectedLink.focus();
-						}
-					}, 200);
-				}
-
-				
-				tabLinks.forEach(link => {
-					link.addEventListener('click', function(e) {
-						e.preventDefault();
-						const tabName = this.getAttribute('data-tab');
-						openTab(tabName);
-					});
-
-					
-					link.addEventListener('keydown', function(e) {
-						const currentIndex = Array.from(tabLinks).indexOf(this);
-						let targetIndex;
-
-						if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-							e.preventDefault();
-							targetIndex = (currentIndex + 1) % tabLinks.length;
-						} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-							e.preventDefault();
-							targetIndex = (currentIndex - 1 + tabLinks.length) % tabLinks.length;
-						} else if (e.key === 'Home') {
-							e.preventDefault();
-							targetIndex = 0;
-						} else if (e.key === 'End') {
-							e.preventDefault();
-							targetIndex = tabLinks.length - 1;
-						}
-
-						if (targetIndex !== undefined) {
-							const targetTab = tabLinks[targetIndex].getAttribute('data-tab');
-							openTab(targetTab);
-						}
-					});
-				});
-
-				
-				if (tabLinks.length > 0) {
-					const firstTab = tabLinks[0].getAttribute('data-tab');
-					openTab(firstTab);
-				}
-			});
-		</script>
-<script src="https://kit.fontawesome.com/7ccbdeb04a.js" crossorigin="anonymous"></script>
-<script>
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
-
-    
-    if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        target.style.scrollMarginTop = `${document.querySelector('header').offsetHeight + 10}px`;
-    }
-});
-});
-
-
-const progressBar = document.getElementById('progress-bar');
-const header = document.querySelector('header');
-
-function adjustProgressBarPosition() {
-progressBar.style.top = `${header.offsetHeight}px`;
-}
-
-function updateProgressBar() {
-const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-const scrolledPercentage = (scrollTop / scrollHeight) * 100;
-progressBar.style.width = `${scrolledPercentage}%`;
-}
-
-
-function debounce(func, delay) {
-let debounceTimer;
-return function() {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(func, delay);
-};
-}
-
-
-window.addEventListener('load', () => {
-adjustProgressBarPosition();
-updateProgressBar();
-});
-
-window.addEventListener('resize', debounce(adjustProgressBarPosition, 100));
-window.addEventListener('scroll', debounce(updateProgressBar, 20));
-
-
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader) {
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', debounce(function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 50) {
-            siteHeader.classList.add('scrolled');
-        } else {
-            siteHeader.classList.remove('scrolled');
-        }
-        lastScrollTop = scrollTop;
-    }, 20));
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img');
-
-    images.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', function() {
-                img.classList.add('loaded');
-            });
-            img.addEventListener('error', function() {
-                img.classList.add('loaded'); 
-            });
-        }
-    });
-});
-
-
-if ('IntersectionObserver' in window) {
-    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        rootMargin: '50px'
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const lazyElements = document.querySelectorAll('.lazy-load');
-        lazyElements.forEach(el => lazyLoadObserver.observe(el));
-    });
-}
-
-
-if ('IntersectionObserver' in window) {
-    const staggerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('stagger-animation');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const blogGrid = document.querySelector('.blog-grid');
-        if (blogGrid) {
-            staggerObserver.observe(blogGrid);
-        }
-    });
-}
-
-
-window.addEventListener('load', function() {
-    const contentContainer = document.querySelector('.content-container');
-    if (contentContainer) {
-        contentContainer.classList.add('content-loaded');
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', function() {
-            const isExpanded = mainNav.classList.toggle('active');
-            mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-
-            
-            const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-            if (menuIcon) {
-                menuIcon.textContent = isExpanded ? '✕' : '☰';
-            }
-        });
-
+<script src="/js/main.js" defer></script>
+        <link rel="preload" href="/icons/sprite.svg" as="image" type="image/svg+xml">
         
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    mainNav.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-                    if (menuIcon) {
-                        menuIcon.textContent = '☰';
-                    }
-                }
-            });
-        });
-
-        
-        document.addEventListener('click', function(event) {
-            if (window.innerWidth <= 768) {
-                if (!event.target.closest('.site-header') && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-                    if (menuIcon) {
-                        menuIcon.textContent = '☰';
-                    }
-                }
-            }
-        });
-
-        
-        window.addEventListener('resize', debounce(function() {
-            if (window.innerWidth > 768) {
-                mainNav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                const menuIcon = mobileMenuToggle.querySelector('.menu-icon');
-                if (menuIcon) {
-                    menuIcon.textContent = '☰';
-                }
-            }
-        }, 100));
-    }
-});
-
-</script>
-</body>
-</html>
-
-        
-        <div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none;">
-            <div class="cookie-consent-content">
-                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
-                <div class="cookie-buttons">
-                    <button id="accept-cookies" class="btn-accept">Accept</button>
-                    <button id="decline-cookies" class="btn-decline">Decline</button>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const banner = document.getElementById("cookie-consent-banner");
-                const acceptBtn = document.getElementById("accept-cookies");
-                const declineBtn = document.getElementById("decline-cookies");
-                const consentGiven = localStorage.getItem("cookieConsent");
-
-                if (!consentGiven) {
-                    banner.style.display = "block";
-                } else if (consentGiven === "accepted") {
-                    loadAnalytics();
-                }
-
-                acceptBtn.addEventListener("click", function() {
-                    localStorage.setItem("cookieConsent", "accepted");
-                    banner.style.display = "none";
-                    loadAnalytics();
-                });
-
-                declineBtn.addEventListener("click", function() {
-                    localStorage.setItem("cookieConsent", "declined");
-                    banner.style.display = "none";
-                });
-
-                function loadAnalytics() {
-                    const script = document.createElement("script");
-                    script.defer = true;
-                    script.setAttribute("data-domain", "www.thetechbiscuit.com");
-                    script.src = "https://plausible.io/js/script.js";
-                    document.head.appendChild(script);
-                }
-            });
-        </script>
     </body>
 </html>

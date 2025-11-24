@@ -1,12 +1,26 @@
 {{ define "main" }}
     {{ partial "breadcrumb.html" . }}
-    <article class="single-post-article">
-        <h1>{{ .Title }}</h1>
-        <div class="meta-info">
-            <span class="author">By {{ .Params.author | default "Zack Baxter" }}</span>
-            <span class="date">Published on {{ .Date.Format "January 2, 2006" }}</span>
-            <span class="reading-time">{{ .ReadingTime }} min read</span>
+
+    <section class="post-hero">
+        <div class="post-hero__content">
+            <p class="eyebrow">Featured Article</p>
+            <h1>{{ .Title }}</h1>
+            <div class="meta-info">
+                <span class="author">By {{ .Params.author | default "Zack Baxter" }}</span>
+                <span class="date">Published on {{ .Date.Format "January 2, 2006" }}</span>
+                <span class="reading-time">{{ .ReadingTime }} min read</span>
+            </div>
+            {{ with .Params.tags }}
+            <div class="meta-tags">
+                {{ range . }}
+                <span class="tag-pill">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
         </div>
+    </section>
+
+    <article class="single-post-article">
 
         {{ with .TableOfContents }}
         <div class="table-of-contents">
@@ -22,8 +36,30 @@
         <aside class="related-posts">
             <h3>Related Posts</h3>
             <ul>
-                {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ $current := . }}
+                {{ $tags := .Params.tags }}
+                {{ $all := sort (where .Site.RegularPages "Section" "blog") "Date" "desc" }}
+                {{ $related := slice }}
+
+                {{ if $tags }}
+                    {{ range $all }}
+                        {{ if and (ne .Permalink $current.Permalink) (gt (len (intersect .Params.tags $tags)) 0) }}
+                            {{ $related = $related | append . }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+
+                {{ if lt (len $related) 3 }}
+                    {{ range $all }}
+                        {{ if and (ne .Permalink $current.Permalink) (not (in $related .)) }}
+                            {{ $related = $related | append . }}
+                        {{ end }}
+                        {{ if ge (len $related) 3 }}{{ break }}{{ end }}
+                    {{ end }}
+                {{ end }}
+
+                {{ range first 3 $related }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                 {{ end }}
             </ul>
         </aside>

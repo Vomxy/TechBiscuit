@@ -1,36 +1,56 @@
 import os
 import re
 import shutil
+import sys
 
-# Paths
-posts_dir = "/home/natefletcher/Documents/thetechbiscuit/content/blog"
-attachments_dir = "/home/natefletcher/Documents/TheTechBiscuit Vault/99 - Meta/01 - Attachments"
-static_images_dir = "/home/natefletcher/Documents/thetechbiscuit/static/images/"
+POSTS_DIR = "/home/natefletcher/Documents/thetechbiscuit/content/blog"
+ATTACHMENTS_DIR = "/home/natefletcher/Documents/TheTechBiscuit Vault/99 - Meta/01 - Attachments"
+STATIC_IMAGES_DIR = "/home/natefletcher/Documents/thetechbiscuit/static/images/"
+IMAGE_EXTENSIONS = (".webp", ".png", ".jpg", ".jpeg", ".avif")
 
-# Step 1: Process each markdown file in the posts directory
-for filename in os.listdir(posts_dir):
-    if filename.endswith(".md"):
-        filepath = os.path.join(posts_dir, filename)
-        
-        with open(filepath, "r") as file:
-            content = file.read()
-        
-        # Step 2: Find all image links in the format [[Pasted Image*.webp]]
-        images = re.findall(r'\[\[([^]]*\.webp)\]\]', content)
-        
-        # Step 3: Replace image links and ensure URLs are correctly formatted
-        for image in images:
-            # Prepare the Markdown-compatible link with %20 replacing spaces
-            markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
-            content = content.replace(f"[[{image}]]", markdown_image)
-            
-            # Step 4: Copy the image to the Hugo static/images directory if it exists
-            image_source = os.path.join(attachments_dir, image)
-            if os.path.exists(image_source):
-                shutil.copy(image_source, static_images_dir)
+missing_images = []
+updated_files = 0
+copied_files = 0
 
-        # Step 5: Write the updated content back to the markdown file
+os.makedirs(STATIC_IMAGES_DIR, exist_ok=True)
+
+for filename in os.listdir(POSTS_DIR):
+    if not filename.endswith(".md"):
+        continue
+
+    filepath = os.path.join(POSTS_DIR, filename)
+    with open(filepath, "r") as file:
+        content = file.read()
+
+    images = re.findall(r"\[\[([^]]+\.(?:webp|png|jpg|jpeg|avif))\]\]", content, flags=re.IGNORECASE)
+    if not images:
+        continue
+
+    original_content = content
+
+    for image in images:
+        image_source = os.path.join(ATTACHMENTS_DIR, image)
+        alt_text = os.path.splitext(image)[0].replace("-", " ").replace("_", " ").strip() or "Image"
+        alt_text = " ".join(alt_text.split())
+        markdown_image = f"![{alt_text}](/images/{image.replace(' ', '%20')})"
+        content = content.replace(f"[[{image}]]", markdown_image)
+
+        if os.path.exists(image_source):
+            shutil.copy(image_source, STATIC_IMAGES_DIR)
+            copied_files += 1
+        else:
+            missing_images.append(image)
+
+    if content != original_content:
         with open(filepath, "w") as file:
             file.write(content)
+        updated_files += 1
 
-print("Markdown files processed and images copied successfully.")
+if missing_images:
+    print("The following images were referenced but not found in attachments:")
+    for image in missing_images:
+        print(f"- {image}")
+    sys.exit(1)
+
+print(f"Markdown files processed: {updated_files}")
+print(f"Images copied: {copied_files}")

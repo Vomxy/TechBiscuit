@@ -1,5 +1,5 @@
 <!-- Structured Data (JSON-LD) -->
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ $.Scratch.Get "cspNonce" }}">
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -22,7 +22,7 @@
 </script>
 
 {{ if eq .Section "blog" }}
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ $.Scratch.Get "cspNonce" }}">
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -61,7 +61,7 @@
 {{ end }}
 
 {{ if .IsHome }}
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ $.Scratch.Get "cspNonce" }}">
 {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -82,7 +82,7 @@
 
 {{ if or (eq .Section "blog") (eq .Type "blog") }}
 <!-- BreadcrumbList Schema -->
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ $.Scratch.Get "cspNonce" }}">
 {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
