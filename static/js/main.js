@@ -148,6 +148,7 @@
         window.addEventListener("load", () => {
             adjust();
             update();
+            progressBar.style.opacity = "1";
         });
         window.addEventListener("resize", debounce(adjust, 100));
         window.addEventListener("scroll", debounce(update, 20));

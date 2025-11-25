@@ -91,12 +91,20 @@
                 <div class="card-inner">
                     <!-- Card front -->
                     <div class="card-front">
+                        {{ with .Params.image }}
+                        <figure class="card-media">
+                            <img src="{{ . | relURL }}" alt="{{ $.Params.imageAlt | default (printf "%s artwork" $.Title) }}">
+                        </figure>
+                        {{ end }}
+
                         <div class="card-badge">
                             {{ if eq (urlize .Params.category) "poetry" }}
                                 <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
                             {{ else if eq (urlize .Params.category) "resilience" }}
                                 <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#spark"></use></svg>
                             {{ else if eq (urlize .Params.category) "wisdom" }}
+                                <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
+                            {{ else if eq (urlize .Params.category) "art" }}
                                 <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
                             {{ else }}
                                 <svg class="icon icon-badge" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
@@ -110,6 +118,8 @@
                             {{ else if eq (urlize .Params.category) "resilience" }}
                                 <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#spark"></use></svg>
                             {{ else if eq (urlize .Params.category) "wisdom" }}
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
+                            {{ else if eq (urlize .Params.category) "art" }}
                                 <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
                             {{ else }}
                                 <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>

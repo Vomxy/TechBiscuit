@@ -867,7 +867,7 @@ main {
     transform: translate(-50%, -50%);
     width: 320px;
     height: 2px;
-    background: linear-gradient(90deg, transparent 0%, rgba(242,166,90,0.5) 30%, rgba(125,211,252,0.6) 50%, rgba(242,166,90,0.5) 70%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(242,166,90,0.55) 30%, rgba(255,127,80,0.55) 50%, rgba(242,166,90,0.55) 70%, transparent 100%);
     box-shadow: 0 0 10px rgba(242, 166, 90, 0.5);
 }
 
@@ -893,9 +893,10 @@ main {
    =================================== */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+    align-items: stretch;
 }
 
 .blog-card {
@@ -914,6 +915,7 @@ main {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(6px);
+    height: 100%;
 }
 
 .blog-card::before {
@@ -923,7 +925,7 @@ main {
     left: 0;
     width: 5px;
     height: 100%;
-    background: linear-gradient(180deg, #f2a65a 0%, #7dd3fc 100%);
+    background: linear-gradient(180deg, #f2a65a 0%, #ff7f50 100%);
     transition: width 0.3s ease;
 }
 
@@ -942,7 +944,7 @@ main {
     width: 100%;
     height: 100%;
     background:
-        linear-gradient(135deg, rgba(242, 166, 90, 0.8) 0%, rgba(125, 211, 252, 0.7) 60%, rgba(242, 166, 90, 0.85) 100%),
+        linear-gradient(135deg, rgba(242, 166, 90, 0.8) 0%, rgba(255, 127, 80, 0.75) 60%, rgba(242, 166, 90, 0.85) 100%),
         linear-gradient(45deg, rgba(15, 22, 33, 0.35) 0%, rgba(11, 17, 26, 0.35) 100%);
     display: flex;
     align-items: center;
@@ -1443,13 +1445,13 @@ footer .footer-bottom{
 .compact-list li {
     background:
         linear-gradient(145deg, rgba(12,18,29,0.92) 0%, rgba(15,24,38,0.95) 100%),
-        radial-gradient(circle at top right, rgba(125, 211, 252, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at top right, rgba(255, 127, 80, 0.08) 0%, transparent 60%),
         radial-gradient(circle at bottom left, rgba(242, 166, 90, 0.1) 0%, transparent 60%);
     padding: 2rem;
     border-radius: 20px;
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.18),
-        0 4px 10px rgba(125, 211, 252, 0.08),
+        0 4px 10px rgba(242, 166, 90, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
@@ -1589,9 +1591,11 @@ footer .footer-bottom{
     background: linear-gradient(90deg, #e69e56 0%, #f4a261 50%, #e69e56 100%);
     background-size: 200% auto;
     z-index:9999;
-    transition:width .2s ease-out;
+    transition:width .2s ease-out, opacity .25s ease;
     box-shadow: 0 0 10px rgba(230, 158, 86, 0.6), 0 0 20px rgba(230, 158, 86, 0.4);
     animation: shimmer 3s linear infinite;
+    opacity: 0;
+    pointer-events: none;
 }
 
 #progress-bar::after {
@@ -1967,7 +1971,7 @@ footer .footer-bottom{
     padding: 3rem 0 4rem;
     background:
         radial-gradient(circle at 15% 20%, rgba(242, 166, 90, 0.14), transparent 32%),
-        radial-gradient(circle at 85% 10%, rgba(125, 211, 252, 0.14), transparent 30%),
+        radial-gradient(circle at 85% 10%, rgba(255, 127, 80, 0.14), transparent 30%),
         linear-gradient(135deg, #0e1626 0%, #0b1321 50%, #0c1728 100%);
     overflow: hidden;
 }
@@ -2006,7 +2010,7 @@ footer .footer-bottom{
 .gallery-title {
     font-size: clamp(2.4rem, 4vw, 3.2rem);
     font-weight: 700;
-    background: linear-gradient(135deg, #e69e56 0%, #f4a261 50%, #7dd3fc 100%);
+    background: linear-gradient(135deg, #e69e56 0%, #f4a261 50%, #ff7f50 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2098,7 +2102,7 @@ footer .footer-bottom{
 .filter-btn {
     padding: 0.7rem 1.2rem;
     border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     color: var(--text);
     border-radius: 999px;
     cursor: pointer;
@@ -2130,17 +2134,17 @@ footer .footer-bottom{
 }
 
 .filter-btn:hover {
-    border-color: rgba(230, 158, 86, 0.45);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(230, 158, 86, 0.28);
+    border-color: rgba(230, 158, 86, 0.35);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 5px 15px rgba(230, 158, 86, 0.22);
 }
 
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+    background: var(--accent);
     color: var(--background-strong);
-    border-color: rgba(242, 166, 90, 0.5);
-    box-shadow: 0 4px 15px rgba(242, 166, 90, 0.32);
-    transform: scale(1.1);
+    border-color: rgba(242, 166, 90, 0.6);
+    box-shadow: 0 4px 12px rgba(242, 166, 90, 0.25);
+    transform: scale(1.06);
 }
 
 .filter-btn.active::before {
@@ -2227,8 +2231,8 @@ footer .footer-bottom{
     justify-self: end;
     padding: 0.6rem 0.9rem;
     border-radius: 999px;
-    background: linear-gradient(120deg, rgba(242, 166, 90, 0.18), rgba(125, 211, 252, 0.18));
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(242, 166, 90, 0.16);
+    border: 1px solid rgba(242, 166, 90, 0.3);
     color: var(--text);
     font-weight: 700;
     text-align: center;
@@ -2253,8 +2257,9 @@ footer .footer-bottom{
 
 /* Creative Card */
 .creative-card {
+    position: relative;
     perspective: 1000px;
-    height: 470px;
+    height: clamp(460px, 65vw, 520px);
     animation: fadeInUp 0.6s ease forwards;
     opacity: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2277,6 +2282,8 @@ footer .footer-bottom{
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: inherit;
+    transform-origin: center center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -2290,10 +2297,15 @@ footer .footer-bottom{
     position: absolute;
     width: 100%;
     height: 100%;
+    min-height: inherit;
     backface-visibility: hidden;
     border-radius: 20px;
     padding: 1.75rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.creative-card .card-inner.flipped .card-front {
+    pointer-events: none;
 }
 
 .card-front {
@@ -2303,8 +2315,8 @@ footer .footer-bottom{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.35rem;
+    justify-content: flex-start;
+    gap: 0.75rem;
     text-align: center;
     box-shadow:
         0 10px 40px rgba(0, 0, 0, 0.35),
@@ -2318,7 +2330,7 @@ footer .footer-bottom{
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 25% 15%, rgba(242, 166, 90, 0.16), transparent 45%),
-        radial-gradient(circle at 80% 10%, rgba(125, 211, 252, 0.14), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(255, 127, 80, 0.14), transparent 45%),
         radial-gradient(circle at 50% 85%, rgba(255, 255, 255, 0.04), transparent 45%);
     pointer-events: none;
     z-index: 0;
@@ -2326,8 +2338,8 @@ footer .footer-bottom{
 
 .card-back {
     background:
-        linear-gradient(135deg, rgba(242, 166, 90, 0.96) 0%, rgba(125, 211, 252, 0.9) 60%, rgba(242, 166, 90, 0.96) 100%),
-        radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.4) 0%, transparent 60%);
+        linear-gradient(135deg, rgba(242, 166, 90, 0.96) 0%, rgba(255, 127, 80, 0.9) 60%, rgba(242, 166, 90, 0.96) 100%),
+        radial-gradient(circle at bottom right, rgba(255, 127, 80, 0.35) 0%, transparent 60%);
     transform: rotateY(180deg);
     overflow-y: auto;
     color: var(--background-strong);
@@ -2362,6 +2374,22 @@ footer .footer-bottom{
 .card-front > * {
     position: relative;
     z-index: 1;
+}
+
+.card-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card-badge {
@@ -2478,6 +2506,7 @@ footer .footer-bottom{
     box-shadow: 0 4px 15px rgba(230, 158, 86, 0.3);
     position: relative;
     overflow: hidden;
+    margin-top: auto;
 }
 
 .read-more-btn::before {
@@ -2566,6 +2595,44 @@ footer .footer-bottom{
     .creative-filters {
         width: 100%;
         justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .creative-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .creative-card {
+        height: 440px;
+    }
+    .card-front,
+    .card-back {
+        padding: 1.25rem;
+        min-height: 400px;
+    }
+    .card-title {
+        font-size: 1.5rem;
+    }
+    .card-description {
+        font-size: 0.95rem;
+    }
+    .read-more-btn {
+        width: 100%;
+    }
+    .gallery-header {
+        margin-bottom: 2rem;
+    }
+    .creative-filters {
+        justify-content: flex-start;
+    }
+    .filter-btn {
+        min-width: 90px;
+        padding: 0.65rem 1rem;
+    }
+    .card-icon {
+        animation: none;
+        transform: none !important;
     }
 }
 
@@ -3531,5 +3598,134 @@ img[loading="lazy"].loaded {
 }
 
 .single-post-article {
+    margin: 1.5rem auto 3rem;
+}
+
+/* Refined article layout */
+.single-post-article {
+    max-width: 1180px;
+    display: grid;
+    grid-template-columns: minmax(240px, 300px) 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.single-post-article .table-of-contents {
+    position: sticky;
+    top: 120px;
+    background: linear-gradient(150deg, rgba(18,27,42,0.92) 0%, rgba(13,20,34,0.95) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+}
+
+.single-post-article .table-of-contents h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--heading-color);
+}
+
+.single-post-article .table-of-contents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.single-post-article .table-of-contents a {
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.5;
+    transition: color var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.single-post-article .table-of-contents a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+.single-post-article .content {
+    background: linear-gradient(170deg, rgba(12,18,29,0.9) 0%, rgba(10,16,26,0.96) 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--border-radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.single-post-article .content p {
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 1.02rem;
+}
+
+.single-post-article .content h2,
+.single-post-article .content h3 {
+    color: var(--heading-color);
+    border: none;
+    padding-bottom: 0.25rem;
     margin-top: 1.5rem;
+    position: relative;
+}
+
+.single-post-article .content h2::after,
+.single-post-article .content h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    border-radius: 999px;
+}
+
+.single-post-article .content blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.single-post-article .related-posts {
+    grid-column: 1 / -1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.single-post-article .related-posts h3 {
+    margin-top: 0;
+    color: var(--heading-color);
+}
+
+.single-post-article .related-posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.single-post-article .related-posts a {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.single-post-article .related-posts a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 960px) {
+    .single-post-article {
+        grid-template-columns: 1fr;
+    }
+    .single-post-article .table-of-contents {
+        position: relative;
+        top: auto;
+    }
 }

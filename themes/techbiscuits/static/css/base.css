@@ -34,7 +34,6 @@ html {
         align-items: center;
         justify-content: center;
     }
-    * { animation-duration: 0.3s !important; }
     body { -webkit-overflow-scrolling: touch; }
 }
 
