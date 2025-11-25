@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     
     
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-187b17d1d23eb62c' https://plausible.io https://kit.fontawesome.com; style-src 'self' https://fonts.googleapis.com https://kit.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io https://kit.fontawesome.com https://ka-f.fontawesome.com; base-uri 'self'; object-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-187b1977042c3c8f' https://plausible.io https://kit.fontawesome.com; style-src 'self' https://fonts.googleapis.com https://kit.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com; img-src 'self' data: https://*; connect-src 'self' https://plausible.io https://kit.fontawesome.com https://ka-f.fontawesome.com; base-uri 'self'; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Read TheTechBiscuit, authored by Zack Baxter.">
     <meta name="keywords" content="TechBiscuit, blog, personal website">
@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="/css/components.css" type="text/css" media="all" />
     
     
-<script type="application/ld+json" nonce="187b17d1d23eb62c">
+<script type="application/ld+json" nonce="187b1977042c3c8f">
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -69,7 +69,7 @@
 
 
 
-<script type="application/ld+json" nonce="187b17d1d23eb62c">
+<script type="application/ld+json" nonce="187b1977042c3c8f">
 {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -293,7 +293,8 @@
             <div class="tabs" role="tablist" aria-label="Favorites sections">
                 <button class="tab-link" role="tab" data-tab="favorite-books" id="tab-favorite-books" aria-controls="favorite-books" aria-selected="false">Favorite Books</button>
                 <button class="tab-link" role="tab" data-tab="favorite-websites-tools" id="tab-favorite-websites-tools" aria-controls="favorite-websites-tools" aria-selected="false">Websites & Tools</button>
-                <button class="tab-link" role="tab" data-tab="recommended-podcasts" id="tab-recommended-podcasts" aria-controls="recommended-podcasts" aria-selected="false">Podcasts</button>
+                <button class="tab-link" role="tab" data-tab="favorite-projects" id="tab-favorite-projects" aria-controls="favorite-projects" aria-selected="false">Projects</button>
+                <button class="tab-link" role="tab" data-tab="recommended-podcasts" id="tab-recommended-podcasts" aria-controls="recommended-podcasts" aria-selected="false">Podcasts & Channels</button>
             </div>
             <div id="favorite-books" class="tab-content" role="tabpanel" aria-labelledby="tab-favorite-books">
                 <h2>My Favorite Books</h2>
@@ -309,6 +310,14 @@
                     <li>
                         <strong>Digital Forensic Diaries</strong> by Mike Sheward <p>Digital Forensics Diaries follows a digital forensics investigator through the artistic and scientific process that leads to cracking cases without physical evidence. Based on the author's real-world experiences.</p>
                         <a href="https://www.goodreads.com/book/show/36682186-digital-forensic-diaries" target="_blank">View on Goodreads</a>
+                    </li>
+                    <li>
+                        <strong>The 33 Strategies of War</strong> by Robert Greene <p>A tactical and psychological toolkit that turns historic campaigns into principles for modern leadership, conflict, and negotiation.</p>
+                        <a href="https://www.goodreads.com/book/show/2647.The_33_Strategies_of_War" target="_blank">View on Goodreads</a>
+                    </li>
+                    <li>
+                        <strong>Meditations</strong> by Marcus Aurelius <p>Stoic field-notes from a Roman emperor—compact reminders on discipline, humility, and focusing on what is within your control.</p>
+                        <a href="https://www.goodreads.com/book/show/30659.Meditations" target="_blank">View on Goodreads</a>
                     </li>
                 </ul>
             </div>
@@ -347,8 +356,61 @@
                     </li>
                 </ul>
             </div>
+            <div id="favorite-projects" class="tab-content" role="tabpanel" aria-labelledby="tab-favorite-projects">
+                <h2>Projects I’m tracking</h2>
+                <ul class="compact-list">
+                    <li>
+                        <strong><a href="https://frame.work/" target="_blank">Framework Laptop</a></strong>
+                        <p>Repairable, modular laptops pushing right-to-repair and upgradable design forward.</p>
+                        <div class="favorite-actions">
+                            <a class="pill-button" href="https://frame.work/marketplace" target="_blank">Marketplace</a>
+                            <a class="pill-button ghost" href="https://guides.frame.work/" target="_blank">Repair guides</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><a href="https://immich.app/" target="_blank">Immich</a></strong>
+                        <p>Open-source, self-hosted photo and video backup with slick mobile apps.</p>
+                        <div class="favorite-actions">
+                            <a class="pill-button" href="https://github.com/immich-app/immich" target="_blank">GitHub</a>
+                            <a class="pill-button ghost" href="https://immich.app/docs/overview/introduction" target="_blank">Docs</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><a href="https://grapheneos.org/" target="_blank">GrapheneOS</a></strong>
+                        <p>Hardened Android for Pixel devices—privacy and security without losing daily usability.</p>
+                        <div class="favorite-actions">
+                            <a class="pill-button" href="https://grapheneos.org/releases" target="_blank">Releases</a>
+                            <a class="pill-button ghost" href="https://grapheneos.org/install/web" target="_blank">Install guide</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><a href="https://keyboard.futo.org/" target="_blank">FUTO Keyboard</a></strong>
+                        <p>Privacy-first keyboard focused on on-device intelligence and low-latency typing.</p>
+                        <div class="favorite-actions">
+                            <a class="pill-button" href="https://keyboard.futo.org/" target="_blank">Download</a>
+                            <a class="pill-button ghost" href="https://github.com/futo-org/keyboard" target="_blank">Source</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><a href="https://obsidian.md/" target="_blank">Obsidian</a></strong>
+                        <p>Local-first knowledge base with plugins and graph views for mapping ideas.</p>
+                        <div class="favorite-actions">
+                            <a class="pill-button" href="https://obsidian.md/download" target="_blank">Download</a>
+                            <a class="pill-button ghost" href="https://obsidian.md/plugins" target="_blank">Plugins</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong><a href="https://signal.org/" target="_blank">Signal</a></strong>
+                        <p>End-to-end encrypted messaging that keeps metadata to a minimum.</p>
+                        <div class="favorite-actions">
+                            <a class="pill-button" href="https://signal.org/download/" target="_blank">Download</a>
+                            <a class="pill-button ghost" href="https://support.signal.org/hc/en-us" target="_blank">Support</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div id="recommended-podcasts" class="tab-content" role="tabpanel" aria-labelledby="tab-recommended-podcasts">
-                <h2>Podcasts I Highly Recommend</h2>
+                <h2>Podcasts & Channels I Highly Recommend</h2>
                 <ul class="compact-list">
                   <li>
                     <img class="podcast-cover" src="/images/jack-splat.webp" alt="Darknet Diaries podcast cover featuring Jack Rhysider's portrait" loading="lazy">
@@ -376,6 +438,92 @@
                         <a href="https://www.vice.com/en/section/tech" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
                       </div>
                       <p>Cybersecurity focused podcast that covers topics like disinformation campaigns, encryption, and other cybersecurity topics.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/jocko-underground.svg" alt="Jocko Underground podcast logo" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">Jocko Underground</strong>
+                      <span class="producer-name">with Jocko Willink</span>
+                      <div class="podcast-links">
+                        <a href="https://www.youtube.com/@JockoPodcast" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://open.spotify.com/show/4J0WZBBOABQW7zcX9YgKQ6" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify" loading="lazy"></a>
+                        <a href="https://www.jockounderground.com/" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
+                      </div>
+                      <p>Short, tactical hits on ownership, discipline, leadership, and mission-first mindset from Jocko and guests.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/diary-ceo-official.jpg" alt="The Diary of a CEO podcast cover" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">The Diary of a CEO</strong>
+                      <span class="producer-name">with Steven Bartlett</span>
+                      <div class="podcast-links">
+                        <a href="https://open.spotify.com/show/7iQXmUT7XGuZSzAMjoNWlX" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify" loading="lazy"></a>
+                        <a href="https://www.youtube.com/@TheDiaryOfACEO" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://stevenbartlett.com/the-diary-of-a-ceo-podcast/" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
+                      </div>
+                      <p>Long-form conversations unpacking leadership, resilience, and building durable companies.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/modern-wisdom-official.webp" alt="Modern Wisdom podcast cover" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">Modern Wisdom</strong>
+                      <span class="producer-name">with Chris Williamson</span>
+                      <div class="podcast-links">
+                        <a href="https://open.spotify.com/show/1Xr0HfHstIQQlZ4eY1TUMS" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify" loading="lazy"></a>
+                        <a href="https://www.youtube.com/@ModernWisdomPodcast" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://chriswillx.com/modern-wisdom/" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
+                      </div>
+                      <p>Expert interviews on philosophy, performance, science, and the habits that move the needle.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/jre-official.jpg" alt="The Joe Rogan Experience podcast cover" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">The Joe Rogan Experience</strong>
+                      <span class="producer-name">with Joe Rogan</span>
+                      <div class="podcast-links">
+                        <a href="https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk" target="_blank"><img src="/images/spotify-logo.svg" alt="Spotify" loading="lazy"></a>
+                        <a href="https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
+                      </div>
+                      <p>Wide-ranging conversations spanning science, culture, comedy, and hard questions.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/networkchuck-official.jpg" alt="NetworkChuck channel cover" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">NetworkChuck</strong>
+                      <span class="producer-name">YouTube Channel</span>
+                      <div class="podcast-links">
+                        <a href="https://www.youtube.com/@NetworkChuck" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://networkchuck.com/" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
+                      </div>
+                      <p>High-energy networking, hacking, and homelab tutorials that make technical deep-dives fun.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/minority-mindset-official.png" alt="Minority Mindset channel cover" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">Minority Mindset</strong>
+                      <span class="producer-name">Jaspreet Singh</span>
+                      <div class="podcast-links">
+                        <a href="https://www.youtube.com/@MinorityMindset" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube" loading="lazy"></a>
+                        <a href="https://theminoritymindset.com/" target="_blank"><img src="/images/link-icon.svg" alt="Website" loading="lazy"></a>
+                      </div>
+                      <p>Straightforward finance and business breakdowns focused on building wealth with discipline.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <img class="podcast-cover" src="/images/janapasabi-official.jpg" alt="janapasabi channel cover" loading="lazy">
+                    <div class="podcast-info">
+                      <strong class="podcast-name">janapasabi</strong>
+                      <span class="producer-name">YouTube Channel</span>
+                      <div class="podcast-links">
+                        <a href="https://www.youtube.com/results?search_query=janapasabi" target="_blank"><img src="/images/youtube-logo.svg" alt="YouTube search for janapasabi" loading="lazy"></a>
+                      </div>
+                      <p>Channel dives into tech, creativity, and personal growth with a candid, community-first tone.</p>
                     </div>
                   </li>
                 </ul>

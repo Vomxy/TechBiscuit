@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Jocko Underground logo">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop stop-color="#1b1f2b" offset="0%"/>
+      <stop stop-color="#0f111a" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="28" fill="url(#g)" />
+  <rect x="20" y="20" width="200" height="200" rx="20" fill="#111725" stroke="#f2a65a" stroke-width="4" />
+  <path d="M60 155 L90 85 L120 155 L150 85 L180 155" fill="none" stroke="#f2a65a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="90" cy="70" r="8" fill="#f2a65a"/>
+  <circle cx="150" cy="70" r="8" fill="#f2a65a"/>
+</svg>

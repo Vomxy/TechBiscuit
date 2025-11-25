@@ -1461,6 +1461,39 @@ footer .footer-bottom{
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.favorite-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.65rem;
+}
+
+.pill-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--background-strong);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid rgba(242,166,90,0.4);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background var(--transition-smooth);
+}
+
+.pill-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.pill-button.ghost {
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    border-color: rgba(255,255,255,0.14);
+}
+
 .compact-list li::before {
     content: '';
     position: absolute;
@@ -2259,7 +2292,7 @@ footer .footer-bottom{
 .creative-card {
     position: relative;
     perspective: 1000px;
-    height: clamp(460px, 65vw, 520px);
+    height: clamp(480px, 62vw, 560px);
     animation: fadeInUp 0.6s ease forwards;
     opacity: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2383,6 +2416,7 @@ footer .footer-bottom{
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.08);
     box-shadow: var(--shadow-sm);
+    margin-bottom: 0.35rem;
 }
 
 .card-media img {
@@ -2604,7 +2638,7 @@ footer .footer-bottom{
         gap: 1.5rem;
     }
     .creative-card {
-        height: 440px;
+        height: 460px;
     }
     .card-front,
     .card-back {
@@ -3610,6 +3644,58 @@ img[loading="lazy"].loaded {
     align-items: start;
 }
 
+.single-post-article .content {
+    background: linear-gradient(170deg, rgba(12,18,29,0.9) 0%, rgba(10,16,26,0.96) 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--border-radius-xl);
+    padding: 2.2rem;
+    box-shadow: var(--shadow-lg);
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.single-post-article .content p {
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 1.04rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.4rem;
+}
+
+.single-post-article .content ul,
+.single-post-article .content ol {
+    padding-left: 1.2rem;
+    margin: 0 0 1.4rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.single-post-article .content li + li {
+    margin-top: 0.4rem;
+}
+
+.single-post-article .content code {
+    background: rgba(255,255,255,0.06);
+    padding: 0.25rem 0.45rem;
+    border-radius: var(--border-radius-sm);
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+.single-post-article .content pre {
+    background: rgba(0,0,0,0.45);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow: auto;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.single-post-article .content img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
 .single-post-article .table-of-contents {
     position: sticky;
     top: 120px;
@@ -3647,20 +3733,6 @@ img[loading="lazy"].loaded {
     transform: translateX(4px);
 }
 
-.single-post-article .content {
-    background: linear-gradient(170deg, rgba(12,18,29,0.9) 0%, rgba(10,16,26,0.96) 100%);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: var(--border-radius-xl);
-    padding: 2rem;
-    box-shadow: var(--shadow-lg);
-}
-
-.single-post-article .content p {
-    color: var(--text);
-    line-height: 1.9;
-    font-size: 1.02rem;
-}
-
 .single-post-article .content h2,
 .single-post-article .content h3 {
     color: var(--heading-color);
@@ -3687,6 +3759,9 @@ img[loading="lazy"].loaded {
     padding-left: 1rem;
     color: var(--text-light);
     font-style: italic;
+    background: rgba(255,255,255,0.03);
+    border-radius: var(--border-radius-sm);
+    padding: 0.85rem 1.1rem;
 }
 
 .single-post-article .related-posts {
@@ -3727,5 +3802,8 @@ img[loading="lazy"].loaded {
     .single-post-article .table-of-contents {
         position: relative;
         top: auto;
+    }
+    .single-post-article .content {
+        padding: 1.5rem;
     }
 }
