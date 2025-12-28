@@ -1,0 +1,15 @@
+<!-- Component: Callout Box -->
+{{- $type := .Get "type" | default "info" -}}
+{{- $icon := .Get "icon" | default "ℹ️" -}}
+
+<div class="callout callout-{{ $type }}">
+    <div class="callout-icon">{{ $icon }}</div>
+    <div class="callout-content">
+        {{- with .Get "title" -}}
+        <div class="callout-title">{{ . }}</div>
+        {{- end -}}
+        <div class="callout-body">
+            {{ .Inner | markdownify }}
+        </div>
+    </div>
+</div>

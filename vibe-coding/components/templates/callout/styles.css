@@ -1,0 +1,70 @@
+/* Component: Callout Box */
+.callout {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: var(--border-radius-md, 8px);
+    border-left: 4px solid;
+    background: white;
+    box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.callout-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.callout-content {
+    flex: 1;
+}
+
+.callout-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.callout-body {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Callout variants */
+.callout-info {
+    border-left-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.callout-success {
+    border-left-color: #10b981;
+    background: #ecfdf5;
+}
+
+.callout-warning {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.callout-danger {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.callout-tip {
+    border-left-color: var(--accent, #e69e56);
+    background: #fff7ed;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .callout {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .callout-icon {
+        font-size: 1.25rem;
+    }
+}

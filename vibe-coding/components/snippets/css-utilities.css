@@ -1,0 +1,304 @@
+/* ============================================
+   VIBE CODING: CSS UTILITY SNIPPETS
+   Quick copy-paste utilities for rapid dev
+   ============================================ */
+
+/* ----------------
+   Glassmorphism
+   ---------------- */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ----------------
+   Gradient Buttons
+   ---------------- */
+.btn-gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-gradient:active {
+    transform: translateY(0);
+}
+
+/* ----------------
+   Shimmer Loading
+   ---------------- */
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ----------------
+   Skeleton Loaders
+   ---------------- */
+.skeleton {
+    background: #e0e0e0;
+    border-radius: var(--border-radius-sm);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-text {
+    height: 1rem;
+    margin: 0.5rem 0;
+}
+
+.skeleton-title {
+    height: 2rem;
+    width: 60%;
+    margin: 0.75rem 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ----------------
+   3D Card Flip
+   ---------------- */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 300px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* ----------------
+   Hover Lift Effect
+   ---------------- */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ----------------
+   Gradient Text
+   ---------------- */
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent) 0%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ----------------
+   Floating Animation
+   ---------------- */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ----------------
+   Stagger Children
+   ---------------- */
+.stagger-parent > * {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.stagger-parent > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-parent > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-parent > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-parent > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-parent > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------
+   Neon Glow
+   ---------------- */
+.neon-glow {
+    text-shadow:
+        0 0 5px var(--accent),
+        0 0 10px var(--accent),
+        0 0 20px var(--accent),
+        0 0 40px var(--accent);
+    animation: neon-flicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* ----------------
+   Smooth Reveal
+   ---------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------
+   Grid Layouts
+   ---------------- */
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* ----------------
+   Flex Utilities
+   ---------------- */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------
+   Truncate Text
+   ---------------- */
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ----------------
+   Aspect Ratios
+   ---------------- */
+.aspect-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+/* ----------------
+   Spacing Utilities
+   ---------------- */
+.gap-sm { gap: var(--spacing-sm, 0.5rem); }
+.gap-md { gap: var(--spacing-md, 1rem); }
+.gap-lg { gap: var(--spacing-lg, 2rem); }
+
+.p-sm { padding: var(--spacing-sm, 0.5rem); }
+.p-md { padding: var(--spacing-md, 1rem); }
+.p-lg { padding: var(--spacing-lg, 2rem); }
+
+.m-sm { margin: var(--spacing-sm, 0.5rem); }
+.m-md { margin: var(--spacing-md, 1rem); }
+.m-lg { margin: var(--spacing-lg, 2rem); }

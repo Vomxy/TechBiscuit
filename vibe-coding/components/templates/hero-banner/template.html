@@ -1,0 +1,30 @@
+<!-- Component: Hero Banner -->
+{{- $title := .Get "title" | default "Welcome" -}}
+{{- $subtitle := .Get "subtitle" -}}
+{{- $image := .Get "image" -}}
+{{- $overlay := .Get "overlay" | default "true" -}}
+{{- $height := .Get "height" | default "400px" -}}
+
+<div class="hero-banner" style="min-height: {{ $height }};">
+    {{- if $image -}}
+    <div class="hero-background">
+        <img src="{{ $image }}" alt="{{ $title }}" loading="lazy">
+        {{- if eq $overlay "true" -}}
+        <div class="hero-overlay"></div>
+        {{- end -}}
+    </div>
+    {{- end -}}
+
+    <div class="hero-content">
+        <h1 class="hero-title">{{ $title }}</h1>
+        {{- with $subtitle -}}
+        <p class="hero-subtitle">{{ . }}</p>
+        {{- end -}}
+
+        {{- with .Inner -}}
+        <div class="hero-cta">
+            {{ . | markdownify }}
+        </div>
+        {{- end -}}
+    </div>
+</div>
