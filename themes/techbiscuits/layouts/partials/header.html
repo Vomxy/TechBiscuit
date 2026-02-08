@@ -3,39 +3,41 @@
     <div class="header-container">
         <a href="{{ .Site.BaseURL }}" class="header-logo-link">
             <img src="/images/logo.svg" alt="TheTechBiscuit Logo" class="header-logo">
-            <span class="header-path">TheTechBiscuit</span>
+            <span class="header-prompt"><span class="prompt-user">techbiscuit</span><span class="prompt-separator">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span><span class="prompt-cursor" aria-hidden="true"></span></span>
         </a>
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-            <span class="menu-icon">☰</span>
+            <span class="menu-icon">
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <line x1="0" y1="1" x2="20" y2="1" stroke="currentColor" stroke-width="2"/>
+                    <line x1="0" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="2"/>
+                    <line x1="0" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </span>
         </button>
         <nav aria-label="Main Navigation" role="navigation" class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="{{ .Site.BaseURL }}"
                        class="nav-link {{ if eq .RelPermalink "/" }}active{{ end }}">
-                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#home"></use></svg>
-                       <span class="nav-text">Home</span>
+                       <span class="nav-text">~</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ "blog/" | relURL }}"
                        class="nav-link {{ if or (eq .Section "blog") (eq .Type "blog") }}active{{ end }}">
-                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
-                       <span class="nav-text">Blog</span>
+                       <span class="nav-text">~/blog</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ "creative/" | relURL }}"
                        class="nav-link {{ if or (eq .Section "creative") (eq .Type "creative") }}active{{ end }}">
-                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#palette"></use></svg>
-                       <span class="nav-text">Creative</span>
+                       <span class="nav-text">~/creative</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ "search/" | relURL }}"
                        class="nav-link {{ if eq .RelPermalink "/search/" }}active{{ end }}">
-                       <svg class="icon icon-nav" aria-hidden="true"><use xlink:href="/icons/sprite.svg#search"></use></svg>
-                       <span class="nav-text">Search</span>
+                       <span class="nav-text">~/search</span>
                     </a>
                 </li>
             </ul>

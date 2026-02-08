@@ -182,8 +182,7 @@
     if (urlQuery) {
         searchInput.value = urlQuery;
         setHidden(clearButton, false);
+        searchInput.focus();
     }
-
-    searchInput.focus();
     loadIndex();
 })();

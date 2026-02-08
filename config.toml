@@ -10,8 +10,14 @@ contentDir = "content"
 [permalinks]
     blog = "/blog/:filename/"
 
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    guessSyntax = true
+
 [params]
-    description = "Read TheTechBiscuit, authored by Zack Baxter."
-    keywords = "TechBiscuit, blog, personal website"
+    description = "TheTechBiscuit is a personal blog by Zack Baxter covering technology, privacy, security, digital sovereignty, and open-source software."
+    keywords = "TheTechBiscuit, technology, privacy, security, infosec, digital sovereignty, open source, personal blog, tech blog, Zack Baxter"
     author = "Zack Baxter"
     og_image = "/images/social-card.png"

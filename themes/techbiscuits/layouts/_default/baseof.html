@@ -8,31 +8,21 @@
             {{ block "pre-main" . }}{{ end }}
         {{ end }}
 
-        {{ $excludeMain := eq .Type "creative" }}
         {{ $mainClass := "" }}
-
-        {{ if not $excludeMain }}
-            {{ if .IsPage }}
-                {{ if eq .Type "blog" }}
-                    {{ $mainClass = "blog-post" }}
-                {{ end }}
+        {{ if .IsPage }}
+            {{ if eq .Type "blog" }}
+                {{ $mainClass = "blog-post" }}
             {{ end }}
-
-            <main{{ with $mainClass }} class="{{ . }}"{{ end }} id="main-content">
-        {{ else }}
-            <div id="main-content" class="sr-only" tabindex="-1"></div>
         {{ end }}
 
+        <main{{ with $mainClass }} class="{{ . }}"{{ end }} id="main-content">
             {{ block "main" . }}{{ end }}
-
-        {{ if not $excludeMain }}
-            </main>
-        {{ end }}
+        </main>
 
         <!-- Cookie Consent Banner -->
         <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
             <div class="cookie-consent-content">
-                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies. <a href="/privacy-policy">Learn more</a>.</p>
+                <p>We use minimal cookies for analytics to improve your experience. By continuing, you agree to our use of cookies.</p>
                 <div class="cookie-buttons">
                     <button id="accept-cookies" class="btn-accept">Accept</button>
                     <button id="decline-cookies" class="btn-decline">Decline</button>
@@ -43,7 +33,6 @@
         {{- partial "footer.html" . -}}
 
         <script src="/js/main.js" defer></script>
-        <link rel="preload" href="/icons/sprite.svg" as="image" type="image/svg+xml">
         {{ block "page-scripts" . }}{{ end }}
     </body>
 </html>

@@ -3,7 +3,7 @@
 
     <section class="post-hero">
         <div class="post-hero__content">
-            <p class="eyebrow">Featured Article</p>
+            {{ with .Params.tags }}<p class="eyebrow">{{ index . 0 }}</p>{{ end }}
             <h1>{{ .Title }}</h1>
             <div class="meta-info">
                 <span class="author">By {{ .Params.author | default "Zack Baxter" }}</span>
@@ -23,7 +23,7 @@
     <article class="single-post-article">
 
         {{ with .TableOfContents }}
-        <div class="table-of-contents">
+        <div class="table-of-contents" role="navigation" aria-label="Table of Contents">
             <h2>Contents</h2>
             {{ . | replaceRE "^<nav[^>]*>" "" | replaceRE "</nav>$" "" | safeHTML }}
         </div>

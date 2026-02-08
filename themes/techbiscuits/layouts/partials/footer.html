@@ -2,8 +2,7 @@
     <div class="footer-container">
         <div class="footer-section contact-info">
             <h3>Contact</h3>
-            <p><i class="fas fa-envelope"></i><strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
-            <p><i class="fas fa-key"></i> <strong><a href="/public-key.asc" download>Download PGP Public Key</a></strong></p>
+            <p><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg> <strong><a href="mailto:reachme@thetechbiscuit.com">reachme@thetechbiscuit.com</a></strong></p>
         </div>
         <div class="footer-section btc-donations">
             <h3>Support My Work</h3>
@@ -27,10 +26,11 @@
             <h3>Quick Links</h3>
             <a href="/">Home</a>
             <a href="/blog/">Blogs</a>
-            <a href="/creative">Creative</a>
+            <a href="/creative/">Creative</a>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 TheTechBiscuit. All rights reserved.</p>
+        <p>&copy; {{ now.Year }} TheTechBiscuit. All rights reserved.</p>
+        <p class="footer-tagline">Baked with care, served without tracking.</p>
     </div>
 </footer>

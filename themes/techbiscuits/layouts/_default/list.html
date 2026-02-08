@@ -7,11 +7,21 @@
                 {{ $sorted := sort .Pages "Date" "desc" }}
                 {{ $paginator := .Paginate $sorted }}
                 {{ range $paginator.Pages }}
+                {{- $firstTag := "" -}}
+                {{- with .Params.tags -}}{{- $firstTag = index . 0 | lower -}}{{- end -}}
+                {{- $iconId := "pen" -}}
+                {{- if or (eq $firstTag "privacy") (eq $firstTag "security") -}}
+                    {{- $iconId = "lock" -}}
+                {{- else if or (eq $firstTag "guide") (eq $firstTag "tutorial") -}}
+                    {{- $iconId = "book" -}}
+                {{- else if or (eq $firstTag "rss") (eq $firstTag "website") -}}
+                    {{- $iconId = "globe" -}}
+                {{- end -}}
                 <article class="blog-card">
                     <div class="blog-card-image">
                         <div class="blog-card-image-inner">
                             <div class="blog-card-icon">
-                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#pen"></use></svg>
+                                <svg class="icon icon-card" aria-hidden="true"><use xlink:href="/icons/sprite.svg#{{ $iconId }}"></use></svg>
                             </div>
                         </div>
                     </div>
